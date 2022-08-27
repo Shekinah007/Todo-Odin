@@ -9,47 +9,60 @@
     <link rel="stylesheet" href="../src/styles.css">
 </head>
 <body>
-    <header>
-        <h1>🖋 TODO</h1>
-    </header>
-    <nav>
-        <h3 class="home">Home</h3>
-        <h3 class="today">Today</h3>
-        <h3 class="this-week">This Week</h3>
+    <!-- <div class="container"> -->
+        <div class="overlay display-none"></div>
 
-        <div class="projects">
-            <h3>Projects</h3>
-            <ul>
-                <li>World</li>
-                <li>World</li>
-                <li>World</li>
-            </ul>
+        <div class="details-window display-none">
+            <button class="close-details-button">Close</button>
+            <p>Hello details</p>
         </div>
-    <button class="add-button">ADD</button>
+        <div class="edit-window display-none">
+            <button class="close-edit-button">Close</button>
+            <p>Edit</p>
+            <textarea></textarea>
+        </div>
 
-    </nav>
-    <div class="content">
-        <div class="todo-item">
-            kjalvlk   ;kj  v asfkh lsc
+
+        <header>
+            <h1>🖋 TODO</h1>
+        </header>
+        <nav>
+            <h3 class="home">Home</h3>
+            <h3 class="today">Today</h3>
+            <h3 class="this-week">This Week</h3>
+
+            <div class="projects">
+                <h3>Projects</h3>
+                <ul>
+                    <li>World</li>
+                    <li>World</li>
+                    <li>World</li>
+                </ul>
+            </div>
+        <button class="add-button">ADD</button>
+
+        </nav>
+        <div class="content">
+            <div class="todo-item">
+                <div>
+                    <input type="checkbox">
+                    <p class="title">kjalvlk   ;kj  v asfkh lsc</p>
+                </div>
+
+                <div>
+                    <button class="details-button">Details</button>             
+                    <button class="edit-button">Edit</button>
+                    <p class="date">23/8/2001</p>
+                    <button class="delete-button">Delete</button>
+                </div>
+            </div>
+            <div class="addTask"> 
+                <button>Add Task</button>
+            </div>
+        
         </div>
-        <div class="todo-item">
-            hello hsdinSFouu pjksdbnb
-        </div>
-        <div class="todo-item">
-            kaujdp lk.sdbvm ;l kadf
-        </div>
-        <div class="todo-item">
-            jellu ther from me to you all
-        </div>
-        <div class="todo-item">
-            come on and dance away
-        </div>
-        <div class="todo-item">
-            hello
-        </div>
-       
-    </div>
-    
-    <p>Hello World</p>
+        
+        <p>Hello World</p>
+    <!-- </div> -->
 </body>
 </html>
