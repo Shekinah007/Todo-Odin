@@ -47,6 +47,8 @@ nav {
     flex-direction: column;
     /* border-top: 1px solid black; */
     gap: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
 }
 
 .content {
@@ -62,6 +64,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
 }
 
 .add-button {
@@ -73,9 +76,22 @@ nav {
 }
 
 .todo-item {
-    width: 90%;
-    height: 60px;
-    background: rgb(171, 241, 171);
-    border-radius: 10px;
+    width: 95%;
+    height: 40px;
+    /* background: rgb(171, 241, 171); */
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: 10px;
+    border-bottom: 1.5px solid rgb(171, 241, 171);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: 0.2s;
+}
+
+.todo-item:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+    border-bottom: 1.5px solid white;
 }
 
