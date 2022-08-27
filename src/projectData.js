@@ -1,7 +1,7 @@
 let homeProjectsArray = [
   {
     title: "Hello World From Array",
-    details: "Greetings from me to you",
+    details: "Saying hello from afar",
     priority: "Medium",
     dueDate: "12/12/4314",
     complete: false,
@@ -15,7 +15,7 @@ let homeProjectsArray = [
   },
   {
     title: "I am terror",
-    details: "Greetings from me to you",
+    details: "Screeem!",
     priority: "Medium",
     dueDate: "12/12/4124",
     complete: false,

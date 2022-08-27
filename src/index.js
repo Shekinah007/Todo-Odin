@@ -38,7 +38,7 @@ class Projects {
   displayTasks() {
     this.arrayOfTodos.forEach((item) => {
       todoContent.append(
-        todoComponent(item.title, item.detauls, item.priority, item.dueDate)
+        todoComponent(item.title, item.details, item.priority, item.dueDate)
       );
     });
   }

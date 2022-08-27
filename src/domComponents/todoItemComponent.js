@@ -7,6 +7,8 @@ import {
   detailsWindow,
 } from "./getElements";
 
+import detailsComponent from "./detailsWindow";
+
 function todoComponent(titleText, details, priority, dueDate) {
   const container = document.createElement("div");
   container.classList.add("todo-item");
@@ -44,11 +46,15 @@ function todoComponent(titleText, details, priority, dueDate) {
 
   detailsButton.addEventListener("click", () => {
     toggleDisplay(overlay, detailsWindow);
+    detailsWindow.innerHTML = "";
+    detailsWindow.append(
+      detailsComponent(titleText, details, priority, dueDate)
+    );
   });
 
-  closeDetailsButton.addEventListener("click", () => {
-    toggleDisplay(overlay, detailsWindow);
-  });
+  //   closeDetailsButton.addEventListener("click", () => {
+  //     toggleDisplay(overlay, detailsWindow);
+  //   });
 
   editButton.addEventListener("click", () => {
     toggleDisplay(overlay, editWindow);
