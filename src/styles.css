@@ -68,7 +68,7 @@ nav {
 
 }
 
-.content {
+ .content {
     width: calc(100vw - 250px);
     margin-left: 250px;
     margin-top: 60px;
@@ -76,6 +76,7 @@ nav {
     /* border-top: 1px solid black; */
     border-left: 1px solid black;
     background: rgb(255, 253, 248);
+
     padding: 20px;
     /* overflow: scroll; */
     display: flex;
@@ -84,6 +85,16 @@ nav {
     gap: 10px;
 }
 
+.todo-content {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
 .add-button {
     position: absolute;
     bottom: 100px;
@@ -91,19 +102,8 @@ nav {
     background: red;
 }
 
-.addTask {
-    width: 95%;
-    height: 40px;
-    /* background: rgb(171, 241, 171); */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    border-radius: 5px;
-    padding: 10px;
-    border-bottom: 1.5px solid rgb(171, 241, 171);
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    transition: 0.2s;
+.add-task {
+    
 }
 
 .todo-item {
@@ -158,6 +158,12 @@ nav {
     justify-content: center;
     align-items: center;
     transition: 0.3s;
+}
+
+.details-window {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .close-details-button, .close-edit-button {

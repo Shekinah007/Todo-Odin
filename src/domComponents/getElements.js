@@ -7,7 +7,8 @@ const editButton = document.querySelector(".edit-button");
 const overlay = document.querySelector(".overlay");
 const closeDetailsButton = document.querySelector(".close-details-button");
 const closeEditButton = document.querySelector(".close-edit-button");
-const content = document.querySelector(".content");
+const addTaskButton = document.querySelector(".add-task");
+const todoContent = document.querySelector(".todo-content");
 
 export {
   addButton,
@@ -19,5 +20,6 @@ export {
   closeEditButton,
   editWindow,
   editButton,
-  content,
+  addTaskButton,
+  todoContent,
 };

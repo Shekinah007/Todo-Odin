@@ -8,48 +8,48 @@ import {
   closeEditButton,
   editWindow,
   editButton,
-  content,
+  addTaskButton,
+  todoContent,
 } from "./domComponents/getElements";
 
 import todoComponent from "./domComponents/todoItemComponent";
+import homeProjectsArray from "./projectData";
+console.log(homeProjectsArray);
 
-let array = [
-  {
-    title: "Hello World",
-    details: "Greetings from me to you",
-    priority: "Medium",
-    dueDate: "12/12/44",
+addTaskButton.addEventListener("click", () => {
+  homeProjects.addTask({
+    title: "New Tack Here",
+    details: "new Dummny Task",
+    priority: "High",
+    dueDate: "13/10/4408",
     complete: false,
-  },
-  { title: "Everybody loves ice cream", details: "I love ice-cream" },
-];
-
-detailsButton.addEventListener("click", () => {
-  //   toggleDisplay(overlay, detailsWindow);
-  content.append(
-    todoComponent("Hello World", "come one", "medium", "20/1/8839")
-  );
+  });
 });
 
-closeDetailsButton.addEventListener("click", () => {
-  toggleDisplay(overlay, detailsWindow);
-});
-
-closeEditButton.addEventListener("click", () => {
-  toggleDisplay(overlay, editWindow);
-});
-
-editButton.addEventListener("click", () => {
-  toggleDisplay(overlay, editWindow);
-});
-
-function toggleDisplay(overlay, target) {
-  overlay.classList.toggle("display-none");
-  target.classList.toggle("display-none");
-}
+// editButton.addEventListener("click", () => {
+//   console.log("Heoo,");
+// });
 
 class Projects {
   constructor(arrayOfTodos) {
     this.arrayOfTodos = arrayOfTodos;
   }
+
+  displayTasks() {
+    this.arrayOfTodos.forEach((item) => {
+      todoContent.append(
+        todoComponent(item.title, item.detauls, item.priority, item.dueDate)
+      );
+    });
+  }
+
+  addTask(object) {
+    this.arrayOfTodos.push(object);
+    todoContent.innerHTML = "";
+    this.displayTasks();
+  }
+  //   editTask() {}
 }
+
+const homeProjects = new Projects(homeProjectsArray);
+homeProjects.displayTasks();
