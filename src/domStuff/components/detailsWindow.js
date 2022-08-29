@@ -1,4 +1,5 @@
-import { overlay, detailsWindow } from "./getElements";
+// import { overlay, detailsWindow } from "./getElements";
+import { overlay, detailsWindow } from "../getElements";
 
 const body = document.querySelector("body");
 

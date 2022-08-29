@@ -10,9 +10,11 @@ import {
   editButton,
   addTaskButton,
   todoContent,
-} from "./domComponents/getElements";
+} from "./domStuff/getElements";
 
-import todoComponent from "./domComponents/todoItemComponent";
+// import todoComponent from "./domComponents/todoItemComponent";
+import todoComponent from "./domStuff/components/todoItemComponent";
+
 import homeProjectsArray from "./projectData";
 console.log(homeProjectsArray);
 
