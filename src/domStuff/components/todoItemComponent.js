@@ -6,9 +6,7 @@ import {
   detailsWindow,
 } from "../getElements";
 
-// import { openWindow, closeWindow } from "../utilityFunctions";
 import { openWindow, closeWindow } from "../utilityFunctions";
-
 import detailsComponent from "./detailsWindow";
 
 function todoComponent(titleText, details, priority, dueDate) {

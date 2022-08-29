@@ -9,6 +9,9 @@ const closeDetailsButton = document.querySelector(".close-details-button");
 const closeEditButton = document.querySelector(".close-edit-button");
 const addTaskButton = document.querySelector(".add-task");
 const todoContent = document.querySelector(".todo-content");
+const editTitleInput = document.querySelector(".edit-title-input");
+const editDetailsInput = document.querySelector(".edit-details-input");
+const submitTaskButton = document.querySelector(".submit-edit");
 
 export {
   addButton,
@@ -22,4 +25,7 @@ export {
   editButton,
   addTaskButton,
   todoContent,
+  editTitleInput,
+  editDetailsInput,
+  submitTaskButton,
 };

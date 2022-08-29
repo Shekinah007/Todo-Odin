@@ -1,7 +1,4 @@
-// import { overlay, detailsWindow } from "./getElements";
 import { overlay, detailsWindow } from "../getElements";
-
-const body = document.querySelector("body");
 
 function detailsComponent(titleText, details, priority, dueDate) {
   const container = document.createElement("div");
