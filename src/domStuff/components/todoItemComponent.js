@@ -46,19 +46,20 @@ function todoComponent(titleText, details, priority, dueDate) {
 
   detailsButton.addEventListener("click", () => {
     openWindow(detailsWindow);
-    detailsWindow.innerHTML = "";
-    detailsWindow.append(
-      detailsComponent(titleText, details, priority, dueDate)
-    );
+    // detailsWindow.innerHTML = "";
+    // detailsWindow.append(
+    //   detailsComponent(titleText, details, priority, dueDate)
+    // );
+    detailsComponent(titleText, details, priority, dueDate);
   });
 
   editButton.addEventListener("click", () => {
     openWindow(editWindow);
   });
 
-  closeEditButton.addEventListener("click", () => {
-    closeWindow(editWindow);
-  });
+  // closeEditButton.addEventListener("click", () => {
+  //   closeWindow(editWindow);
+  // });
 
   return container;
 }

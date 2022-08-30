@@ -59,11 +59,7 @@
     width: 100%;
 }
 
-.title {
-    width: 400px;
-    background: red;
-    overflow: hidden;
-}
+
 
 .details-title {
     font-size: 20px;

@@ -1,11 +1,11 @@
 const body = document.querySelector("body");
 
+import homeProjectsArray from "./projectData";
 import {
   content,
   home,
   addButton,
-  detailsButton,
-  detailsWindow,
+  detailsB,
   overlay,
   closeDetailsButton,
   closeEditButton,
@@ -16,24 +16,27 @@ import {
   editDetailsInput,
   editTitleInput,
   submitTaskButton,
+  detailsWindow,
 } from "./domStuff/getElements";
 
 import { openWindow, closeWindow } from "./domStuff/utilityFunctions";
 
 import todoComponent from "./domStuff/components/todoItemComponent";
 
-import homeProjectsArray from "./projectData";
-console.log(homeProjectsArray);
+// editButton.addEventListener("click", () => {
+//   openWindow(editWindow);
+// });
 
-// todoContent.addEventListener("scroll", () => {
-//   console.log("Hello, Scroll");
-// });
-// body.addEventListener("scroll", () => {
-//   console.log("Hello, Scroll");
-// });
-// content.addEventListener("scroll", () => {
-//   console.log("Hello, Scroll");
-// });
+closeEditButton.addEventListener("click", () => {
+  closeWindow(editWindow);
+});
+
+closeDetailsButton.addEventListener("click", () => {
+  closeWindow(detailsWindow);
+  console.log("Close Details");
+});
+
+console.log(homeProjectsArray);
 
 body.onscroll = () => {
   console.log("Hello body");
