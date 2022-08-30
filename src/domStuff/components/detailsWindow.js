@@ -1,5 +1,7 @@
 import { overlay, detailsWindow } from "../getElements";
 
+const label = document.querySelector(".details-label");
+
 function detailsComponent(titleText, details, priority, dueDate) {
   const container = document.createElement("div");
   container.classList.add("details-window");

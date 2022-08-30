@@ -6,28 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🖋ToDo</title>
     <script src="main.js" defer></script>
+    <link rel="stylesheet" href="../src/stylesB.css">
     <link rel="stylesheet" href="../src/styles.css">
 </head>
 <body>
     <!-- <div class="container"> -->
         <div class="overlay display-none"></div>
 
-        <div class="details-window display-none">
-            <button class="close-details-button">Close</button>
-            <p class="details-title">Some random title</p>
-            <div class="details-description">Description</div>
+        <div class="details-window ">         
+            <div>
+               <div class="details-label">Project: Home</div>
+               <button class="close-details-button">Close</button>
+            </div>
+
+            <div>
+                <p class="details-title">Some random titleSome random titleSome random titleSome random titleSome random titleSome random titlem</p>
+                <div class="details-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum nobis vel, eius saepe atque et labore commodi nesciunt maxime maiores ea architecto magni porro vero dolorum mollitia voluptatibus eos placeat?</div>
+            </div>
+
+            <!-- <div> -->
+                <div class="details-priority">
+                   Low Priority
+                </div>
+                <p>Due Date: 23-03-2022</p>
+                <p>Status: Pending</p>
+                <!-- <p>Due Date:</p> -->
+            <!-- </div> -->
+
+
         </div>
         <div class="edit-window display-none">
+            <div class="edit-label">
+                Edit Task
+            </div>
             <button class="close-edit-button">Close</button>
-            <p>Edit</p>
-            <textarea class="edit-title-input"></textarea>
-            <textarea class="edit-details-input"></textarea>
-            <button class="submit submit-edit">Done!</button>
+            <div>
+                <p>Edit</p>
+                <textarea class="edit-title-input"></textarea>
+                <textarea class="edit-details-input"></textarea>
+                <button class="submit submit-edit">Done!</button>
+            </div>
         </div>
 
 
         <header>
             <h1>🖋 TODO</h1>
+            <p class="header-date">12/34/2022</p>
+            <p class="header-time">5:20 PM</p>
             <div class="priority-meter">
                 <p class="low">Low</p>
                 <p class="medium">Medium</p>

@@ -1,0 +1,113 @@
+:root {
+    --low-priority: rgb(167, 238, 167);
+    --medium-priority: rgb(240, 220, 107);
+    --high-priority: rgb(247, 124, 120);
+}
+
+
+
+.details-window, .edit-window {
+    width: min(700px, 100vw);
+    min-height: 300px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+
+    z-index: 3;
+    background: white;
+    border-radius: 5px;
+    /* border: 1px solid black; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.6s;
+    /* transition: 1s; */
+    opacity: 1;
+}
+
+.details-window {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: left;
+    background: var(--medium-priority)
+
+}
+
+.close-details-button {
+    position: relative;
+}
+
+
+.details-window div:first-child {
+    /* background-color: red; */
+    display: flex;
+    /* justify-content: space-between; */
+}
+.details-window div:nth-child(2) {
+    /* background-color: red; */
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.title {
+    width: 400px;
+    background: red;
+    overflow: hidden;
+}
+
+.details-title {
+    font-size: 20px;
+    font-weight: bold;
+    /* width: 200px; */
+    color:rgb(82, 116, 102);
+    /* color: yellow; */
+    /* text-decoration: underline; */
+}
+.details-label {
+    font-size: 24px;
+    font-weight: bold;
+    opacity: 0.4;
+}
+
+.details-priority {
+    /* border: 1px solid red; */
+    border-radius: 4px;
+    padding: 10px;
+    color: rgb(80, 80, 80);
+    background: yellow;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.priority-meter {
+    display: flex;
+    flex-direction: column;
+    width: 60px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.priority-meter > * {
+    padding-left: 4px;
+    border-radius: 3px;
+}
+
+.low {
+    background-color: var(--low-priority)
+}
+.medium {
+    background-color: rgb(240, 220, 107);
+}
+.high {
+    background-color: var(--high-priority)
+}
+
