@@ -1,4 +1,7 @@
+const body = document.querySelector("body");
+
 import {
+  content,
   home,
   addButton,
   detailsButton,
@@ -21,6 +24,28 @@ import todoComponent from "./domStuff/components/todoItemComponent";
 
 import homeProjectsArray from "./projectData";
 console.log(homeProjectsArray);
+
+// todoContent.addEventListener("scroll", () => {
+//   console.log("Hello, Scroll");
+// });
+// body.addEventListener("scroll", () => {
+//   console.log("Hello, Scroll");
+// });
+// content.addEventListener("scroll", () => {
+//   console.log("Hello, Scroll");
+// });
+
+body.onscroll = () => {
+  console.log("Hello body");
+};
+
+todoContent.onscroll = () => {
+  console.log("Hello, todo-content");
+};
+
+content.onscroll = () => {
+  console.log("hello, content");
+};
 
 // addTaskButton.addEventListener("click", () => {
 //   homeProjects.addTask({
@@ -64,7 +89,7 @@ class Projects {
   }
 
   addTask(object) {
-    this.arrayOfTodos.push(object);
+    this.arrayOfTodos.unshift(object);
     todoContent.innerHTML = "";
     console.log("Home Projects Array: ", homeProjectsArray);
     this.displayTasks();

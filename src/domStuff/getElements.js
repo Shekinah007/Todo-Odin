@@ -1,3 +1,4 @@
+const content = document.querySelector(".content");
 const addButton = document.querySelector(".add-button");
 const detailsButton = document.querySelector(".details-button");
 const home = document.querySelector(".home");
@@ -14,6 +15,7 @@ const editDetailsInput = document.querySelector(".edit-details-input");
 const submitTaskButton = document.querySelector(".submit-edit");
 
 export {
+  content,
   addButton,
   detailsButton,
   overlay,
