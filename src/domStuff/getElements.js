@@ -14,6 +14,10 @@ const editTitleInput = document.querySelector(".edit-title-input");
 const editDetailsInput = document.querySelector(".edit-details-input");
 const submitTaskButton = document.querySelector(".submit-edit");
 
+const detailsProjectName = document.querySelector(".details-label");
+const detailsTitle = document.querySelector(".details-title");
+const detailsDescription = document.querySelector(".details-description");
+
 export {
   content,
   addButton,
@@ -30,4 +34,7 @@ export {
   editTitleInput,
   editDetailsInput,
   submitTaskButton,
+  detailsProjectName,
+  detailsTitle,
+  detailsDescription,
 };

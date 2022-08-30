@@ -8,8 +8,9 @@ import {
 
 import { openWindow, closeWindow } from "../utilityFunctions";
 import detailsComponent from "./detailsWindow";
+import { altDetailsComponent } from "./detailsWindow";
 
-function todoComponent(titleText, details, priority, dueDate) {
+function todoComponent(titleText, details, priority, dueDate, project) {
   const container = document.createElement("div");
   container.classList.add("todo-item");
 
@@ -50,16 +51,21 @@ function todoComponent(titleText, details, priority, dueDate) {
     // detailsWindow.append(
     //   detailsComponent(titleText, details, priority, dueDate)
     // );
-    detailsComponent(titleText, details, priority, dueDate);
+    altDetailsComponent(titleText, details, priority, dueDate, project);
   });
 
   editButton.addEventListener("click", () => {
     openWindow(editWindow);
   });
 
-  // closeEditButton.addEventListener("click", () => {
-  //   closeWindow(editWindow);
-  // });
+  closeEditButton.addEventListener("click", () => {
+    closeWindow(editWindow);
+  });
+
+  closeDetailsButton.addEventListener("click", () => {
+    closeWindow(detailsWindow);
+    console.log("Close Details");
+  });
 
   return container;
 }

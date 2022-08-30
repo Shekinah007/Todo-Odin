@@ -38,16 +38,8 @@ closeDetailsButton.addEventListener("click", () => {
 
 console.log(homeProjectsArray);
 
-body.onscroll = () => {
-  console.log("Hello body");
-};
-
 todoContent.onscroll = () => {
   console.log("Hello, todo-content");
-};
-
-content.onscroll = () => {
-  console.log("hello, content");
 };
 
 // addTaskButton.addEventListener("click", () => {
@@ -62,6 +54,7 @@ content.onscroll = () => {
 
 submitTaskButton.addEventListener("click", () => {
   homeProjects.addTask({
+    project: "None",
     title: editTitleInput.value,
     details: editDetailsInput.value,
     priority: "High",
@@ -86,7 +79,13 @@ class Projects {
   displayTasks() {
     this.arrayOfTodos.forEach((item) => {
       todoContent.append(
-        todoComponent(item.title, item.details, item.priority, item.dueDate)
+        todoComponent(
+          item.title,
+          item.details,
+          item.priority,
+          item.dueDate,
+          item.project
+        )
       );
     });
   }

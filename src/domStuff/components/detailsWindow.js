@@ -1,5 +1,11 @@
-import { overlay, detailsWindow } from "../getElements";
-const firstDiv = detailsWindow.getElementsByTagName("div")[0];
+import {
+  detailsWindow,
+  detailsProjectName,
+  detailsTitle,
+  detailsDescription,
+} from "../getElements";
+import { closeWindow } from "../utilityFunctions";
+// const firstDiv = detailsWindow.getElementsByTagName("div")[0];
 
 // function detailsComponent(titleText, details, priority, dueDate) {
 //   const container = document.createElement("div");
@@ -17,13 +23,8 @@ const firstDiv = detailsWindow.getElementsByTagName("div")[0];
 //   description.classList.add("details-description");
 //   description.innerText = details;
 
-//   function toggleDisplay(overlay, target) {
-//     overlay.classList.toggle("display-none");
-//     target.classList.toggle("display-none");
-//   }
-
 //   closeButton.addEventListener("click", () => {
-//     toggleDisplay(overlay, detailsWindow);
+//     closeWindow(detailsWindow);
 //   });
 
 //   container.append(closeButton, title, description);
@@ -31,14 +32,11 @@ const firstDiv = detailsWindow.getElementsByTagName("div")[0];
 //   return container;
 // }
 
-function detailsComponent(titleText, details, priority, dueDate) {
-  const label = document.querySelector(".details-label");
-
-  label.innerText = "Project Home" + titleText;
-
-  const detailsElement = document.querySelector(".details-title");
-  detailsElement.innerText = details + "Details Inner Text";
+function altDetailsComponent(titleText, details, priority, dueDate, project) {
+  detailsTitle.innerText = titleText;
+  detailsDescription.innerText = details;
+  detailsProjectName.innerText = "Project: " + project;
 }
 
+export { altDetailsComponent };
 // export default detailsComponent;
-export default detailsComponent;

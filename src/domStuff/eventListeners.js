@@ -1,4 +1,5 @@
 import { closeDetailsButton, closeEditButton } from "./getElements";
+import { openWindow, closeWindow } from "./utilityFunctions";
 
 closeEditButton.addEventListener("click", () => {
   closeWindow(editWindow);
