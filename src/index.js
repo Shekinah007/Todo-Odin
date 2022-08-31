@@ -1,7 +1,6 @@
-const body = document.querySelector("body");
-
 import homeProjectsArray from "./projectData";
 import {
+  navBar,
   content,
   home,
   addButton,
@@ -15,17 +14,34 @@ import {
   todoContent,
   editDetailsInput,
   editTitleInput,
-  submitTaskButton,
+  submitEditButton,
   detailsWindow,
+  navToggleButton,
+  fullScreenBtn,
+  editProjectInput,
+  editPriorityInput,
+  editDateInput,
 } from "./domStuff/getElements";
 
 import { openWindow, closeWindow } from "./domStuff/utilityFunctions";
 
 import todoComponent from "./domStuff/components/todoItemComponent";
 
-// editButton.addEventListener("click", () => {
-//   openWindow(editWindow);
-// });
+fullScreenBtn.addEventListener("click", () => {
+  const elem = document.documentElement;
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) {
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) {
+    elem.msRequestFullscreen();
+  }
+});
+
+navToggleButton.addEventListener("click", () => {
+  navBar.classList.toggle("nav-close");
+  content.classList.toggle("content-expand");
+});
 
 closeEditButton.addEventListener("click", () => {
   closeWindow(editWindow);
@@ -36,40 +52,24 @@ closeDetailsButton.addEventListener("click", () => {
   console.log("Close Details");
 });
 
-console.log(homeProjectsArray);
-
 todoContent.onscroll = () => {
   console.log("Hello, todo-content");
 };
 
-// addTaskButton.addEventListener("click", () => {
-//   homeProjects.addTask({
-//     title: "New Tack Here",
-//     details: "new Dummny Task",
-//     priority: "High",
-//     dueDate: "13/10/4408",
-//     complete: false,
-//   });
-// });
-
-submitTaskButton.addEventListener("click", () => {
+submitEditButton.addEventListener("click", () => {
   homeProjects.addTask({
-    project: "None",
     title: editTitleInput.value,
     details: editDetailsInput.value,
-    priority: "High",
-    dueDate: "13/10/4408",
-    complete: false,
+    priority: editPriorityInput.value,
+    dueDate: editDateInput.value,
+    project: editProjectInput.value,
+    // complete: false,
   });
 });
 
 addTaskButton.addEventListener("click", () => {
   homeProjects.editTask(editWindow);
 });
-
-// editButton.addEventListener("click", () => {
-//   console.log("Heoo,");
-// });
 
 class Projects {
   constructor(arrayOfTodos) {
@@ -93,10 +93,11 @@ class Projects {
   addTask(object) {
     this.arrayOfTodos.unshift(object);
     todoContent.innerHTML = "";
-    console.log("Home Projects Array: ", homeProjectsArray);
+    // console.log("Home Projects Array: ", homeProjectsArray);
     this.displayTasks();
     closeWindow(editWindow);
   }
+
   editTask() {
     openWindow(editWindow);
   }

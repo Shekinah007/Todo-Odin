@@ -3,6 +3,8 @@ import {
   detailsProjectName,
   detailsTitle,
   detailsDescription,
+  detailsPriority,
+  detailsDueDate,
 } from "../getElements";
 import { closeWindow } from "../utilityFunctions";
 // const firstDiv = detailsWindow.getElementsByTagName("div")[0];
@@ -34,8 +36,15 @@ import { closeWindow } from "../utilityFunctions";
 
 function altDetailsComponent(titleText, details, priority, dueDate, project) {
   detailsTitle.innerText = titleText;
+  console.log(
+    "🚀 ~ file: detailsWindow.js ~ line 38 ~ altDetailsComponent ~ detailsTitle",
+    detailsTitle
+  );
   detailsDescription.innerText = details;
   detailsProjectName.innerText = "Project: " + project;
+  detailsProjectName.style.textTransform = "capitalize";
+  detailsPriority.innerText = priority;
+  detailsDueDate.innerText = "Due date: " + dueDate;
 }
 
 export { altDetailsComponent };

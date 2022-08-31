@@ -10,13 +10,24 @@ const closeDetailsButton = document.querySelector(".close-details-button");
 const closeEditButton = document.querySelector(".close-edit-button");
 const addTaskButton = document.querySelector(".add-task");
 const todoContent = document.querySelector(".todo-content");
+
 const editTitleInput = document.querySelector(".edit-title-input");
 const editDetailsInput = document.querySelector(".edit-details-input");
-const submitTaskButton = document.querySelector(".submit-edit");
+const editDateInput = document.querySelector(".edit-date-input");
+const editPriorityInput = document.querySelector(".edit-priority-input");
+const editProjectInput = document.querySelector(".edit-project-input");
+
+const submitEditButton = document.querySelector(".submit-edit");
 
 const detailsProjectName = document.querySelector(".details-label");
 const detailsTitle = document.querySelector(".details-title");
 const detailsDescription = document.querySelector(".details-description");
+const detailsPriority = document.querySelector(".details-priority");
+const detailsDueDate = document.querySelector(".details-dueDate");
+
+const navToggleButton = document.querySelector(".nav-toggle");
+const navBar = document.querySelector("nav");
+const fullScreenBtn = document.querySelector(".fullscreen-btn");
 
 export {
   content,
@@ -33,8 +44,16 @@ export {
   todoContent,
   editTitleInput,
   editDetailsInput,
-  submitTaskButton,
+  submitEditButton,
   detailsProjectName,
   detailsTitle,
   detailsDescription,
+  detailsPriority,
+  detailsDueDate,
+  navToggleButton,
+  navBar,
+  fullScreenBtn,
+  editDateInput,
+  editPriorityInput,
+  editProjectInput,
 };

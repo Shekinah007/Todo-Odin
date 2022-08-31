@@ -47,10 +47,11 @@ function todoComponent(titleText, details, priority, dueDate, project) {
 
   detailsButton.addEventListener("click", () => {
     openWindow(detailsWindow);
-    // detailsWindow.innerHTML = "";
-    // detailsWindow.append(
-    //   detailsComponent(titleText, details, priority, dueDate)
-    // );
+    altDetailsComponent(titleText, details, priority, dueDate, project);
+  });
+
+  container.addEventListener("click", () => {
+    openWindow(detailsWindow);
     altDetailsComponent(titleText, details, priority, dueDate, project);
   });
 

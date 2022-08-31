@@ -1,0 +1,73 @@
+.label-input {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.edit-window {
+    padding: 10px;
+    /* background: pink; */
+    background: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.edit-label {
+    height: 30px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input, textarea, select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(209, 209, 209);
+    /* border: none; */
+    height: 50px;
+}
+
+.edit-title-input {
+    display: grid;
+    place-items: center; 
+}
+
+.editCreate-form {
+    /* min-height: 80%; */
+    width: 100%;
+    /* background: green; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+} 
+
+
+
+.submit-edit {
+    background: rgb(122, 241, 122);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.editCreate-form > div:nth-child(2), .editCreate-form > div:first-child {
+    /* background: yellow; */
+    flex-direction: column;
+    display: flex;
+    gap: 20px;
+}
+
+.edit-details-input {
+    height: 100px;
+    /* overflow: visible; */
+}
+
+
+@media only screen and (max-width: 400px) {
+    .editCreate-form {
+        grid-template-columns: initial;
+        grid-template-rows: 1fr 1fr;
+    } 
+  }

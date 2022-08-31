@@ -6,17 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🖋ToDo</title>
     <script src="main.js" defer></script>
-    <link rel="stylesheet" href="../src/stylesB.css">
-    <link rel="stylesheet" href="../src/styles.css">
+    <link rel="stylesheet" href="../src/styles/detailsWindow.css">
+    <link rel="stylesheet" href="../src/styles/buttonsAndLinks.css">
+    <link rel="stylesheet" href="../src/styles/styles.css">
+    <link rel="stylesheet" href="../src/styles/editWindow.css">
 </head>
 <body>
+    <!-- <div class="project-window">
+        <form action="">
+            <div>
+                <label for="project-name">Name</label>
+                <input id="project-name" class="projec-name-input" required>
+            </div>
+            <div>
+                <button type="submit" class="submit submit-project">Create</button>
+                <button type="button" class="cancel close-project-window">Cancel</button>
+            </div>
+        </form>
+    </div> -->
+
+
     <!-- <div class="container"> -->
-        <div class="overlay display-none"></div>
 
         <div class="details-window display-none">         
             <div class="details1">
                <div class="details-label">Project: Home</div>
-               <button class="close-details-button">Close</button>
+               <button class="close-details-button">
+                   <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+
+                <path fill="currentColor" d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" />
+            </svg></button>
             </div>
 
             <div class="details2">
@@ -28,28 +47,89 @@
                 <div class="details-priority">
                    Low Priority
                 </div>
-                <p>Due Date: 23-03-2022</p>
+                <p class="details-dueDate">Due Date: 23-03-2022</p>
                 <p>Status: Pending</p>
             <!-- </div> -->
 
 
         </div>
-        <div class="edit-window display-none">
+
+        <div class="edit-window">
             <div class="edit-label">
-                Edit Task
+              <p>Edit Task</p>
             </div>
             <button class="close-edit-button">Close</button>
+
+         <form class="editCreate-form display-none">
+                <div>
+                    <div class="label-input">
+                        <label for="title-input">Title: </label>
+                        <textarea class="edit-title-input" placeholder="e.g: Learn some French every 2 days" id="title-input" required></textarea>
+                    </div>
+                    <div class="label-input">
+                        <label for="details-input">Description:</label>
+                        <textarea class="edit-details-input" placeholder="Description" id="details-input"></textarea>
+                    </div>
+                </div>
+                
+                <div>                    
+                    <div class="label-input">
+                        <label for="date">Due Date:</label>
+                        <input class="edit-date-input" type="datetime-local" name="date-time" id="date">
+                    </div>
+                    
+                    <div class="label-input">
+                        <label for="priority">Priority:</label>
+                        <!-- <input type="select" id="priority-input"> -->
+                        <select id="priority" class="edit-priority-input">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <div class="label-input">
+                        <label for="project-input">Project:</label>
+                        <select id="project-input" class="edit-project-input">
+                            <option value="home">Home</option>
+                            <option value="school">School</option>
+                            <option value="tour">Tour</option>
+                        </select>
+                    </div>
+                </div>
+               
+            </form>
+
             <div>
-                <p>Edit</p>
-                <textarea class="edit-title-input"></textarea>
-                <textarea class="edit-details-input"></textarea>
-                <button class="submit submit-edit">Done!</button>
+                <button type="submit" class="submit submit-edit">Add Task</button>
+                <!-- <button class="">Cancel</button> -->
             </div>
         </div>
 
+        <!-- <div class="create-window display-none">
+            <div class="create-label">
+                Edit Task -->
+            </div>
+            <button class="close-create-button">Close</button>
+            <div>
+                <p>Edit</p>
+                <textarea class="create-title-input"></textarea>
+                <textarea class="create-details-input"></textarea>
+                <button class="submit submit-task">Done!</button>
+            </div>
+        </div>
 
+        <button class="fullscreen-btn">FullScreen</button>
         <header>
-            <h1>🖋 TODO</h1>
+            <div class="overlay display-none"></div>
+
+            <div>
+                <button class="nav-toggle">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="white" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+                    </svg>
+                </button>
+                <h1>🖋 TODO</h1>
+            </div>
             <p class="header-date">12/34/2022</p>
             <p class="header-time">5:20 PM</p>
             <div class="priority-meter">
@@ -58,6 +138,8 @@
                 <p class="high">High</p>
             </div>
         </header>
+        <button class="add-project-btn">ADD</button>
+
         <nav>
             <h3 class="home select-project">Home</h3>
             <h3 class="today select-project">Today</h3>
@@ -71,8 +153,6 @@
                     <li class="select-project">World</li>
                 </ul>
             </div>
-        <button class="add-button">ADD</button>
-
         </nav>
         <div class="content">
                 <button class="add-task">Add Task</button>
