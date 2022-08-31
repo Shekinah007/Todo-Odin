@@ -1,0 +1,53 @@
+.project-window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+
+    background: #f5f5f5;
+    width: min(500px, 80vw);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.project-window form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-window input {
+    height: 40px;
+}
+
+.project-window p {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.project-window div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.project-window  form div:first-child {
+    gap: 10px;
+}
+
+form div:nth-child(2) {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* .project-window  button {
+    
+} */
+
+.submit-project {
+    background: pink;
+}
