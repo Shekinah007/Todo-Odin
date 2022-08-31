@@ -6,24 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🖋ToDo</title>
     <script src="main.js" defer></script>
+    <link rel="stylesheet" href="../src/styles/projectWindow.css">
     <link rel="stylesheet" href="../src/styles/detailsWindow.css">
     <link rel="stylesheet" href="../src/styles/buttonsAndLinks.css">
     <link rel="stylesheet" href="../src/styles/styles.css">
     <link rel="stylesheet" href="../src/styles/editWindow.css">
 </head>
 <body>
-    <!-- <div class="project-window">
+
+    <div class="project-window display-none">
+        <div>
+            <p>New Project</p>
+            <hr >
+        </div>
         <form action="">
+            
             <div>
                 <label for="project-name">Name</label>
                 <input id="project-name" class="projec-name-input" required>
             </div>
             <div>
-                <button type="submit" class="submit submit-project">Create</button>
                 <button type="button" class="cancel close-project-window">Cancel</button>
+                <button type="submit" class="submit submit-project">Create Project</button>
             </div>
         </form>
-    </div> -->
+    </div>
 
 
     <!-- <div class="container"> -->
@@ -54,13 +61,13 @@
 
         </div>
 
-        <div class="edit-window">
+        <div class="edit-window display-none">
             <div class="edit-label">
               <p>Edit Task</p>
             </div>
             <button class="close-edit-button">Close</button>
 
-         <form class="editCreate-form display-none">
+         <form class="editCreate-form">
                 <div>
                     <div class="label-input">
                         <label for="title-input">Title: </label>
@@ -107,7 +114,7 @@
 
         <!-- <div class="create-window display-none">
             <div class="create-label">
-                Edit Task -->
+                Edit Task
             </div>
             <button class="close-create-button">Close</button>
             <div>
@@ -116,8 +123,9 @@
                 <textarea class="create-details-input"></textarea>
                 <button class="submit submit-task">Done!</button>
             </div>
-        </div>
+        </div> -->
 
+      
         <button class="fullscreen-btn">FullScreen</button>
         <header>
             <div class="overlay display-none"></div>
@@ -138,6 +146,7 @@
                 <p class="high">High</p>
             </div>
         </header>
+
         <button class="add-project-btn">ADD</button>
 
         <nav>
