@@ -2,15 +2,15 @@ let homeProjectsArray = [
   {
     project: "Home",
     priority: "Medium",
-    title: "Attend french class",
-    details: "Don't miss tuesday's french class",
+    title: "House cleaning day",
+    details: "Don't forget the toilets",
     dueDate: "12/12/4314",
     complete: false,
   },
   {
     project: "Home",
     priority: "High",
-    title: "Math assignment",
+    title: "House task",
     details: "Ask Rhoda for her math assignment",
     dueDate: "12/12/4824",
     complete: false,
@@ -18,7 +18,7 @@ let homeProjectsArray = [
   {
     project: "Home",
     priority: "Low",
-    title: "Gym",
+    title: "Another house task",
     details: "Gym registration.",
     dueDate: "12/12/4124",
     complete: false,

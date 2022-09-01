@@ -47,8 +47,6 @@ console.log(projectItems);
 //   });
 // });
 
-console.log(projectItems.length);
-
 addProjectBtn.addEventListener("click", () => {
   openWindow(projectWindow);
 });
@@ -94,7 +92,7 @@ submitEditButton.addEventListener("click", () => {
     priority: editPriorityInput.value,
     dueDate: editDateInput.value,
     project: editProjectInput.value,
-    // complete: false,
+    complete: false,
   });
 });
 
@@ -124,7 +122,6 @@ class Project {
   addTask(object) {
     this.arrayOfTodos.unshift(object);
     todoContent.innerHTML = "";
-    // console.log("Home Projects Array: ", homeProjectsArray);
     this.displayTasks();
     closeWindow(editWindow);
   }
@@ -135,21 +132,40 @@ class Project {
 }
 
 const homeProjects = new Project(homeProjectsArray);
-// homeProjects.displayTasks();
 
-let listOfProjects = [];
+let listOfProjects = [homeProjects];
 
 arrayOfProjects.forEach((project) => {
   let item = new Project(project);
   listOfProjects.push(item);
-  console.log(listOfProjects);
 });
 
 for (let i = 0; i < projectItems.length; i++) {
-  projectItems[i].addEventListener("click", () => {
+  projectItems[i].addEventListener("click", (e) => {
     todoContent.innerHTML = "";
     console.log("olleh, dlrow");
+    console.log("InnerText: ", projectItems[i].innerText);
 
-    homeProjects.displayTasks();
+    listOfProjects.forEach((item) => {
+      let projectName = item.arrayOfTodos[0].project;
+      if (projectName == projectItems[i].innerText) {
+        console.log("ProJECT!!!");
+        item.displayTasks();
+      }
+    });
+  });
+}
+
+function displayProjectTask(tasks) {
+  tasks.forEach((item) => {
+    todoContent.append(
+      todoComponent(
+        item.title,
+        item.details,
+        item.priority,
+        item.dueDate,
+        item.project
+      )
+    );
   });
 }

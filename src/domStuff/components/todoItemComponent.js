@@ -52,10 +52,10 @@ function todoComponent(titleText, details, priority, dueDate, project) {
     altDetailsComponent(titleText, details, priority, dueDate, project);
   });
 
-  container.addEventListener("click", () => {
-    openWindow(detailsWindow);
-    altDetailsComponent(titleText, details, priority, dueDate, project);
-  });
+  // container.addEventListener("click", () => {
+  //   openWindow(detailsWindow);
+  //   altDetailsComponent(titleText, details, priority, dueDate, project);
+  // });
 
   editButton.addEventListener("click", () => {
     openWindow(editWindow);

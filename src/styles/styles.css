@@ -3,10 +3,9 @@
     --header-color: white;
 }
 
-html {
-    /* background-color: aqua; */
+* {
+    box-sizing: border-box;
 }
-
 
 h1,h2,h3,h4,h5,p,body, span {
     margin: 0;
@@ -106,7 +105,7 @@ header {
     /* background: rgb(122, 122, 122); */
     background: pink;
     /* color: white; */
-    padding: 0 20px;
+    padding: 0 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -115,6 +114,9 @@ header {
     /* z-index: 2; */
 }
 
+h1 {
+    font-size: 20px;
+}
 
 header div:nth-child(2) {
     display: flex;
@@ -149,8 +151,8 @@ nav {
     padding: 10px;
     width: calc(100vw - 250px);
     margin-left: 250px;
-    margin-top: 35px;
-    height: calc(100vh - 55px);
+    margin-top: 60px;
+    height: calc(100vh - 36px);
     /* min-height: 100vh; */
     /* border-top: 1px solid black; */
     /* border-left: 1px solid black; */
@@ -172,7 +174,7 @@ nav {
 
 .todo-content {
     width: 95%;
-    height: 95%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -180,7 +182,7 @@ nav {
     padding: 10px 0;
     overflow-y: scroll;
     /* margin-bottom: 5px; */
-    /* background: rgb(245, 245, 245); */
+    background: rgb(245, 245, 245);
 }
 
 .add-project-btn {
@@ -237,9 +239,10 @@ nav {
     text-overflow: ellipsis;
 }
 
-.header-date {
-    font-size: 13px;
+.header-date, .header-time {
+    font-size: 10px;
     font-weight: 800;
+    color:rgb(110, 110, 110);
 }
 
 
