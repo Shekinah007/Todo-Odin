@@ -1,3 +1,9 @@
+import "./styles/projectWindow.css";
+import "./styles/detailsWindow.css";
+import "./styles/buttonsAndLinks.css";
+import "./styles/styles.css";
+import "./styles/editWindow.css";
+
 import homeProjectsArray from "./projectData";
 import {
   navBar,

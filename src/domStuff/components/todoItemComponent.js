@@ -14,6 +14,8 @@ function todoComponent(titleText, details, priority, dueDate, project) {
   const container = document.createElement("div");
   container.classList.add("todo-item");
 
+  // const dataset = titleText
+
   const firstDiv = document.createElement("div");
   const input = document.createElement("input");
   input.type = "checkbox";
