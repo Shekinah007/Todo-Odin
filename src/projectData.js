@@ -1,6 +1,6 @@
 let homeProjectsArray = [
   {
-    project: "Language Class",
+    project: "Home",
     priority: "Medium",
     title: "Attend french class",
     details: "Don't miss tuesday's french class",
@@ -8,7 +8,7 @@ let homeProjectsArray = [
     complete: false,
   },
   {
-    project: "School Work",
+    project: "Home",
     priority: "High",
     title: "Math assignment",
     details: "Ask Rhoda for her math assignment",
@@ -16,7 +16,7 @@ let homeProjectsArray = [
     complete: false,
   },
   {
-    project: "Exercise",
+    project: "Home",
     priority: "Low",
     title: "Gym",
     details: "Gym registration.",
@@ -24,5 +24,62 @@ let homeProjectsArray = [
     complete: false,
   },
 ];
+
+let schoolTasks = [
+  {
+    project: "School",
+    priority: "Urgent",
+    title: "Attend Math class",
+    details: "Don't miss Sunday's math class",
+    dueDate: "12/12/4314",
+    complete: false,
+  },
+  {
+    project: "School",
+    priority: "Medium",
+    title: "Go home",
+    details: "Don't hang around school",
+    dueDate: "12/12/4314",
+    complete: false,
+  },
+  {
+    project: "School",
+    priority: "Low",
+    title: "Help the old lady",
+    details: "The old lady across the road",
+    dueDate: "12/12/4314",
+    complete: false,
+  },
+];
+
+let exerciseTasks = [
+  {
+    project: "Exercise",
+    priority: "low",
+    title: "Get registered",
+    details: "Say hello",
+    dueDate: "12/12/4314",
+    complete: false,
+  },
+  {
+    project: "Exercise",
+    priority: "Medium",
+    title: "Exercise task 2",
+    details: "ljnwdlvkn olskvmm",
+    dueDate: "12/12/4314",
+    complete: false,
+  },
+  {
+    project: "Exercise",
+    priority: "Low",
+    title: "Some random exercise title",
+    details: "Some random exercise description",
+    dueDate: "12/12/4314",
+    complete: false,
+  },
+];
+
+let arrayOfProjects = [schoolTasks, exerciseTasks];
+export { arrayOfProjects };
 
 export default homeProjectsArray;

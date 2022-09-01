@@ -4,7 +4,16 @@ button {
     background: #D6D6E7;
     padding: 10px;
     border-radius: 5px;
+    transition: 0.5s;
 }
+
+button:hover {
+  /* background: white; */
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+}
+
+
 .fullscreen-btn {
     position: fixed;
     bottom: 0px;
@@ -12,6 +21,7 @@ button {
     background: pink;
     padding: 10px;
     border-top-right-radius: 5px;
+    z-index: 2;
 }
 
 .close-details-button, .close-edit-button {
@@ -21,11 +31,8 @@ button {
 } 
 
 .details-button {
-    
     padding: 7px;
-    /* height: 5px; */
-    /* color: blue; */
-    border: 1px solid rgb(143, 143, 252);
+    /* border: 1px solid rgb(143, 143, 252); */
     border-radius: 5px;
     /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
 }

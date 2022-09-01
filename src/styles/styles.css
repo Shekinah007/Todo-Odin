@@ -14,8 +14,8 @@ h1,h2,h3,h4,h5,p,body, span {
 }
 
 .overlay {
-    /* backdrop-filter: blur(5px); */
-    background-color: rgba(0, 0, 0, 0.801);
+    backdrop-filter: blur(1px);
+    background-color: rgba(0, 10, 26, 0.801);
     position: fixed;
     top: 0;
     left: 0;
@@ -23,7 +23,7 @@ h1,h2,h3,h4,h5,p,body, span {
     height: 100vh;
     bottom: 0;
     right: 0;
-    z-index: 3;
+    z-index: 10;
     animation: closeOverlay 0.5s;    
 }
 
@@ -47,15 +47,6 @@ h1,h2,h3,h4,h5,p,body, span {
     }
  }
 
-/* header, nav {
-    z-index: -10;
-} */
-nav {
-    /* z-index: -1; */
-}
-
-
-
 body {
     /* min-height: 300px; */
     /* height: 100%; */
@@ -65,6 +56,7 @@ body {
     font-family: sans-serif;
     overflow: hidden;
     /* background-color: rgb(238, 238, 238); */
+    /* z-index: ; */
 
 }
 
@@ -120,6 +112,7 @@ header {
     align-items: center;
     position: fixed;
     top: 0;
+    /* z-index: 2; */
 }
 
 
@@ -136,7 +129,6 @@ nav {
     background-color: rgb(238, 238, 238);
     height: 100vh;
     top: 55px;
-    z-index: -1;
     width: 250px;
     left: 0;
     padding: 20px;
@@ -144,8 +136,8 @@ nav {
     flex-direction: column;
     gap: 20px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    /* color: black; */
     transition: 0.3s;
+    z-index: 0;
 }
 
 .nav-close {
@@ -280,8 +272,45 @@ nav {
 
 
 .projects {
-    
+    /* background-color: ivory; */
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px; */
 }
+
+.projects > div:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    /* background-color: khaki; */
+    gap: 1px;
+}
+
+.projects:hover {
+    /* background: violet; */
+}
+
+.select-project {
+    /* background-color: red; */
+    height: 30px;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+.select-project:hover {
+    background: rgb(255, 255, 255);
+}
+
+
 
 
 

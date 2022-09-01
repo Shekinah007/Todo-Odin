@@ -4,7 +4,11 @@ import "./styles/buttonsAndLinks.css";
 import "./styles/styles.css";
 import "./styles/editWindow.css";
 
+import { openWindow, closeWindow } from "./domStuff/utilityFunctions";
+import todoComponent from "./domStuff/components/todoItemComponent";
+
 import homeProjectsArray from "./projectData";
+import { arrayOfProjects } from "./projectData";
 import {
   navBar,
   content,
@@ -32,19 +36,18 @@ import {
   projectNameInput,
   cancelProjectBtn,
   createProjectBtn,
+  projectItems,
 } from "./domStuff/getElements";
 
-addEventListener("load", function () {
-  var viewport = document.querySelector("meta[name=viewport]");
-  viewport.setAttribute(
-    "content",
-    viewport.content + ", height=" + window.innerHeight
-  );
-});
+console.log(projectItems);
 
-import { openWindow, closeWindow } from "./domStuff/utilityFunctions";
+// projectItems.forEach((item) => {
+//   item.addEventListener("click", () => {
+//     alert("Item");
+//   });
+// });
 
-import todoComponent from "./domStuff/components/todoItemComponent";
+console.log(projectItems.length);
 
 addProjectBtn.addEventListener("click", () => {
   openWindow(projectWindow);
@@ -99,7 +102,7 @@ addTaskButton.addEventListener("click", () => {
   homeProjects.editTask(editWindow);
 });
 
-class Projects {
+class Project {
   constructor(arrayOfTodos) {
     this.arrayOfTodos = arrayOfTodos;
   }
@@ -131,18 +134,22 @@ class Projects {
   }
 }
 
-const homeProjects = new Projects(homeProjectsArray);
-homeProjects.displayTasks();
+const homeProjects = new Project(homeProjectsArray);
+// homeProjects.displayTasks();
 
-// document.documentElement.style.setProperty("overflow", "auto");
-// const metaViewport = document.querySelector("meta[name=viewport]");
-// metaViewport.setAttribute(
-//   "content",
-//   "height=" + initialHeight + "px, width=device-width, initial-scale=1.0"
-// );
+let listOfProjects = [];
 
-const metaViewport = document.querySelector("meta[name=viewport]");
-metaViewport.setAttribute(
-  "content",
-  "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-);
+arrayOfProjects.forEach((project) => {
+  let item = new Project(project);
+  listOfProjects.push(item);
+  console.log(listOfProjects);
+});
+
+for (let i = 0; i < projectItems.length; i++) {
+  projectItems[i].addEventListener("click", () => {
+    todoContent.innerHTML = "";
+    console.log("olleh, dlrow");
+
+    homeProjects.displayTasks();
+  });
+}
