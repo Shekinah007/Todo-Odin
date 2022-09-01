@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🖋ToDo</title>
-    <script src="main.js" defer></script>
+    <!-- <script defer>
+        var viewport = document.querySelector("meta[name=viewport]");
+        viewport.setAttribute("content", viewport.content + ", height=" + window.innerHeight);
+    </script> -->
+
     <!-- <link rel="stylesheet" href="../src/styles/projectWindow.css">
     <link rel="stylesheet" href="../src/styles/detailsWindow.css">
     <link rel="stylesheet" href="../src/styles/buttonsAndLinks.css">
@@ -13,7 +17,6 @@
     <link rel="stylesheet" href="../src/styles/editWindow.css"> -->
 </head>
 <body>
-
     <div class="project-window display-none">
         <div>
             <p>New Project</p>
@@ -61,7 +64,7 @@
 
         </div>
 
-        <div class="edit-window display-none">
+        <div class="edit-window ">
             <div class="edit-label">
               <p>Edit Task</p>
             </div>
@@ -128,7 +131,7 @@
       
         <button class="fullscreen-btn">FullScreen</button>
         <header>
-            <div class="overlay display-none"></div>
+            <div class="overlay overlay-display-none"></div>
 
             <div>
                 <button class="nav-toggle">
@@ -147,7 +150,7 @@
             </div>
         </header>
 
-        <button class="add-project-btn">ADD</button>
+        <button class="add-project-btn">ADD</button>get
 
         <nav>
             <h3 class="home select-project">Home</h3>
@@ -175,5 +178,7 @@
         
         <p>Hello World</p>
     <!-- </div> -->
+
+    <script src="main.js" ></script>
 </body>
 </html>
