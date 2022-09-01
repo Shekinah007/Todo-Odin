@@ -27,11 +27,33 @@ import {
   editProjectInput,
   editPriorityInput,
   editDateInput,
+  addProjectBtn,
+  projectWindow,
+  projectNameInput,
+  cancelProjectBtn,
+  createProjectBtn,
 } from "./domStuff/getElements";
+
+addEventListener("load", function () {
+  var viewport = document.querySelector("meta[name=viewport]");
+  viewport.setAttribute(
+    "content",
+    viewport.content + ", height=" + window.innerHeight
+  );
+});
 
 import { openWindow, closeWindow } from "./domStuff/utilityFunctions";
 
 import todoComponent from "./domStuff/components/todoItemComponent";
+
+addProjectBtn.addEventListener("click", () => {
+  openWindow(projectWindow);
+});
+
+cancelProjectBtn.addEventListener("click", () => {
+  console.log("Hello project");
+  closeWindow(projectWindow);
+});
 
 fullScreenBtn.addEventListener("click", () => {
   const elem = document.documentElement;
@@ -111,3 +133,16 @@ class Projects {
 
 const homeProjects = new Projects(homeProjectsArray);
 homeProjects.displayTasks();
+
+// document.documentElement.style.setProperty("overflow", "auto");
+// const metaViewport = document.querySelector("meta[name=viewport]");
+// metaViewport.setAttribute(
+//   "content",
+//   "height=" + initialHeight + "px, width=device-width, initial-scale=1.0"
+// );
+
+const metaViewport = document.querySelector("meta[name=viewport]");
+metaViewport.setAttribute(
+  "content",
+  "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+);

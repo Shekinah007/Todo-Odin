@@ -14,33 +14,52 @@ h1,h2,h3,h4,h5,p,body, span {
 }
 
 .overlay {
+    /* backdrop-filter: blur(5px); */
+    background-color: rgba(0, 0, 0, 0.801);
     position: fixed;
     top: 0;
     left: 0;
-    /* background: rgba(199, 199, 199, 0.521); */
-    z-index: 3;
-    height: 100vh;
     width: 100vw;
-
-    /* box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5); */
-
-
-    /* backdrop-filter: blur(10px);  */
-    background-color: rgba(68, 68, 68, 0.801);
+    height: 100vh;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+    animation: closeOverlay 0.5s;    
 }
+
+
+.overlay-display-none {
+   height: 0;
+   width: 0;
+   animation: myAnim 3s ease 0s 1 normal forwards;
+}
+
+@keyframes closeOverlay {
+    0% {
+        opacity: 0;
+    }
+    1% {
+        bottom: 0;
+        opacity: 0;
+    }
+    100% {
+         opacity: 1;
+    }
+ }
 
 /* header, nav {
     z-index: -10;
 } */
 nav {
-    z-index: -10;
+    /* z-index: -1; */
 }
 
 
 
 body {
+    /* min-height: 300px; */
+    /* height: 100%; */
     min-height: 100vh;
-    height: 100vh;
     width: 100vw;
     background-color: rgb(248, 175, 175);
     font-family: sans-serif;
@@ -116,6 +135,8 @@ nav {
     background: whitesmoke;
     background-color: rgb(238, 238, 238);
     height: 100vh;
+    top: 55px;
+    z-index: -1;
     width: 250px;
     left: 0;
     padding: 20px;
@@ -136,8 +157,8 @@ nav {
     padding: 10px;
     width: calc(100vw - 250px);
     margin-left: 250px;
-    margin-top: 55px;
-    height: calc(100vh - 50px);
+    margin-top: 35px;
+    height: calc(100vh - 55px);
     /* min-height: 100vh; */
     /* border-top: 1px solid black; */
     /* border-left: 1px solid black; */
@@ -197,9 +218,9 @@ nav {
     /* border-bottom: 1.5px solid rgb(171, 241, 171); */
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     transition: 0.2s;
-    /* opacity: 0.2; */
-    /* text-overflow: none; */
-    /* overflow: hidden; */
+
+
+    /* animation: myAnim 1s ease 0s 1 normal forwards; */
 }
 
 .todo-item:hover {
@@ -232,11 +253,26 @@ nav {
 
 .display-none {
     position: fixed;
-    top: 0;
-    /* transition: 0.5s; */
-    opacity: 0.5;
-    transform: translate(-50%, -50%) scaleY(0);
+    top: 40%;
+    animation: displayExit 0.5s; 
+    transform:  scaleY(0);
 }
+
+@keyframes displayExit {
+    0% {
+         transform: translate(-50%, -50%) scaleY(1);
+    }
+    99% {
+        transform: translate(-50%, -50%) scaleY(1);
+        opacity: 0;
+    }
+    100% {
+        
+        transform: translate(-50%, -50%) scaleY(0); 
+    }
+}
+
+
 .filter-blur {
     filter: blur(1px);
 }

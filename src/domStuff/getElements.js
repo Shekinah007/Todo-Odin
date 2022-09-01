@@ -29,6 +29,12 @@ const navToggleButton = document.querySelector(".nav-toggle");
 const navBar = document.querySelector("nav");
 const fullScreenBtn = document.querySelector(".fullscreen-btn");
 
+const addProjectBtn = document.querySelector(".add-project-btn");
+const projectWindow = document.querySelector(".project-window");
+const projectNameInput = document.querySelector(".project-name-input");
+const createProjectBtn = document.querySelector(".submit-project");
+const cancelProjectBtn = document.querySelector(".close-project-window");
+
 export {
   content,
   addButton,
@@ -56,4 +62,9 @@ export {
   editDateInput,
   editPriorityInput,
   editProjectInput,
+  addProjectBtn,
+  projectWindow,
+  projectNameInput,
+  createProjectBtn,
+  cancelProjectBtn,
 };
