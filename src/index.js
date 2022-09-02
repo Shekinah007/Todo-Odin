@@ -37,6 +37,7 @@ import {
   cancelProjectBtn,
   createProjectBtn,
   projectItems,
+  projectList,
 } from "./domStuff/getElements";
 
 console.log(projectItems);
@@ -46,6 +47,21 @@ console.log(projectItems);
 //     alert("Item");
 //   });
 // });
+
+createProjectBtn.addEventListener("click", () => {
+  console.log(projectNameInput.value);
+  // listOfProjects.push(new Project([]));
+
+  const newDiv = document.createElement("div");
+  newDiv.classList.add("select-project");
+  newDiv.innerText = projectNameInput.value;
+
+  projectList.appendChild(newDiv);
+
+  closeWindow(projectWindow);
+
+  console.log(projectList);
+});
 
 addProjectBtn.addEventListener("click", () => {
   openWindow(projectWindow);
@@ -85,21 +101,6 @@ todoContent.onscroll = () => {
   console.log("Hello, todo-content");
 };
 
-submitEditButton.addEventListener("click", () => {
-  homeProjects.addTask({
-    title: editTitleInput.value,
-    details: editDetailsInput.value,
-    priority: editPriorityInput.value,
-    dueDate: editDateInput.value,
-    project: editProjectInput.value,
-    complete: false,
-  });
-});
-
-addTaskButton.addEventListener("click", () => {
-  homeProjects.editTask(editWindow);
-});
-
 class Project {
   constructor(arrayOfTodos) {
     this.arrayOfTodos = arrayOfTodos;
@@ -132,29 +133,55 @@ class Project {
 }
 
 const homeProjects = new Project(homeProjectsArray);
-
+// ////////////////////////////////////////////////////////////
 let listOfProjects = [homeProjects];
-
+// /////////////////////////////////////////////////////////////////
 arrayOfProjects.forEach((project) => {
   let item = new Project(project);
   listOfProjects.push(item);
 });
 
+let currentProject = "Home";
+
 for (let i = 0; i < projectItems.length; i++) {
   projectItems[i].addEventListener("click", (e) => {
     todoContent.innerHTML = "";
-    console.log("olleh, dlrow");
     console.log("InnerText: ", projectItems[i].innerText);
 
     listOfProjects.forEach((item) => {
       let projectName = item.arrayOfTodos[0].project;
       if (projectName == projectItems[i].innerText) {
+        currentProject = item;
+        console.log(item.arrayOfTodos);
         console.log("ProJECT!!!");
         item.displayTasks();
+        console.log("Item: ", item);
+        // displayProjectTask(item.arrayOfTodos);
       }
     });
   });
 }
+
+function addTask(project, object) {
+  project.push(object);
+}
+
+addTaskButton.addEventListener("click", () => {
+  homeProjects.editTask(editWindow);
+});
+
+submitEditButton.addEventListener("click", () => {
+  console.log("Current: ", currentProject);
+  currentProject.addTask({
+    title: editTitleInput.value,
+    details: editDetailsInput.value,
+    priority: editPriorityInput.value,
+    dueDate: editDateInput.value,
+    project: editProjectInput.value,
+    complete: false,
+  });
+  console.log("Current Project: ", currentProject);
+});
 
 function displayProjectTask(tasks) {
   tasks.forEach((item) => {

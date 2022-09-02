@@ -4,8 +4,6 @@
     gap: 5px;
 }
 
-
-
 .edit-label {
     height: 30px;
 }
@@ -33,7 +31,7 @@ input, textarea, select {
     /* background: green; */
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5px;
+    gap: 20px;
 } 
 
 
@@ -59,7 +57,7 @@ input, textarea, select {
     width: min(700px, 90vw);
     padding: 10px;
     /* background: pink; */
-    /* background: whitesmoke; */
+    background: whitesmoke;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -68,19 +66,26 @@ input, textarea, select {
 }
 
 .close-edit-button {
-    background: rgb(204, 204, 204);
-    position: fixed;
-    top: 30px;
+    /* position: absolute;
+    top: 10px; */
+    background: none;
+    padding: 0;
+    top: 5px;
 }
 
 @media only screen and (max-width: 500px) {
     .editCreate-form {
         grid-template-columns: initial;
         grid-template-rows: 1fr 1fr;
+        gap: 5px;
     } 
 
-   
-
+    .close-edit-button {
+        /* background: rgb(204, 204, 204); */
+        background: none;
+        position: fixed;
+        top: 30px;
+    }
     .edit-window {
         border-radius: 0;
         width: min(700px, 100vw);

@@ -34,6 +34,7 @@ const projectWindow = document.querySelector(".project-window");
 const projectNameInput = document.querySelector(".project-name-input");
 const createProjectBtn = document.querySelector(".submit-project");
 const cancelProjectBtn = document.querySelector(".close-project-window");
+const projectList = document.querySelector(".project-list");
 
 const projectItems = document.getElementsByClassName("select-project");
 
@@ -70,4 +71,5 @@ export {
   createProjectBtn,
   cancelProjectBtn,
   projectItems,
+  projectList,
 };
