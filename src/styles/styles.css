@@ -5,6 +5,8 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 h1,h2,h3,h4,h5,p,body, span {
@@ -49,14 +51,15 @@ h1,h2,h3,h4,h5,p,body, span {
 body {
     /* min-height: 300px; */
     /* height: 100%; */
-    min-height: 100vh;
+    min-height: 100%;
     width: 100vw;
     background-color: rgb(248, 175, 175);
     font-family: sans-serif;
     overflow: hidden;
     /* background-color: rgb(238, 238, 238); */
     /* z-index: ; */
-
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 body::-webkit-scrollbar {
@@ -83,17 +86,6 @@ body::-webkit-scrollbar {
 
 
   /* Hide scrollbar for IE, Edge and Firefox */
-  body {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
-
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 
 
 header {
@@ -151,7 +143,7 @@ nav {
     padding: 10px;
     width: calc(100vw - 250px);
     margin-left: 250px;
-    margin-top: 60px;
+    margin-top: 36px;
     height: calc(100vh - 36px);
     /* min-height: 100vh; */
     /* border-top: 1px solid black; */
@@ -164,6 +156,8 @@ nav {
     gap: 10px;
     transition: 0.3s;
 }
+
+
 
 .content-expand {
     width: 100vw;
@@ -182,7 +176,7 @@ nav {
     padding: 10px 0;
     overflow-y: scroll;
     /* margin-bottom: 5px; */
-    background: rgb(245, 245, 245);
+    /* background: rgb(245, 245, 245); */
 }
 
 .add-project-btn {
@@ -315,5 +309,12 @@ nav {
 
 
 
+
+@media only screen and (max-width: 400px) {
+    .content {
+        width: 100vw;
+        margin-left: 0;
+    }
+  }
 
 

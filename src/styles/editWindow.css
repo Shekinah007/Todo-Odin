@@ -4,19 +4,7 @@
     gap: 5px;
 }
 
-.edit-window {
-    padding: 10px;
-    /* background: pink; */
-    background: whitesmoke;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
 
-    /* top: 50%;
-    left: 50%; 
-    transform: translate(-50%, -50%) scale(1); */
-}
 
 .edit-label {
     height: 30px;
@@ -45,19 +33,18 @@ input, textarea, select {
     /* background: green; */
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 5px;
 } 
 
 
 
 .submit-edit {
-    background: rgb(122, 241, 122);
+    background: pink;
     padding: 10px;
     border-radius: 5px;
 }
 
 .editCreate-form > div:nth-child(2), .editCreate-form > div:first-child {
-    /* background: yellow; */
     flex-direction: column;
     display: flex;
     gap: 20px;
@@ -65,43 +52,45 @@ input, textarea, select {
 
 .edit-details-input {
     height: 100px;
-    /* overflow: visible; */
 }
 
+.edit-window {
+    position: fixed;
+    width: min(700px, 90vw);
+    padding: 10px;
+    /* background: pink; */
+    /* background: whitesmoke; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    /* transform: translate(-50%, -50%) scale(1); */
+}
 
-@media only screen and (max-width: 400px) {
+.close-edit-button {
+    background: rgb(204, 204, 204);
+    position: fixed;
+    top: 30px;
+}
+
+@media only screen and (max-width: 500px) {
     .editCreate-form {
         grid-template-columns: initial;
         grid-template-rows: 1fr 1fr;
     } 
 
+   
+
     .edit-window {
+        border-radius: 0;
         width: min(700px, 100vw);
-        height: 100%;
-
-        /* top: 0%; */
-        /* left: 0%; */
-        /* transform: initial; */
-        /* bottom: 0; */
-        /* transform: initial; */
-        /* height: 900px; */
-        /* height: 100vh; */
-        /* bottom: 0; */
-        /* height: 100vh; */
-        /* height: max(300px, 70vh); */
-        /* top: 50%; 
-        left: 50%; 
-        transform: translate(-50%, -50%) scale(1);  */
-
-        /* transform: translate(-50%, -0%) scale(1); */
-
+        height: max(800px, 100vh);
     }
 
     input, textarea, select {
         padding: 5px;
         border-radius: 5px;
         border: 1px solid rgb(209, 209, 209);
-        /* border: none; */
         height: 30px;
     }
     .edit-title-input {
