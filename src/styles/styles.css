@@ -53,7 +53,7 @@ body {
     /* height: 100%; */
     min-height: 100%;
     width: 100vw;
-    background-color: rgb(248, 175, 175);
+    background-color: rgb(255, 255, 255);
     font-family: sans-serif;
     overflow: hidden;
     /* background-color: rgb(238, 238, 238); */
@@ -68,7 +68,7 @@ body::-webkit-scrollbar {
 
 
   ::-webkit-scrollbar {
-      width: 7px;
+      width: 5px;
   }
   
    
@@ -142,7 +142,7 @@ nav {
     padding: 10px;
     width: calc(100vw - 250px);
     margin-left: 250px;
-    margin-top: 36px;
+    margin-top: 55px;
     height: calc(100vh - 36px);
     /* min-height: 100vh; */
     background: rgb(255, 253, 248);
@@ -151,6 +151,10 @@ nav {
     align-items: center;
     gap: 10px;
     transition: 0.3s;
+
+    /* position: fixed;
+    height: 100vh;
+    top: 55px; */
 }
 
 
