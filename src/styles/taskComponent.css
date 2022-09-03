@@ -1,0 +1,78 @@
+.todo-item {
+    transition: 0.2s;
+    font-weight: 200;
+    width: 95%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    padding: 10px;
+    /* border-bottom: 1.5px solid rgb(171, 241, 171); */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.todo-item:hover {
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+    /* border-bottom: 1.5px solid white; */
+    cursor: pointer;
+}
+
+.todo-item div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.todo-item div:nth-child(2) {
+    gap: 20px;
+}
+
+.date {
+    font-size: 10px;
+    /* color: grey; */
+}
+
+.title {
+    width: 400px;
+    text-overflow: ellipsis;
+}
+
+
+.add-task {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* align-self: flex-start; */
+    color: grey;
+}
+
+.add-task:hover {
+    color: #db4c3f;
+    background: initial;
+}
+
+
+.title {
+    /* background: blanchedalmond; */
+    width: 100%;
+    height: 100%;
+}
+
+.edit-button {
+    height: 20px;
+
+}
+
+.edit-button:hover {
+    /* background: #ebe9e9; */
+    /* color: red; */
+}
+
+@media only screen and (max-width: 500px) {
+    .todo-item div:nth-child(2) {
+        gap: 10px;
+    }
+  }

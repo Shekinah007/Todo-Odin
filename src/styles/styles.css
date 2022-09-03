@@ -35,6 +35,10 @@ h1,h2,h3,h4,h5,p,body, span {
    animation: myAnim 3s ease 0s 1 normal forwards;
 }
 
+.svgImage {
+    /* position: fixed; */
+}
+
 @keyframes closeOverlay {
     0% {
         opacity: 0;
@@ -49,15 +53,11 @@ h1,h2,h3,h4,h5,p,body, span {
  }
 
 body {
-    /* min-height: 300px; */
-    /* height: 100%; */
     min-height: 100%;
     width: 100vw;
     background-color: rgb(255, 255, 255);
     font-family: sans-serif;
     overflow: hidden;
-    /* background-color: rgb(238, 238, 238); */
-    /* z-index: ; */
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
@@ -68,7 +68,7 @@ body::-webkit-scrollbar {
 
 
   ::-webkit-scrollbar {
-      width: 5px;
+      width: 0px;
   }
   
    
@@ -93,17 +93,20 @@ header {
     height: 55px;
     background-color: rgb(238, 238, 238);
     background: rgb(176, 240, 151);
-    background: rgb(253, 155, 155);
+    /* background: rgb(253, 155, 155); */
     /* background: rgb(122, 122, 122); */
     background: pink;
-    /* color: white; */
-    padding: 0 5px;
+    background: #db4c3f;
+    color: white;
+    padding: 0 35px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
     top: 0;
     /* z-index: 2; */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    
 }
 
 h1 {
@@ -121,6 +124,7 @@ nav {
     position: fixed;
     background: whitesmoke;
     background-color: rgb(238, 238, 238);
+    background: #fafafa;
     height: 100vh;
     top: 55px;
     width: 250px;
@@ -128,10 +132,16 @@ nav {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 5px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     transition: 0.3s;
     z-index: 0;
+}
+
+nav p {
+    font-size: 15px;
+    color: rgb(92, 92, 92);
+    font-weight: 100;
 }
 
 .nav-close {
@@ -149,12 +159,8 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 0px;
     transition: 0.3s;
-
-    /* position: fixed;
-    height: 100vh;
-    top: 55px; */
 }
 
 
@@ -173,64 +179,10 @@ nav {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    padding: 10px 0;
+    padding: 2px 0;
     overflow-y: scroll;
     /* margin-bottom: 5px; */
     /* background: rgb(245, 245, 245); */
-}
-
-.add-project-btn {
-    position: absolute;
-    bottom: 100px;
-    right: 50px;
-    background: red;
-}
-
-.add-task {
-    /* position: absolute;
-    top: 62px;
-    left: 255px; */
-    /* background: red; */
-}
-
-.todo-item {
-    font-weight: 600;
-    width: 95%;
-    height: 40px;
-    /* background: rgb(228, 241, 228); */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 5px;
-    padding: 10px;
-    /* border-bottom: 1.5px solid rgb(171, 241, 171); */
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    transition: 0.2s;
-
-
-    /* animation: myAnim 1s ease 0s 1 normal forwards; */
-}
-
-.todo-item:hover {
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 5px;
-    border-bottom: 1.5px solid white;
-    cursor: pointer;
-}
-
-.todo-item div {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-.todo-item div:nth-child(2) {
-    gap: 30px;
-}
-
-.title {
-    width: 400px;
-    text-overflow: ellipsis;
 }
 
 .header-date, .header-time {
@@ -269,10 +221,14 @@ nav {
 
 
 .projects {
-    /* background-color: ivory; */
     display: flex;
     flex-direction: column;
-    /* gap: 10px; */
+}
+
+.projects > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
 }
 
 .projects > div:first-child {
@@ -283,42 +239,52 @@ nav {
 .project-list {
     display: flex;
     flex-direction: column;
-    /* background-color: khaki; */
     gap: 1px;
 }
 
-.projects:hover {
-    /* background: violet; */
-}
+
 
 .select-project {
-    /* background-color: red; */
     height: 30px;
     display: flex;
     align-items: center;
     transition: 0.3s;
     border-radius: 5px;
-    padding: 10px;
+    padding: 20px;
     cursor: pointer;
 }
 
 
 .select-project:hover {
-    background: rgb(255, 255, 255);
+    background: #ebe9e9;
 }
 
-
+.project-selected {
+    background-color: #ebe9e9
+}
 
 
 @media only screen and (max-width: 500px) {
     .content {
         width: 100vw;
         margin-left: 0;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .todo-item {
-        width: 98%;
+        width: 100%;
         font-size: 13px;
+        background: khaki;
+    }
+
+    header {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .details-button {
+        display: none;
     }
   }
 

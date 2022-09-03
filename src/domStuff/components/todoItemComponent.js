@@ -1,3 +1,5 @@
+import EditIcon from "./images2/pencil-outline.svg";
+
 import {
   overlay,
   editWindow,
@@ -31,13 +33,14 @@ function todoComponent(titleText, details, priority, dueDate, project) {
   detailsButton.classList.add("details-button");
   detailsButton.innerText = "Details";
 
-  const editButton = document.createElement("button");
+  const editButton = document.createElement("img");
   editButton.classList.add("edit-button");
-  editButton.innerText = "Edit";
+  // editButton.innerText = "Hello";
+  editButton.src = EditIcon;
 
   const deleteButton = document.createElement("button");
   deleteButton.classList.add("delete-button");
-  deleteButton.innerText = "Delete";
+  deleteButton.innerText = "Del";
 
   const date = document.createElement("p");
   date.classList.add("date");
@@ -52,10 +55,10 @@ function todoComponent(titleText, details, priority, dueDate, project) {
     altDetailsComponent(titleText, details, priority, dueDate, project);
   });
 
-  // container.addEventListener("click", () => {
-  //   openWindow(detailsWindow);
-  //   altDetailsComponent(titleText, details, priority, dueDate, project);
-  // });
+  container.addEventListener("click", () => {
+    openWindow(detailsWindow);
+    altDetailsComponent(titleText, details, priority, dueDate, project);
+  });
 
   editButton.addEventListener("click", () => {
     openWindow(editWindow);

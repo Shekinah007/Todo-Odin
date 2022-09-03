@@ -3,6 +3,7 @@ import "./styles/detailsWindow.css";
 import "./styles/buttonsAndLinks.css";
 import "./styles/styles.css";
 import "./styles/editWindow.css";
+import "./styles/taskComponent.css";
 
 import { openWindow, closeWindow } from "./domStuff/utilityFunctions";
 import todoComponent from "./domStuff/components/todoItemComponent";
@@ -41,6 +42,7 @@ import {
 } from "./domStuff/getElements";
 
 let selectedProject;
+let currentProjectElement;
 
 function chooseProject() {
   for (let i = 0; i < projectItems.length; i++) {
@@ -51,13 +53,19 @@ function chooseProject() {
       listOfProjects.forEach((item) => {
         // let projectName = item.arrayOfTodos[0].project;
         if (item.nameOfProject == projectItems[i].innerText) {
-          console.log("Name: of project: ", item.nameOfProject);
+          // console.log("Name: of project: ", item.nameOfProject);
           selectedProject = projectItems[i].innerText;
+
+          if (currentProjectElement) {
+            currentProjectElement.classList.remove("project-selected");
+          }
+          currentProjectElement = projectItems[i];
+          currentProjectElement.classList.add("project-selected");
+
+          // projectItems[i].classList.add("project-selected");
+
           currentProject = item;
-          console.log(item.arrayOfTodos);
-          console.log("ProJECT!!!");
           item.displayTasks();
-          console.log("Item: ", item);
           // displayProjectTask(item.arrayOfTodos);
         }
       });
@@ -66,7 +74,7 @@ function chooseProject() {
 }
 
 createProjectBtn.addEventListener("click", () => {
-  console.log(projectNameInput.value);
+  // console.log(projectNameInput.value);
   const newDiv = document.createElement("div");
   newDiv.classList.add("select-project");
   newDiv.innerText = projectNameInput.value;
@@ -151,7 +159,7 @@ class Project {
   }
 }
 
-const homeProjects = new Project(homeProjectsArray);
+const homeProjects = new Project(homeProjectsArray, "Home");
 // ////////////////////////////////////////////////////////////
 let listOfProjects = [homeProjects];
 // /////////////////////////////////////////////////////////////////
@@ -161,7 +169,7 @@ arrayOfProjects.forEach((projectItem) => {
 });
 
 let currentProject = "Home";
-
+homeProjects.displayTasks();
 chooseProject();
 
 addTaskButton.addEventListener("click", () => {
