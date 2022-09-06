@@ -5,7 +5,12 @@ import "./styles/styles.css";
 import "./styles/editWindow.css";
 import "./styles/taskComponent.css";
 
-import { openWindow, closeWindow } from "./domStuff/utilityFunctions";
+import Project from "./classes";
+import {
+  openWindow,
+  closeWindow,
+  toggleNavBar,
+} from "./domStuff/utilityFunctions";
 import todoComponent from "./domStuff/components/todoItemComponent";
 
 import homeProjectsArray from "./projectData";
@@ -44,6 +49,7 @@ import {
 let selectedProject;
 let currentProjectElement;
 
+// Function to choose current project
 function chooseProject() {
   for (let i = 0; i < projectItems.length; i++) {
     projectItems[i].addEventListener("click", (e) => {
@@ -109,9 +115,13 @@ fullScreenBtn.addEventListener("click", () => {
   }
 });
 
+window.onload = function () {
+  if (screen.width < 500) {
+    toggleNavBar();
+  }
+};
 navToggleButton.addEventListener("click", () => {
-  navBar.classList.toggle("nav-close");
-  content.classList.toggle("content-expand");
+  toggleNavBar();
 });
 
 closeEditButton.addEventListener("click", () => {
@@ -127,53 +137,48 @@ todoContent.onscroll = () => {
   console.log("Hello, todo-content");
 };
 
-class Project {
-  constructor(arrayOfTodos, nameOfProject) {
-    this.arrayOfTodos = arrayOfTodos;
-    this.nameOfProject = nameOfProject;
-  }
+// class Project {
+//   constructor(arrayOfTodos, nameOfProject) {
+//     this.arrayOfTodos = arrayOfTodos;
+//     this.nameOfProject = nameOfProject;
+//   }
 
-  displayTasks() {
-    this.arrayOfTodos.forEach((item) => {
-      todoContent.append(
-        todoComponent(
-          item.title,
-          item.details,
-          item.priority,
-          item.dueDate,
-          item.project
-        )
-      );
-    });
-  }
-
-  addTask(object) {
-    this.arrayOfTodos.unshift(object);
-    todoContent.innerHTML = "";
-    this.displayTasks();
-    closeWindow(editWindow);
-  }
-
-  editTask() {
-    openWindow(editWindow);
-  }
-}
+//   displayTasks() {
+//     this.arrayOfTodos.forEach((item) => {
+//       todoContent.append(
+//         todoComponent(
+//           item.title,
+//           item.details,
+//           item.priority,
+//           item.dueDate,
+//           item.project
+//         )
+//       );
+//     });
+//   }
+//   addTask(object) {
+//     this.arrayOfTodos.unshift(object);
+//     todoContent.innerHTML = "";
+//     this.displayTasks();
+//     closeWindow(editWindow);
+//   }
+//   editTask() {
+//     openWindow(editWindow);
+//   }
+// }
 
 const homeProjects = new Project(homeProjectsArray, "Home");
-// ////////////////////////////////////////////////////////////
 let listOfProjects = [homeProjects];
-// /////////////////////////////////////////////////////////////////
 arrayOfProjects.forEach((projectItem) => {
   let item = new Project(projectItem, projectItem[0].project);
   listOfProjects.push(item);
 });
-
-let currentProject = "Home";
-homeProjects.displayTasks();
+let currentProject = "Inbox";
+// homeProjects.displayTasks();
 chooseProject();
 
 addTaskButton.addEventListener("click", () => {
-  homeProjects.editTask(editWindow);
+  homeProjects.addTaskWindow(editWindow);
 });
 
 submitEditButton.addEventListener("click", () => {
@@ -188,3 +193,5 @@ submitEditButton.addEventListener("click", () => {
   });
   console.log("Current Project: ", currentProject);
 });
+
+projectItems[0].click();

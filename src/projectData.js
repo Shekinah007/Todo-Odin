@@ -54,7 +54,7 @@ let schoolTasks = [
 
 let exerciseTasks = [
   {
-    project: "Exercise",
+    project: "Inbox",
     priority: "low",
     title: "Get registered",
     details: "Say hello",
@@ -62,7 +62,7 @@ let exerciseTasks = [
     complete: false,
   },
   {
-    project: "Exercise",
+    project: "Inbox",
     priority: "Medium",
     title: "Exercise task 2",
     details: "ljnwdlvkn olskvmm",
@@ -70,7 +70,7 @@ let exerciseTasks = [
     complete: false,
   },
   {
-    project: "Exercise",
+    project: "Inbox",
     priority: "Low",
     title: "Some random exercise title",
     details: "Some random exercise description",

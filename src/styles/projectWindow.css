@@ -12,8 +12,23 @@
     gap: 20px;
     padding: 10px;
     border-radius: 10px;
-    transition: 0.5s;
+    transition: 0.4s;
+    animation: displayEnter 0.4s;
 }
+
+
+
+@keyframes displayEnter {
+    0% {
+        opacity: 0;
+        top: 40%;
+        transform: translate(-50%, -50%) scale(1); 
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 .project-window form {
     display: flex;
@@ -52,4 +67,10 @@ form div:nth-child(2) {
 
 .submit-project {
     background: pink;
+}
+
+@media only screen and (max-width: 500px) {
+    .project-window {
+        z-index: 50;
+    }
 }

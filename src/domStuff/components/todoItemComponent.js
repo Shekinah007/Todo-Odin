@@ -31,7 +31,7 @@ function todoComponent(titleText, details, priority, dueDate, project) {
 
   const detailsButton = document.createElement("button");
   detailsButton.classList.add("details-button");
-  detailsButton.innerText = "Details";
+  detailsButton.innerText = "Info";
 
   const editButton = document.createElement("img");
   editButton.classList.add("edit-button");
@@ -55,7 +55,7 @@ function todoComponent(titleText, details, priority, dueDate, project) {
     altDetailsComponent(titleText, details, priority, dueDate, project);
   });
 
-  container.addEventListener("click", () => {
+  title.addEventListener("click", () => {
     openWindow(detailsWindow);
     altDetailsComponent(titleText, details, priority, dueDate, project);
   });

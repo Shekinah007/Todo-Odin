@@ -1,3 +1,7 @@
+:root {
+    --header-height: 50px;
+}
+
 :root.dark {
     --header-background: black;
     --header-color: white;
@@ -25,14 +29,14 @@ h1,h2,h3,h4,h5,p,body, span {
     bottom: 0;
     right: 0;
     z-index: 10;
-    animation: closeOverlay 0.2s;    
+    animation: closeOverlay 0.4s;    
 }
 
 
 .overlay-display-none {
    height: 0;
    width: 0;
-   animation: overlayExit 0.2s;
+   animation: overlayExit 0.3s;
    opacity: 0;
 }
 
@@ -106,7 +110,7 @@ body::-webkit-scrollbar {
 
 header {
     width: 100vw;
-    height: 55px;
+    height: var(--header-height);
     background-color: rgb(238, 238, 238);
     background: rgb(176, 240, 151);
     /* background: rgb(253, 155, 155); */
@@ -120,7 +124,7 @@ header {
     align-items: center;
     position: fixed;
     top: 0;
-    /* z-index: 2; */
+    /* z-index: 50; */
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     
 }
@@ -142,7 +146,7 @@ nav {
     background-color: rgb(238, 238, 238);
     background: #fafafa;
     height: 100vh;
-    top: 55px;
+    top: var(--header-height);
     width: 250px;
     left: 0;
     padding: 20px;
@@ -168,7 +172,7 @@ nav p {
     padding: 10px;
     width: calc(100vw - 250px);
     margin-left: 250px;
-    margin-top: 55px;
+    margin-top: var(--header-height);
     height: calc(100vh - 36px);
     /* min-height: 100vh; */
     background: rgb(255, 253, 248);
@@ -177,19 +181,18 @@ nav p {
     align-items: center;
     gap: 0px;
     transition: 0.3s;
+    /* background: rgb(253, 249, 211); */
+
 }
-
-
 
 .content-expand {
     width: 100vw;
     margin-left: 0;
 }
 
-
-
 .todo-content {
     width: 95%;
+    max-width: 80vw;
     height: 90%;
     display: flex;
     flex-direction: column;
@@ -213,8 +216,12 @@ nav p {
     top: 40%;
     transition: 0.4s;
     opacity: 0;
-    animation: displayExit 0.4s; 
+    /* animation: displayExit 0.4s;  */
     transform:  scaleY(0);
+
+
+
+    top: 45%;
 }
 
 @keyframes displayExit {
@@ -230,7 +237,6 @@ nav p {
         opacity: 0;
     }
     100% {
-        
         transform: translate(-50%, -50%) scaleY(0); 
     }
 }
@@ -287,22 +293,36 @@ nav p {
 
 
 @media only screen and (max-width: 500px) {
+    :root {
+        --header-height: 40px;
+    }
+    .todo-content {
+        max-width: unset;
+    }
     .content {
         width: 100vw;
+        
         margin-left: 0;
         padding-left: 0;
         padding-right: 0;
+        /* background: rgb(253, 249, 211); */
     }
 
+    
     .todo-item {
         width: 100%;
         font-size: 13px;
-        background: khaki;
+        background: rgb(253, 249, 211);
     }
 
+    nav {
+        width: 200px;
+        z-index: 40;
+    }
     header {
         padding-left: 5px;
         padding-right: 5px;
+        z-index: 40;
     }
 
     .details-button {

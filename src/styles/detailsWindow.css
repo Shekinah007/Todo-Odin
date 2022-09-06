@@ -18,19 +18,33 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 0.4s;
-    animation: displayEnter 0.4s;
+    transition: 0.3s;
+    /* animation: displayEnter 0.4s; */
+    /* animation: altDisplayEnter 0.4s; */
     opacity: 1;
+    /* will-change: transform, opacity; */
 }
 
 @keyframes displayEnter {
     0% {
         opacity: 0;
         top: 40%;
-        transform: translate(-50%, -50%) scale(1); 
+        /* transform: translate(-50%, -50%) scale(1);  */
     }
     100% {
-        /* top: 50%; */
+        opacity: 1;
+    }
+}
+@keyframes altDisplayEnter {
+    0% {
+        opacity: 0;
+        /* top: 40%; */
+        /* transform: translate(-50%, -50%) scale(1);  */
+    }
+    2% {
+        opacity: 0;
+    }
+    100% {
         opacity: 1;
     }
 }
@@ -130,6 +144,13 @@ label {
 }
 .high {
     background-color: var(--high-priority);
+}
+
+@media only screen and (max-width: 500px) {
+    .details-window {
+        width: 100vw;
+        height: 50vh;
+    }
 }
 
 
