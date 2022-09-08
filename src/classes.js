@@ -11,14 +11,16 @@ class Project {
   }
 
   displayTasks() {
-    this.arrayOfTodos.forEach((item) => {
+    todoContent.innerHTML = "";
+    this.arrayOfTodos.forEach((item, index) => {
       todoContent.append(
         todoComponent(
           item.title,
           item.details,
           item.priority,
           item.dueDate,
-          item.project
+          item.project,
+          index
         )
       );
     });
@@ -33,6 +35,11 @@ class Project {
 
   addTaskWindow() {
     openWindow(editWindow);
+  }
+
+  deleteTask(index) {
+    this.arrayOfTodos.splice(index, 1);
+    this.displayTasks();
   }
 }
 

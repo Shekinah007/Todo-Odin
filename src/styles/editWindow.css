@@ -82,14 +82,20 @@ input, textarea, select {
 
     .close-edit-button {
         /* background: rgb(204, 204, 204); */
+        color: grey;
         background: none;
         position: fixed;
-        top: 30px;
+        top: 40px;
+        top: 10vh;
     }
     .edit-window {
         border-radius: 0;
         width: min(700px, 100vw);
-        height: max(800px, 100vh);
+        height: max(800px, calc(100vh - 45px));
+
+        z-index: 100;
+        /* top: calc(50% - 45px);
+        height: calc(100vh - 45px); */
     }
 
     input, textarea, select {

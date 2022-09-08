@@ -126,11 +126,11 @@ header {
     top: 0;
     /* z-index: 50; */
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    
+    font-size: 18px;
 }
 
 h1 {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 header div:nth-child(2) {
@@ -140,6 +140,11 @@ header div:nth-child(2) {
     justify-content: center;
 }
 
+.content-header {
+    /* font-size: 20px; */
+    color:antiquewhite;
+    font-weight: 700;
+}
 nav {
     position: fixed;
     background: whitesmoke;
@@ -192,7 +197,7 @@ nav p {
 
 .todo-content {
     width: 95%;
-    max-width: 80vw;
+    max-width: 70vw;
     height: 90%;
     display: flex;
     flex-direction: column;
@@ -218,7 +223,6 @@ nav p {
     opacity: 0;
     /* animation: displayExit 0.4s;  */
     transform:  scaleY(0);
-
 
 
     top: 45%;

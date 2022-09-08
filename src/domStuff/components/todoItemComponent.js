@@ -11,8 +11,12 @@ import {
 import { openWindow, closeWindow } from "../utilityFunctions";
 import detailsComponent from "./detailsWindow";
 import { altDetailsComponent } from "./detailsWindow";
+import editTaskComponent from "./editComponent";
+import { currentProject } from "../..";
 
-function todoComponent(titleText, details, priority, dueDate, project) {
+function todoComponent(titleText, details, priority, dueDate, project, index) {
+  let itemIndex = index;
+
   const container = document.createElement("div");
   container.classList.add("todo-item");
 
@@ -42,6 +46,10 @@ function todoComponent(titleText, details, priority, dueDate, project) {
   deleteButton.classList.add("delete-button");
   deleteButton.innerText = "Del";
 
+  deleteButton.addEventListener("click", () => {
+    currentProject.deleteTask(itemIndex);
+  });
+
   const date = document.createElement("p");
   date.classList.add("date");
   date.innerText = dueDate;
@@ -57,11 +65,13 @@ function todoComponent(titleText, details, priority, dueDate, project) {
 
   title.addEventListener("click", () => {
     openWindow(detailsWindow);
+    console.log("Item Index= ", itemIndex);
     altDetailsComponent(titleText, details, priority, dueDate, project);
   });
 
   editButton.addEventListener("click", () => {
-    openWindow(editWindow);
+    // openWindow(editWindow);
+    editTaskComponent(titleText, details, priority, dueDate, project);
   });
 
   closeEditButton.addEventListener("click", () => {

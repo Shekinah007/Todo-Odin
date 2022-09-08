@@ -21,11 +21,12 @@ button:hover {
 }
 
 .fullscreen-btn {
-    position: fixed;
+    /* position: fixed; */
     bottom: 0px;
     left: 0px;
-    background: pink;
-    padding: 10px;
+    /* background: grey; */
+    color: white;
+    /* padding: 10px; */
     border-top-right-radius: 5px;
     z-index: 2;
 }

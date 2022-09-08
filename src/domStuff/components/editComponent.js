@@ -1,3 +1,5 @@
+import { openWindow } from "../utilityFunctions";
+
 import {
   editWindow,
   editTitleInput,
@@ -7,4 +9,13 @@ import {
   editProjectInput,
 } from "../getElements";
 
-function editTask() {}
+function editTaskComponent(title, details, priority, dueDate, project) {
+  editTitleInput.value = title;
+  editDetailsInput.value = details;
+  editDateInput.value = dueDate;
+  editPriorityInput.value = priority;
+
+  openWindow(editWindow);
+}
+
+export default editTaskComponent;

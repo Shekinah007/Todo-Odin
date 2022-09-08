@@ -38,6 +38,8 @@ const projectList = document.querySelector(".project-list");
 
 const projectItems = document.getElementsByClassName("select-project");
 
+const contentHeader = document.querySelector(".content-header");
+
 export {
   content,
   addButton,
@@ -72,4 +74,5 @@ export {
   cancelProjectBtn,
   projectItems,
   projectList,
+  contentHeader,
 };
