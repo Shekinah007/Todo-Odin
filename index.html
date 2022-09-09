@@ -64,7 +64,7 @@
 
         <div class="edit-window display-none">
             <div class="edit-label">
-              <p>Edit Home Task</p>
+              <p>Edit Task</p>
             </div>
             <button class="close-edit-button">
                 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -72,47 +72,46 @@
                 </svg>
             </button>
 
-         <form class="editCreate-form">
-                <div>
-                    <div class="label-input">
-                        <label for="title-input">Title: </label>
-                        <textarea class="edit-title-input" placeholder="e.g: Learn some French every 2 days" id="title-input" required></textarea>
-                    </div>
-                    <div class="label-input">
-                        <label for="details-input">Description:</label>
-                        <textarea class="edit-details-input" placeholder="Description" id="details-input"></textarea>
-                    </div>
-                </div>
-                
-                <div>                    
-                    <div class="label-input">
-                        <label for="date">Due Date:</label>
-                        <input class="edit-date-input" type="datetime-local" name="date-time" id="date">
+            <form class="editCreate-form">
+                    <div>
+                        <div class="label-input">
+                            <label for="title-input">Title: </label>
+                            <textarea class="edit-title-input" placeholder="e.g: Learn some French every 2 days" id="title-input" required></textarea>
+                        </div>
+                        <div class="label-input">
+                            <label for="details-input">Description:</label>
+                            <textarea class="edit-details-input" placeholder="Description" id="details-input"></textarea>
+                        </div>
                     </div>
                     
-                    <div class="label-input">
-                        <label for="priority">Priority:</label>
-                        <!-- <input type="select" id="priority-input"> -->
-                        <select id="priority" class="edit-priority-input">
-                            <option value="low">Low</option>
-                            <option value="medium">Medium</option>
-                            <option value="high">High</option>
-                        </select>
+                    <div>                    
+                        <div class="label-input">
+                            <label for="date">Due Date:</label>
+                            <input class="edit-date-input" type="datetime-local" name="date-time" id="date">
+                        </div>
+                        
+                        <div class="label-input">
+                            <label for="priority">Priority:</label>
+                            <!-- <input type="select" id="priority-input"> -->
+                            <select id="priority" class="edit-priority-input">
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                        <div class="label-input">
+                            <!-- <label for="project-input">Project:</label>
+                            <select id="project-input" class="edit-project-input" value="">
+                                <option value="Home">Home</option>
+                                <option value="School">School</option>
+                                <option value="Tour">Exercise</option>
+                            </select> -->
+                        </div>
                     </div>
-                    <div class="label-input">
-                        <!-- <label for="project-input">Project:</label>
-                        <select id="project-input" class="edit-project-input" value="">
-                            <option value="Home">Home</option>
-                            <option value="School">School</option>
-                            <option value="Tour">Exercise</option>
-                        </select> -->
-                    </div>
-                </div>
-               
-            </form>
-
+                
+                </form>
             <div>
-                <button type="submit" class="submit submit-edit">Add Task</button>
+                <button type="submit" class="submit submit-task">Done</button>
                 <!-- <button class="">Cancel</button> -->
             </div>
         </div>
@@ -139,7 +138,7 @@
         </button> -->
 
         <header>
-            <div style="position: fixed;"></div>
+            <div style="position: fixed"></div>
             <div>
                 <button class="nav-toggle">
                     <svg style="width:24px;height:24px" viewBox="0 0 24 24">
