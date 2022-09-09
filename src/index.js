@@ -1,4 +1,10 @@
 import { format } from "date-fns";
+
+import editTaskComponent from "./domStuff/components/editComponent";
+// import { editIndex } from "./domStuff/components/todoItemComponent";
+import { editIndex } from "./domStuff/components/todoItemComponent";
+import { editComponentIndex } from "./domStuff/components/editComponent";
+
 console.log(format(new Date(2022, 2, 43), "MM/dd/yyyy"));
 
 import "./styles/projectWindow.css";
@@ -33,7 +39,11 @@ import {
   todoContent,
   editDetailsInput,
   editTitleInput,
-  submitEditButton,
+  // ////////////
+  submitTaskButton,
+  // submitEditButton,
+
+  // ////////////
   detailsWindow,
   navToggleButton,
   fullScreenBtn,
@@ -60,12 +70,12 @@ function chooseProject() {
       todoContent.innerHTML = "";
       console.log("InnerText: ", projectItems[i].innerText);
 
-      console.log("Selected Project: ", selectedProject);
-      console.log(
-        "🚀 ~ file: index.js ~ line 55 ~ currentProjectElement",
-        currentProjectElement
-      );
-      console.log("Current Project Array: ", currentProject);
+      // console.log("Selected Project: ", selectedProject);
+      // console.log(
+      //   "🚀 ~ file: index.js ~ line 55 ~ currentProjectElement",
+      //   currentProjectElement
+      // );
+      // console.log("Current Project Array: ", currentProject);
 
       listOfProjects.forEach((item) => {
         // let projectName = item.arrayOfTodos[0].project;
@@ -87,13 +97,12 @@ function chooseProject() {
 
           // item.displayTasks();
 
-          console.log("Selected Project: ", selectedProject);
-          console.log(
-            "🚀 ~ file: index.js ~ line 55 ~ currentProjectElement",
-            currentProjectElement
-          );
-          console.log("Current Project Array: ", currentProject);
-          // displayProjectTask(item.arrayOfTodos);
+          // console.log("Selected Project: ", selectedProject);
+          // console.log(
+          //   "🚀 ~ file: index.js ~ line 55 ~ currentProjectElement",
+          //   currentProjectElement
+          // );
+          // console.log("Current Project Array: ", currentProject);
         }
       });
     });
@@ -151,38 +160,7 @@ closeEditButton.addEventListener("click", () => {
 });
 closeDetailsButton.addEventListener("click", () => {
   closeWindow(detailsWindow);
-  console.log("Close Details");
 });
-
-// class Project {
-//   constructor(arrayOfTodos, nameOfProject) {
-//     this.arrayOfTodos = arrayOfTodos;
-//     this.nameOfProject = nameOfProject;
-//   }
-
-//   displayTasks() {
-//     this.arrayOfTodos.forEach((item) => {
-//       todoContent.append(
-//         todoComponent(
-//           item.title,
-//           item.details,
-//           item.priority,
-//           item.dueDate,
-//           item.project
-//         )
-//       );
-//     });
-//   }
-//   addTask(object) {
-//     this.arrayOfTodos.unshift(object);
-//     todoContent.innerHTML = "";
-//     this.displayTasks();
-//     closeWindow(editWindow);
-//   }
-//   editTask() {
-//     openWindow(editWindow);
-//   }
-// }
 
 chooseProject();
 
@@ -196,23 +174,39 @@ arrayOfProjects.forEach((projectItem) => {
 let currentProject = "Inbox";
 // homeProjects.displayTasks();
 
+let mode = "addingTask";
+
 addTaskButton.addEventListener("click", () => {
   homeProjects.addTaskWindow(editWindow);
+  mode = "addingTask";
 });
 
-submitEditButton.addEventListener("click", () => {
+submitTaskButton.addEventListener("click", () => {
   console.log("Current: ", currentProject);
-  currentProject.addTask({
-    title: editTitleInput.value,
-    details: editDetailsInput.value,
-    priority: editPriorityInput.value,
-    dueDate: editDateInput.value,
-    project: currentProject.nameOfProject,
-    complete: false,
-  });
-  console.log("Current Project: ", currentProject);
+  if (mode === "addingTask") {
+    currentProject.addTask({
+      title: editTitleInput.value,
+      details: editDetailsInput.value,
+      priority: editPriorityInput.value,
+      dueDate: editDateInput.value,
+      project: currentProject.nameOfProject,
+      complete: false,
+    });
+    console.log("Current Project: ", currentProject);
+  } else if (mode === "editingTask") {
+    currentProject.editTask(editComponentIndex, {
+      title: editTitleInput.value,
+      details: editDetailsInput.value,
+      priority: editPriorityInput.value,
+      dueDate: editDateInput.value,
+      project: currentProject.nameOfProject,
+      complete: false,
+    });
+    mode = "addingTask";
+    console.log("Component index: ", editComponentIndex);
+  }
 });
 
 projectItems[0].click();
 
-export { currentProject };
+export { currentProject, mode };

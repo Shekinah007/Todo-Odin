@@ -28,7 +28,6 @@ class Project {
 
   addTask(object) {
     this.arrayOfTodos.unshift(object);
-    todoContent.innerHTML = "";
     this.displayTasks();
     closeWindow(editWindow);
   }
@@ -40,6 +39,16 @@ class Project {
   deleteTask(index) {
     this.arrayOfTodos.splice(index, 1);
     this.displayTasks();
+  }
+
+  editTask(index, object) {
+    this.arrayOfTodos.splice(index, 1, object);
+    // console.log(
+    //   "🚀 ~ file: classes.js ~ line 47 ~ Project ~ editTask ~ object",
+    //   object
+    // );
+    this.displayTasks();
+    closeWindow(editWindow);
   }
 }
 

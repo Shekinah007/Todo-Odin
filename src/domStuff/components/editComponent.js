@@ -1,4 +1,6 @@
 import { openWindow } from "../utilityFunctions";
+import { mode } from "../..";
+import { currentProject } from "../..";
 
 import {
   editWindow,
@@ -7,15 +9,32 @@ import {
   editDateInput,
   editPriorityInput,
   editProjectInput,
+  submitTaskButton,
 } from "../getElements";
 
-function editTaskComponent(title, details, priority, dueDate, project) {
+import { returnIndex } from "./todoItemComponent";
+import { editIndex } from "./todoItemComponent";
+
+var editComponentIndex;
+
+function editTaskComponent(
+  title,
+  details,
+  priority,
+  dueDate,
+  project,
+  itemIndex
+) {
+  editComponentIndex = itemIndex;
+
+  // submitTaskButton.innerText = "Edit Task";
   editTitleInput.value = title;
   editDetailsInput.value = details;
   editDateInput.value = dueDate;
   editPriorityInput.value = priority;
 
-  openWindow(editWindow);
+  console.log("EditComponentIndex: ", editComponentIndex);
 }
 
 export default editTaskComponent;
+export { editComponentIndex };

@@ -55,6 +55,16 @@ button:hover {
   background: initial;
 }
 
+/* .submit-task {
+  background: #db4c3f;
+  color: white;
+} */
+
+.submit {
+  background: #db4c3f;
+  color: white;
+}
+
 
 
   

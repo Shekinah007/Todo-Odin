@@ -12,10 +12,13 @@ import { openWindow, closeWindow } from "../utilityFunctions";
 import detailsComponent from "./detailsWindow";
 import { altDetailsComponent } from "./detailsWindow";
 import editTaskComponent from "./editComponent";
-import { currentProject } from "../..";
+import { currentProject, mode } from "../..";
+
+var editIndex;
 
 function todoComponent(titleText, details, priority, dueDate, project, index) {
   let itemIndex = index;
+  editIndex = index;
 
   const container = document.createElement("div");
   container.classList.add("todo-item");
@@ -65,13 +68,23 @@ function todoComponent(titleText, details, priority, dueDate, project, index) {
 
   title.addEventListener("click", () => {
     openWindow(detailsWindow);
-    console.log("Item Index= ", itemIndex);
+    // console.log("Item Index= ", itemIndex);
     altDetailsComponent(titleText, details, priority, dueDate, project);
   });
 
   editButton.addEventListener("click", () => {
-    // openWindow(editWindow);
-    editTaskComponent(titleText, details, priority, dueDate, project);
+    // let newIndex =
+    openWindow(editWindow);
+    editTaskComponent(
+      titleText,
+      details,
+      priority,
+      dueDate,
+      project,
+      itemIndex
+    );
+    mode = "editingTask";
+    console.log("Edit Button Index: ", itemIndex);
   });
 
   closeEditButton.addEventListener("click", () => {
@@ -86,4 +99,10 @@ function todoComponent(titleText, details, priority, dueDate, project, index) {
   return container;
 }
 
+function returnIndex() {
+  return editIndex;
+}
+
 export default todoComponent;
+export { editIndex };
+export { returnIndex };

@@ -17,7 +17,7 @@ const editDateInput = document.querySelector(".edit-date-input");
 const editPriorityInput = document.querySelector(".edit-priority-input");
 const editProjectInput = document.querySelector(".edit-project-input");
 
-const submitEditButton = document.querySelector(".submit-edit");
+const submitTaskButton = document.querySelector(".submit-task");
 
 const detailsProjectName = document.querySelector(".details-label");
 const detailsTitle = document.querySelector(".details-title");
@@ -55,7 +55,10 @@ export {
   todoContent,
   editTitleInput,
   editDetailsInput,
-  submitEditButton,
+  // /////////////////
+  submitTaskButton,
+  // submitEditButton,
+
   detailsProjectName,
   detailsTitle,
   detailsDescription,

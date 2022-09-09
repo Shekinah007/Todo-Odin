@@ -9,7 +9,7 @@
 }
 
 textarea {
-    resize: vertical;
+    resize: none;
 }
 
 input, textarea, select {
@@ -77,7 +77,7 @@ input, textarea, select {
     .editCreate-form {
         grid-template-columns: initial;
         grid-template-rows: 1fr 1fr;
-        gap: 5px;
+        /* gap: 5px; */
     } 
 
     .close-edit-button {
@@ -96,6 +96,7 @@ input, textarea, select {
         z-index: 100;
         /* top: calc(50% - 45px);
         height: calc(100vh - 45px); */
+
     }
 
     input, textarea, select {

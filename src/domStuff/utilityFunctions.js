@@ -10,8 +10,8 @@ function openWindow(target) {
 
   isWindowOpen = !isWindowOpen;
 
-  console.log("Is window open", isWindowOpen);
-  console.log("Is Navbar open", isOpen);
+  // console.log("Is window open", isWindowOpen);
+  // console.log("Is Navbar open", isOpen);
 }
 function closeWindow(target) {
   target.classList.add("display-none");
@@ -20,14 +20,14 @@ function closeWindow(target) {
   if (!isOpen && screen.width < 500) {
     return;
   }
-  console.log("Is window open", isWindowOpen);
-  console.log("Is Navbar open", isOpen);
+  // console.log("Is window open", isWindowOpen);
+  // console.log("Is Navbar open", isOpen);
   overlay.classList.add("overlay-display-none");
 }
 
 function toggleNavBar() {
-  console.log("Is window open", isWindowOpen);
-  console.log("Is Navbar open", isOpen);
+  // console.log("Is window open", isWindowOpen);
+  // console.log("Is Navbar open", isOpen);
   if (screen.width < 500) {
     if (!isOpen && isWindowOpen) {
       navBar.classList.add("nav-close");
