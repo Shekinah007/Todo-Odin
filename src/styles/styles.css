@@ -1,5 +1,6 @@
 :root {
     --header-height: 50px;
+    --header-background: #db4c3f;;
 }
 
 :root.dark {
@@ -18,59 +19,6 @@ h1,h2,h3,h4,h5,p,body, span {
     padding: 0;
 }
 
-.overlay {
-    backdrop-filter: blur(1px);
-    background-color: rgba(0, 10, 26, 0.801);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    bottom: 0;
-    right: 0;
-    z-index: 10;
-    animation: closeOverlay 0.4s;    
-}
-
-
-.overlay-display-none {
-   height: 0;
-   width: 0;
-   animation: overlayExit 0.3s;
-   opacity: 0;
-}
-
-@keyframes overlayExit {
-    0% {
-        opacity: 1;
-        width: 100vw;
-        height: 100vh;
-    }
-
-    99% {
-        width: 100vw;
-        height: 100vh;  
-        opacity: 0;
-    }
-    100% {     
-        height: 0;
-        width: 0;
-    }
-}
-
-
-@keyframes closeOverlay {
-    0% {
-        opacity: 0;
-    }
-    1% {
-        bottom: 0;
-        opacity: 0;
-    }
-    100% {
-         opacity: 1;
-    }
- }
 
 body {
     min-height: 100%;
@@ -140,11 +88,6 @@ header div:nth-child(2) {
     justify-content: center;
 }
 
-.content-header {
-    /* font-size: 20px; */
-    color:antiquewhite;
-    font-weight: 700;
-}
 nav {
     position: fixed;
     background: whitesmoke;
@@ -161,6 +104,10 @@ nav {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     transition: 0.3s;
     z-index: 0;
+
+    /* background-image: url("/src/images/To\ do\ list-amico-red.svg"); */
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 nav p {
@@ -170,7 +117,7 @@ nav p {
 }
 
 .nav-close {
-    left: -250px;
+    left: -350px;
 }
 
  .content {
@@ -187,7 +134,77 @@ nav p {
     gap: 0px;
     transition: 0.3s;
     /* background: rgb(253, 249, 211); */
+    /* background-image: url("/src/images/To\ do\ list-amico-red.svg");
+    background-image: url("/src/images/To\ do\ list-amico-grey.svg");
+    background-image: url("/src/images/To\ do\ list-pana.svg"); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
+    /* background-color: rgb(247, 105, 86); */
+    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(253, 249, 211); */
 
+
+}
+
+
+
+/* .content::before {
+    content: ' ';
+    display: block;
+    position: fixed;
+    
+    margin-top: var(--header-height);
+    width: calc(100vw - 250px);
+    left: 250px;
+
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-image: url("/src/images/To\ do\ list-pana.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
+    background-color: blue;
+  } */
+
+
+
+.content  * {
+    position: relative;
+}
+
+.content > div:first-child {
+    background-color: blueviolet;
+}
+
+.content-top {
+    background-color: brown;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* align-self: flex-start; */
+    justify-self: flex-start;
+    width: 84%;
+    width: 42%;
+
+    max-width: 70vw;
+}
+
+.project-label {
+    /* margin-top: 10px; */
+    font-size: 26px;
+    /* text-decoration: underline; */
+    /* background-color: brown; */
+    width: 84%;
+    /* width: 42%; */
+    max-width: 67vw;
+    border-bottom: 2px solid black;
+
+    font-weight: 700;
+    color: black;
 }
 
 .content-expand {
@@ -209,11 +226,74 @@ nav p {
     /* background: rgb(245, 245, 245); */
 }
 
+.attrib {
+    position: fixed;
+    bottom: 0;
+    color: rgba(0, 0, 0, 0.733);
+    font-size: 10px;
+}
+
 .header-date, .header-time {
     font-size: 10px;
     font-weight: 800;
     color:rgb(110, 110, 110);
 }
+
+.overlay {
+    backdrop-filter: blur(1px);
+    background-color: rgba(0, 10, 26, 0.637);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    bottom: 0;
+    right: 0;
+    /* transition: 0.3s; */
+    z-index: 10;
+    animation: closeOverlay 0.3s;    
+}
+
+
+.overlay-display-none {
+   height: 0;
+   width: 0;
+   animation: overlayExit 0.05s;
+   opacity: 0;
+}
+
+@keyframes overlayExit {
+    0% {
+        opacity: 1;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    99% {
+        width: 100vw;
+        height: 100vh;  
+        opacity: 0;
+    }
+    100% {     
+        height: 0;
+        width: 0;
+    }
+}
+
+
+@keyframes closeOverlay {
+    0% {
+        opacity: 0;
+    }
+    1% {
+        bottom: 0;
+        opacity: 0;
+    }
+    100% {
+         opacity: 1;
+    }
+ }
+
 
 
 .display-none {
@@ -221,11 +301,11 @@ nav p {
     top: 40%;
     transition: 0.4s;
     opacity: 0;
-    /* animation: displayExit 0.4s;  */
+    animation: displayExit 0.4s; 
     transform:  scaleY(0);
 
 
-    top: 45%;
+    top: 35%;
 }
 
 @keyframes displayExit {
@@ -309,18 +389,41 @@ nav p {
         margin-left: 0;
         padding-left: 0;
         padding-right: 0;
-        /* background: rgb(253, 249, 211); */
+        background-color: rgb(255, 246, 246);
+        background-size: 70%;
     }
+
+    .project-label {
+        font-size: 20px;
+        max-width: initial;
+        width: 96vw;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    
+
+    .content::before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.6;
+        background-image: url("/src/images/To\ do\ list-pana.svg");
+        /* background-image: url("/src/images/To\ do\ list-amico-pink.svg"); */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 70%;
+      }
 
     
-    .todo-item {
-        width: 100%;
-        font-size: 13px;
-        background: rgb(253, 249, 211);
-    }
+    
 
     nav {
-        width: 200px;
+        width: 300px;
+        /* width: 70vw; */
         z-index: 40;
     }
     header {

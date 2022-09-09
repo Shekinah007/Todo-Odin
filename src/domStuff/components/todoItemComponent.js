@@ -16,10 +16,19 @@ import { currentProject, mode } from "../..";
 
 var editIndex;
 
-function todoComponent(titleText, details, priority, dueDate, project, index) {
+function todoComponent(
+  titleText,
+  details,
+  priority,
+  dueDate,
+  project,
+  index,
+  complete
+) {
   let itemIndex = index;
   editIndex = index;
 
+  console.log("Project:       ,mdfvjfv", project);
   const container = document.createElement("div");
   container.classList.add("todo-item");
 
@@ -28,9 +37,46 @@ function todoComponent(titleText, details, priority, dueDate, project, index) {
   const firstDiv = document.createElement("div");
   const input = document.createElement("input");
   input.type = "checkbox";
+  input.checked = complete;
+
+  function addCheckedClass() {
+    title.classList.add("title-complete");
+    container.classList.add("todo-complete");
+  }
+
+  function removeCheckedClass() {
+    title.classList.remove("title-complete");
+    container.classList.remove("todo-complete");
+  }
+
+  input.addEventListener("change", () => {
+    console.clear();
+    console.log("hello");
+    title.classList.toggle("title-complete");
+    container.classList.toggle("todo-complete");
+    currentProject.arrayOfTodos.forEach((item, i) => {
+      if (itemIndex == i) {
+        if (input.checked == true) {
+          item.complete = true;
+          addCheckedClass();
+        } else {
+          item.complete = false;
+          removeCheckedClass();
+        }
+      }
+      console.log("Foreach: ", item.complete);
+    });
+
+    // console.log(currentProject.arrayOf);
+  });
+
   const title = document.createElement("p");
   title.classList.add("title");
   title.innerText = titleText;
+
+  if (input.checked === true) {
+    addCheckedClass();
+  }
 
   firstDiv.append(input, title);
 
@@ -50,7 +96,7 @@ function todoComponent(titleText, details, priority, dueDate, project, index) {
   deleteButton.innerText = "Del";
 
   deleteButton.addEventListener("click", () => {
-    currentProject.deleteTask(itemIndex);
+    currentProject.forEach(item).deleteTask(itemIndex);
   });
 
   const date = document.createElement("p");

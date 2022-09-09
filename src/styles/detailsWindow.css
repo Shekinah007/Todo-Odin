@@ -19,16 +19,16 @@
     justify-content: center;
     align-items: center;
     transition: 0.3s;
-    /* animation: displayEnter 0.4s; */
-    /* animation: altDisplayEnter 0.4s; */
     opacity: 1;
+    animation: displayEnter 0.4s;
+    /* animation: altDisplayEnter 0.4s; */
     /* will-change: transform, opacity; */
 }
 
 @keyframes displayEnter {
     0% {
         opacity: 0;
-        top: 40%;
+        /* top: 40%; */
         /* transform: translate(-50%, -50%) scale(1);  */
     }
     100% {

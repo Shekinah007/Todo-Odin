@@ -5,8 +5,11 @@ let isOpen = true;
 let isWindowOpen = false;
 
 function openWindow(target) {
-  overlay.classList.remove("overlay-display-none");
   target.classList.remove("display-none");
+
+  setTimeout(() => {
+    overlay.classList.remove("overlay-display-none");
+  }, 250);
 
   isWindowOpen = !isWindowOpen;
 
@@ -14,7 +17,11 @@ function openWindow(target) {
   // console.log("Is Navbar open", isOpen);
 }
 function closeWindow(target) {
-  target.classList.add("display-none");
+  overlay.classList.add("overlay-display-none");
+
+  setTimeout(() => {
+    target.classList.add("display-none");
+  }, 60);
   isWindowOpen = !isWindowOpen;
 
   if (!isOpen && screen.width < 500) {
@@ -22,7 +29,6 @@ function closeWindow(target) {
   }
   // console.log("Is window open", isWindowOpen);
   // console.log("Is Navbar open", isOpen);
-  overlay.classList.add("overlay-display-none");
 }
 
 function toggleNavBar() {
@@ -32,15 +38,26 @@ function toggleNavBar() {
     if (!isOpen && isWindowOpen) {
       navBar.classList.add("nav-close");
       content.classList.add("content-expand");
+
+      // setTimeout(() => {
+      //   overlay.classList.remove("overlay-display-none");
+      // }, 500);
+
       overlay.classList.add("overlay-display-none");
+      console.log("First");
     } else if (!isOpen && !isWindowOpen) {
       navBar.classList.add("nav-close");
       content.classList.add("content-expand");
       overlay.classList.add("overlay-display-none");
+      // setTimeout(() => {
+      //   overlay.classList.remove("overlay-display-none");
+      // }, 500);
+      console.log("Second");
     } else {
       navBar.classList.remove("nav-close");
       content.classList.remove("content-expand");
       overlay.classList.remove("overlay-display-none");
+      console.log("Third");
     }
   } else {
     navBar.classList.toggle("nav-close");
@@ -84,5 +101,7 @@ function toggleNavBar() {
 //   }
 //   isOpen = !isOpen;
 // }
+
+function addCheckedClass() {}
 
 export { closeWindow, openWindow, toggleNavBar };

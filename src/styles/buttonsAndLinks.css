@@ -65,6 +65,19 @@ button:hover {
   color: white;
 }
 
+.submit:hover {
+  color: black;
+}
+
+.cancel {
+  background-color: black;
+  color: white;
+}
+
+.cancel:hover {
+  color: black;
+}
+
 
 
   

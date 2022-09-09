@@ -20,7 +20,8 @@ class Project {
           item.priority,
           item.dueDate,
           item.project,
-          index
+          index,
+          item.complete
         )
       );
     });
