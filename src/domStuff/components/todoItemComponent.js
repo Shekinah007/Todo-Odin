@@ -39,19 +39,19 @@ function todoComponent(
   input.type = "checkbox";
   input.checked = complete;
 
+  // Functions to add and remove classes related to checkbox
   function addCheckedClass() {
     title.classList.add("title-complete");
     container.classList.add("todo-complete");
   }
-
   function removeCheckedClass() {
     title.classList.remove("title-complete");
     container.classList.remove("todo-complete");
   }
 
+  // Changes the "complete" property of task item based on
+  // checkbox state
   input.addEventListener("change", () => {
-    console.clear();
-    console.log("hello");
     title.classList.toggle("title-complete");
     container.classList.toggle("todo-complete");
     currentProject.arrayOfTodos.forEach((item, i) => {
@@ -74,6 +74,8 @@ function todoComponent(
   title.classList.add("title");
   title.innerText = titleText;
 
+  // Add relevant css classes based on the "complete" property
+  // on initial load of component
   if (input.checked === true) {
     addCheckedClass();
   }
@@ -114,12 +116,10 @@ function todoComponent(
 
   title.addEventListener("click", () => {
     openWindow(detailsWindow);
-    // console.log("Item Index= ", itemIndex);
     altDetailsComponent(titleText, details, priority, dueDate, project);
   });
 
   editButton.addEventListener("click", () => {
-    // let newIndex =
     openWindow(editWindow);
     editTaskComponent(
       titleText,
