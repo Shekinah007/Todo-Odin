@@ -1,7 +1,6 @@
 import { format } from "date-fns";
 
 import editTaskComponent from "./domStuff/components/editComponent";
-// import { editIndex } from "./domStuff/components/todoItemComponent";
 import { editIndex } from "./domStuff/components/todoItemComponent";
 import { editComponentIndex } from "./domStuff/components/editComponent";
 
@@ -95,9 +94,10 @@ function chooseProject() {
 
           currentProject = item;
           currentProject.displayTasks();
-          // if (screen.width < 500) {
-          toggleNavBar();
-          // }
+
+          if (screen.width < 500) {
+            toggleNavBar();
+          }
 
           // item.displayTasks();
 

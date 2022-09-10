@@ -44,10 +44,21 @@ class Project {
 
   editTask(index, object) {
     this.arrayOfTodos.splice(index, 1, object);
-    // console.log(
-    //   "🚀 ~ file: classes.js ~ line 47 ~ Project ~ editTask ~ object",
-    //   object
-    // );
+    this.displayTasks();
+    closeWindow(editWindow);
+  }
+
+  altEditTask(index, object) {
+    this.arrayOfTodos.forEach((item, i) => {
+      if (index == i) {
+        item.title = object.title;
+        item.details = object.details;
+        item.priority = object.priority;
+        item.dueDate = object.dueDate;
+        item.project = object.project;
+        item.complete = object.complete;
+      }
+    });
     this.displayTasks();
     closeWindow(editWindow);
   }

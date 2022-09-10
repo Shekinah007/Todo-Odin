@@ -134,9 +134,9 @@ nav p {
     gap: 0px;
     transition: 0.3s;
     /* background: rgb(253, 249, 211); */
-    /* background-image: url("/src/images/To\ do\ list-amico-red.svg");
+    background-image: url("/src/images/To\ do\ list-amico-red.svg");
     background-image: url("/src/images/To\ do\ list-amico-grey.svg");
-    background-image: url("/src/images/To\ do\ list-pana.svg"); */
+    background-image: url("/src/images/To\ do\ list-pana.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 30%;
@@ -194,17 +194,31 @@ nav p {
 }
 
 .project-label {
-    /* margin-top: 10px; */
     font-size: 26px;
-    /* text-decoration: underline; */
-    /* background-color: brown; */
-    width: 84%;
-    /* width: 42%; */
-    max-width: 67vw;
-    border-bottom: 2px solid black;
-
+    /* width: 84%; */
+    /* max-width: 67vw; */
     font-weight: 700;
     color: black;
+}
+
+
+.content-first {
+    width: 96vw;
+    display: flex;
+    justify-content: space-between;
+    width: 84%;
+    max-width: 67vw;
+    font-weight: 700;
+    color: black;
+
+    font-size: 12px;
+    align-items:flex-end; 
+}
+
+
+.current-date-time {
+    color: var(--header-background);
+    color: grey;
 }
 
 .content-expand {
@@ -393,16 +407,18 @@ hr {
         padding-right: 0;
         background-color: rgb(255, 246, 246);
         background-size: 70%;
+        background-image: none;
     }
 
     .project-label {
         font-size: 20px;
+    }
+    .content-first {
         max-width: initial;
         width: 96vw;
         overflow: hidden;
-        white-space: nowrap;
+        white-space: nowrap;    
     }
-    
 
     .content::before {
         content: ' ';
@@ -420,11 +436,8 @@ hr {
         background-size: 70%;
       }
 
-    
-    
-
     nav {
-        width: 300px;
+        width: 250px;
         /* width: 70vw; */
         z-index: 40;
     }

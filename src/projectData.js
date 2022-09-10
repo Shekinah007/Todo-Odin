@@ -72,8 +72,8 @@ let exerciseTasks = [
   {
     project: "Inbox",
     priority: "Low",
-    title: "Some random exercise title",
-    details: "Some random exercise description",
+    title: "Some random exercise title blah blah blah",
+    details: "Some random exercise description ",
     dueDate: "12/12/4314",
     complete: false,
   },
