@@ -19,6 +19,7 @@ import {
   openWindow,
   closeWindow,
   toggleNavBar,
+  isOpen,
 } from "./domStuff/utilityFunctions";
 import todoComponent from "./domStuff/components/todoItemComponent";
 
@@ -94,6 +95,9 @@ function chooseProject() {
 
           currentProject = item;
           currentProject.displayTasks();
+          // if (screen.width < 500) {
+          toggleNavBar();
+          // }
 
           // item.displayTasks();
 

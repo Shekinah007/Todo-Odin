@@ -330,7 +330,9 @@ nav p {
     filter: blur(1px);
 }
 
-
+hr {
+    width: 100%;
+}
 
 .projects {
     display: flex;
