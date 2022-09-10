@@ -98,7 +98,8 @@ function todoComponent(
   deleteButton.innerText = "Del";
 
   deleteButton.addEventListener("click", () => {
-    currentProject.forEach(item).deleteTask(itemIndex);
+    console.log("Current Project:", currentProject);
+    currentProject.deleteTask(itemIndex);
   });
 
   const date = document.createElement("p");
