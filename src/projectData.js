@@ -52,7 +52,7 @@ let schoolTasks = [
   },
 ];
 
-let exerciseTasks = [
+let inbox = [
   {
     project: "Inbox",
     priority: "low",
@@ -79,7 +79,7 @@ let exerciseTasks = [
   },
 ];
 
-let arrayOfProjects = [schoolTasks, exerciseTasks];
+let arrayOfProjects = [inbox, schoolTasks];
 export { arrayOfProjects };
 
 export default homeProjectsArray;

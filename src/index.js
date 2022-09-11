@@ -148,17 +148,9 @@ fullScreenBtn.addEventListener("click", () => {
     elem.msRequestFullscreen();
   }
 });
-
-///////////////////////////////////////////////////////
-window.onload = function () {
-  if (screen.width < 500) {
-    toggleNavBar();
-  }
-};
 navToggleButton.addEventListener("click", () => {
   toggleNavBar();
 });
-// //////////////////////////////////////////////////
 closeEditButton.addEventListener("click", () => {
   closeWindow(editWindow);
 });
@@ -166,18 +158,30 @@ closeDetailsButton.addEventListener("click", () => {
   closeWindow(detailsWindow);
 });
 
-chooseProject();
+// Opens nav bar on page load if device width < 500px
+window.onload = function () {
+  if (screen.width < 500) {
+    toggleNavBar();
+  }
+};
+
+chooseProject(); // Call function to add event listeners to all project elements
 
 const homeProjects = new Project(homeProjectsArray, "Home");
-let listOfProjects = [homeProjects];
 
+const inbox = new Project(arrayOfProjects[0], "Inbox");
+
+// Creates an array to contain a list of project objects;
+let listOfProjects = [inbox];
+
+// Create a Project object for from each item supplied from
+// "arrayOfProjects" and pushes it to the "listOfProjects" array
 arrayOfProjects.forEach((projectItem) => {
   let item = new Project(projectItem, projectItem[0].project);
   listOfProjects.push(item);
 });
-let currentProject = "Inbox";
-// homeProjects.displayTasks();
-
+// Sets the current project
+let currentProject = inbox;
 let mode = "addingTask";
 
 addTaskButton.addEventListener("click", () => {
@@ -198,19 +202,25 @@ submitTaskButton.addEventListener("click", () => {
     });
     console.log("Current Project: ", currentProject);
   } else if (mode === "editingTask") {
+    console.log(
+      "Current Project: ",
+      currentProject.arrayOfTodos[editComponentIndex].complete
+    );
     currentProject.editTask(editComponentIndex, {
       title: editTitleInput.value,
       details: editDetailsInput.value,
       priority: editPriorityInput.value,
       dueDate: editDateInput.value,
       project: currentProject.nameOfProject,
-      complete: false,
+      complete: currentProject.arrayOfTodos[editComponentIndex].complete,
     });
+
     mode = "addingTask";
     console.log("Component index: ", editComponentIndex);
   }
 });
 
+// Clicks on the first project, the INBOX
 projectItems[0].click();
 
 export { currentProject, mode };
