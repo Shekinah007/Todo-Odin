@@ -169,20 +169,52 @@ chooseProject(); // Call function to add event listeners to all project elements
 
 const homeProjects = new Project(homeProjectsArray, "Home");
 
-const inbox = new Project(arrayOfProjects[0], "Inbox");
-
 // Creates an array to contain a list of project objects;
-let listOfProjects = [inbox];
+let listOfProjects = [];
+
+// Checks if arrayOfProjects is empty
+// if so, create a empty INBOX project object and adds it to the listOfProjects array
+const inbox = new Project([], "Inbox");
+if (arrayOfProjects.length == 0) {
+  listOfProjects = [inbox];
+} else {
+  listOfProjects = [];
+}
 
 // Create a Project object for from each item supplied from
 // "arrayOfProjects" and pushes it to the "listOfProjects" array
-arrayOfProjects.forEach((projectItem) => {
-  let item = new Project(projectItem, projectItem[0].project);
+arrayOfProjects.forEach((projectItem, i) => {
+  // Issue #023 project object name in this case comes from project property of first
+  // task. Which is a big problem if there are no tasks at all
+
+  console.log("Project Item", projectItem.nameOfProject);
+  console.log(i);
+
+  // let item = new Project(projectItem, projectItem[0].project); // Original
+
+  let item = new Project(projectItem.arrayOfTodos, projectItem.nameOfProject); // Testing
+
   listOfProjects.push(item);
 });
+
 // Sets the current project
-let currentProject = inbox;
+// Declare variables up top
+let currentProject;
+
 let mode = "addingTask";
+
+// //////////////////////////////////////////////////////////
+// if (localStorage.getItem("names")) {
+//   let storedProjects = JSON.stringify(arrayOfProjects);
+//   localStorage.setItem("allProjects", storedProjects);
+
+//   let retrievedProjects = JSON.parse(localStorage.getItem("allProjects"));
+//   console.log("Retrieved Projects:  ", retrievedProjects);
+// } else {
+//   console.log("Sorry!!");
+// }
+
+///////////////////////////////////////////////////////////////////////////////////
 
 addTaskButton.addEventListener("click", () => {
   homeProjects.addTaskWindow(editWindow);
@@ -200,12 +232,7 @@ submitTaskButton.addEventListener("click", () => {
       project: currentProject.nameOfProject,
       complete: false,
     });
-    console.log("Current Project: ", currentProject);
   } else if (mode === "editingTask") {
-    console.log(
-      "Current Project: ",
-      currentProject.arrayOfTodos[editComponentIndex].complete
-    );
     currentProject.editTask(editComponentIndex, {
       title: editTitleInput.value,
       details: editDetailsInput.value,

@@ -1,3 +1,5 @@
+import { ar } from "date-fns/locale";
+
 let homeProjectsArray = [
   {
     project: "Home",
@@ -80,6 +82,44 @@ let inbox = [
 ];
 
 let arrayOfProjects = [inbox, schoolTasks];
+
+if (localStorage.getItem("allProjects")) {
+  arrayOfProjects = JSON.parse(localStorage.getItem("allProjects"));
+  console.log("Array Of Projects: ", arrayOfProjects);
+} else arrayOfProjects = [];
+
+// A try to solve issue 023
+
+let projectObject = {
+  projectName: "Hello",
+  projectTasks: [
+    {
+      project: "Inbox",
+      priority: "low",
+      title: "Get registered",
+      details: "Say hello",
+      dueDate: "12/12/4314",
+      complete: false,
+    },
+    {
+      project: "Inbox",
+      priority: "Medium",
+      title: "Exercise task 2",
+      details: "ljnwdlvkn olskvmm",
+      dueDate: "12/12/4314",
+      complete: false,
+    },
+    {
+      project: "Inbox",
+      priority: "Low",
+      title: "Some random exercise title blah blah blah",
+      details: "Some random exercise description ",
+      dueDate: "12/12/4314",
+      complete: false,
+    },
+  ],
+};
+
 export { arrayOfProjects };
 
 export default homeProjectsArray;

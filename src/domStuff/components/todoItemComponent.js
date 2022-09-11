@@ -28,7 +28,7 @@ function todoComponent(
   let itemIndex = index;
   editIndex = index;
 
-  console.log("Project:       ,mdfvjfv", project);
+  console.log("Project:", project);
   const container = document.createElement("div");
   container.classList.add("todo-item");
 
