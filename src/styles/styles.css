@@ -36,7 +36,7 @@ body::-webkit-scrollbar {
 
 
   ::-webkit-scrollbar {
-      width: 0px;
+      width: 5px;
   }
   
    
@@ -108,7 +108,17 @@ nav {
     /* background-image: url("/src/images/To\ do\ list-amico-red.svg"); */
     background-repeat: no-repeat;
     background-position: center;
+
 }
+
+/* .nav-top  {
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    background-color: white;
+} */
 
 nav p {
     font-size: 15px;
@@ -368,11 +378,14 @@ hr {
     display: flex;
     flex-direction: column;
     gap: 1px;
+    overflow-y: scroll;
+    /* background-color: bisque; */
+    height: 65vh;
 }
 
 
 
-.select-project {
+/* .select-project {
     height: 30px;
     display: flex;
     align-items: center;
@@ -389,7 +402,7 @@ hr {
 
 .project-selected {
     background-color: #ebe9e9
-}
+} */
 
 
 @media only screen and (max-width: 500px) {

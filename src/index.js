@@ -12,6 +12,7 @@ import "./styles/buttonsAndLinks.css";
 import "./styles/styles.css";
 import "./styles/editWindow.css";
 import "./styles/taskComponent.css";
+import "./styles/projectSelect.css";
 
 import Project from "./classes";
 import {
@@ -55,20 +56,26 @@ import {
   projectNameInput,
   cancelProjectBtn,
   createProjectBtn,
-  projectItems,
   projectList,
   contentHeader,
+  // ///////////////////////
+  projectItems,
+  projectTasks,
+  projectElementContainers,
+  deleteProjectBtns,
 } from "./domStuff/getElements";
 
 let selectedProject;
 let currentProjectElement;
+let currentProjectElementContainer;
 
 // Function to choose current project
 function chooseProject() {
   for (let i = 0; i < projectItems.length; i++) {
     projectItems[i].addEventListener("click", (e) => {
-      todoContent.innerHTML = "";
+      // todoContent.innerHTML = "";
       console.log("InnerText: ", projectItems[i].innerText);
+      // console.log("Project Container: ", projectElementContainers[i].innerText);
 
       // console.log("Selected Project: ", selectedProject);
       // console.log(
@@ -85,9 +92,23 @@ function chooseProject() {
 
           if (currentProjectElement) {
             currentProjectElement.classList.remove("project-selected");
+
+            // Added
+            currentProjectElementContainer.classList.remove(
+              "container-selected"
+            );
           }
-          currentProjectElement = projectItems[i];
-          currentProjectElement.classList.add("project-selected");
+          currentProjectElement = projectItems[i]; // OG
+          currentProjectElement.classList.add("project-selected"); // OG
+
+          // /////////////////////////////////////////////////
+          // currentProjectElement = projectElementContainers[i];
+          // ///////////////////////////////////////////////////////////
+          // currentProjectElement.classList.add("container-selected");
+
+          currentProjectElementContainer = projectElementContainers[i]; // *
+          currentProjectElementContainer.classList.add("container-selected"); // *
+
           contentHeader.innerText = "-- " + projectItems[i].innerText + " --";
 
           // projectItems[i].classList.add("project-selected");
@@ -113,38 +134,95 @@ function chooseProject() {
   }
 }
 
+function projectComponent(projectName, index) {
+  // let index = i;
+
+  const container = document.createElement("div");
+  container.classList.add("select-container");
+
+  const projectNameDiv = document.createElement("div");
+  projectNameDiv.classList.add("select-project");
+  projectNameDiv.innerText = projectName;
+
+  const tasks = document.createElement("p");
+  tasks.classList.add("number-of-tasks");
+  tasks.innerText = "13";
+
+  const deleteProjectButton = document.createElement("button");
+  deleteProjectButton.classList.add("delete-project");
+  deleteProjectButton.innerText = "del";
+
+  deleteProjectButton.addEventListener("click", () => {
+    alert(index);
+    // listOfProjectsObjects.splice()
+  });
+
+  container.append(projectNameDiv, tasks, deleteProjectButton);
+
+  return container;
+}
+
+function displayProjects() {
+  listOfProjectsObjects.forEach((project, i) => {
+    if (i > 1) {
+      // const projectNameDiv = document.createElement("div");
+      // projectNameDiv.classList.add("select-project");
+      // projectNameDiv.innerText = project.nameOfProject;
+      // projectList.appendChild(projectNameDiv);
+
+      // 0---------------------------------------------
+      // const container = document.createElement("div");
+      // container.classList.add("select-container");
+
+      // const projectNameDiv = document.createElement("div");
+      // projectNameDiv.classList.add("select-project");
+      // projectNameDiv.innerText = project.nameOfProject;
+
+      // const tasks = document.createElement("p");
+      // tasks.classList.add("number-of-tasks");
+      // tasks.innerText = "13";
+
+      // const deleteProjectButton = document.createElement("button");
+      // deleteProjectButton.classList.add("delete-project");
+      // deleteProjectButton.innerText = "del";
+
+      // container.append(projectNameDiv, tasks, deleteProjectButton);
+
+      // projectList.appendChild(container);
+
+      projectList.appendChild(projectComponent(project.nameOfProject, i));
+
+      chooseProject();
+      // projectNameDiv.dataset.index = listOfProjectsObjects.length;
+      // projectNameDiv.dataset.index = i;
+
+      // console.log("New Div: ", projectNameDiv.dataset.index);
+    }
+  });
+}
+
 window.addEventListener("load", () => {
-  console.log("jkskjjv sljfvbsflkj i");
   if (screen.width < 500) {
     toggleNavBar();
   }
 
-  listOfProjectsObjects.forEach((project, i) => {
-    if (i > 10) {
-      const newDiv = document.createElement("div");
-      newDiv.classList.add("select-project");
-      newDiv.innerText = project.nameOfProject;
-      projectList.appendChild(newDiv);
-      chooseProject();
-
-      console.log("Project Data: ", project.nameOfProject);
-    }
-  });
+  // On initial load of page, load every project from data if any
+  displayProjects();
 });
 
 createProjectBtn.addEventListener("click", (name) => {
-  const newDiv = document.createElement("div");
-  newDiv.classList.add("select-project");
-  newDiv.innerText = projectNameInput.value;
-  projectList.appendChild(newDiv);
   closeWindow(projectWindow);
   console.log(projectList);
   chooseProject();
 
   listOfProjectsObjects.push(new Project([], projectNameInput.value));
+  projectList.appendChild(
+    projectComponent(projectNameInput.value, listOfProjectsObjects.length - 1)
+  );
   console.log("New Project: ", listOfProjectsObjects);
 
-  // arrayOfProjects = listOfProjectsObjects;
+  // projectNameDiv.dataset.index = listOfProjectsObjects.length;
+  // console.log("New Div: ", projectNameDiv.dataset.index);
 });
 
 addProjectBtn.addEventListener("click", () => {

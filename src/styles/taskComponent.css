@@ -16,23 +16,27 @@
     background-color: rgba(255, 255, 255, 0.829);
 
 
-    border-left: 5px solid rgb(55, 248, 55);
+    /* border-left: 5px solid rgb(55, 248, 55); */
 }
 
 .low-priority {
     border-left: 5px solid rgb(55, 248, 55);
+
+
+    /* background-color: rgb(55, 248, 55); */
 }
 
 .medium-priority {
     border-left: 5px solid rgb(245, 248, 55);
     border-left: 5px solid rgb(177, 180, 7);
 
-
+    /* background-color:  rgb(177, 180, 7); */
 }
 
 .high-priority{
     border-left: 5px solid rgb(248, 55, 55);
 
+    /* background-color:  rgb(248, 55, 55); */
 }
 
 
