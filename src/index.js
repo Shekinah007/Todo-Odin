@@ -77,7 +77,7 @@ function chooseProject() {
       // );
       // console.log("Current Project Array: ", currentProject);
 
-      listOfProjects.forEach((item) => {
+      listOfProjectsObjects.forEach((item) => {
         // let projectName = item.arrayOfTodos[0].project;
         if (item.nameOfProject == projectItems[i].innerText) {
           // console.log("Name: of project: ", item.nameOfProject);
@@ -123,10 +123,14 @@ createProjectBtn.addEventListener("click", () => {
   console.log(projectList);
   chooseProject();
 
-  // listOfProjects.push(new Project([{ project: projectNameInput.value }]));
-  listOfProjects.push(new Project([{ project: projectNameInput.value }]));
-  listOfProjects.push(new Project([], projectNameInput.value));
-  console.log("New Project: ", listOfProjects);
+  // listOfProjectsObjects.push(new Project([{ project: projectNameInput.value }]));
+  listOfProjectsObjects.push(
+    new Project([{ project: projectNameInput.value }])
+  );
+  listOfProjectsObjects.push(new Project([], projectNameInput.value));
+  console.log("New Project: ", listOfProjectsObjects);
+
+  // arrayOfProjects = listOfProjectsObjects;
 });
 
 addProjectBtn.addEventListener("click", () => {
@@ -170,19 +174,19 @@ chooseProject(); // Call function to add event listeners to all project elements
 const homeProjects = new Project(homeProjectsArray, "Home");
 
 // Creates an array to contain a list of project objects;
-let listOfProjects = [];
+let listOfProjectsObjects = [];
 
 // Checks if arrayOfProjects is empty
-// if so, create a empty INBOX project object and adds it to the listOfProjects array
+// if so, create a empty INBOX project object and adds it to the listOfProjectsObjects array
 const inbox = new Project([], "Inbox");
 if (arrayOfProjects.length == 0) {
-  listOfProjects = [inbox];
+  listOfProjectsObjects = [inbox];
 } else {
-  listOfProjects = [];
+  listOfProjectsObjects = [];
 }
 
 // Create a Project object for from each item supplied from
-// "arrayOfProjects" and pushes it to the "listOfProjects" array
+// "arrayOfProjects" and pushes it to the "listOfProjectsObjects" array
 arrayOfProjects.forEach((projectItem, i) => {
   // Issue #023 project object name in this case comes from project property of first
   // task. Which is a big problem if there are no tasks at all
@@ -194,7 +198,7 @@ arrayOfProjects.forEach((projectItem, i) => {
 
   let item = new Project(projectItem.arrayOfTodos, projectItem.nameOfProject); // Testing
 
-  listOfProjects.push(item);
+  listOfProjectsObjects.push(item);
 });
 
 // Sets the current project
@@ -218,6 +222,7 @@ let mode = "addingTask";
 
 addTaskButton.addEventListener("click", () => {
   homeProjects.addTaskWindow(editWindow);
+  console.log("Hello");
   mode = "addingTask";
 });
 
@@ -250,4 +255,4 @@ submitTaskButton.addEventListener("click", () => {
 // Clicks on the first project, the INBOX
 projectItems[0].click();
 
-export { currentProject, mode };
+export { currentProject, mode, listOfProjectsObjects };

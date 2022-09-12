@@ -4,6 +4,9 @@ import { openWindow } from "./domStuff/utilityFunctions";
 import { closeWindow } from "./domStuff/utilityFunctions";
 import { editWindow } from "./domStuff/getElements";
 
+import { arrayOfProjects } from "./projectData";
+import { listOfProjectsObjects } from "./index";
+
 class Project {
   constructor(arrayOfTodos, nameOfProject) {
     this.arrayOfTodos = arrayOfTodos;
@@ -31,6 +34,8 @@ class Project {
     this.arrayOfTodos.unshift(object);
     this.displayTasks();
     closeWindow(editWindow);
+
+    this.saveData();
   }
 
   addTaskWindow() {
@@ -40,12 +45,16 @@ class Project {
   deleteTask(index) {
     this.arrayOfTodos.splice(index, 1);
     this.displayTasks();
+
+    this.saveData();
   }
 
   editTask(index, object) {
     this.arrayOfTodos.splice(index, 1, object);
     this.displayTasks();
     closeWindow(editWindow);
+
+    this.saveData();
   }
 
   altEditTask(index, object) {
@@ -61,6 +70,24 @@ class Project {
     });
     this.displayTasks();
     closeWindow(editWindow);
+
+    this.saveData();
+  }
+
+  saveData() {
+    // let storedProjects = JSON.stringify(arrayOfProjects);
+    // localStorage.setItem("allProjects", storedProjects);
+
+    // The idea is to save project after every action
+    // that mutates to data in the -listOfProjectObjects-
+
+    let parsedProjects = JSON.stringify(listOfProjectsObjects);
+    localStorage.setItem("allProjects", parsedProjects);
+
+    console.log("Class all projects: ", arrayOfProjects);
+    console.log("Class all projects: ", listOfProjectsObjects);
+
+    console.log("Project Objects: ", listOfProjectsObjects);
   }
 }
 

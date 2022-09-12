@@ -1,5 +1,7 @@
 import EditIcon from "./images2/pencil-outline.svg";
 
+import { listOfProjectsObjects } from "../..";
+
 import {
   overlay,
   editWindow,
@@ -68,6 +70,8 @@ function todoComponent(
     });
 
     // console.log(currentProject.arrayOf);
+    console.log("From Checkbox: ", listOfProjectsObjects);
+    currentProject.saveData();
   });
 
   const title = document.createElement("p");
