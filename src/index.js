@@ -109,18 +109,16 @@ function chooseProject() {
           currentProjectElementContainer = projectElementContainers[i]; // *
           currentProjectElementContainer.classList.add("container-selected"); // *
 
+          if (screen.width < 500) {
+            closeNavBar();
+          }
+
           contentHeader.innerText = "-- " + projectItems[i].innerText + " --";
 
           // projectItems[i].classList.add("project-selected");
 
           currentProject = item;
           currentProject.displayTasks();
-
-          if (screen.width < 500) {
-            console.log("Toggle Nav");
-            toggleNavBar();
-            // closeNavBar();
-          }
 
           // item.displayTasks();
 
