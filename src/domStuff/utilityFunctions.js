@@ -51,4 +51,13 @@ function toggleNavBar() {
   }
 }
 
-export { closeWindow, openWindow, toggleNavBar };
+function closeNavBar() {
+  navBar.classList.add("nav-close");
+  if (isWindowOpen == false) {
+    overlay.classList.add("overlay-display-none");
+  }
+
+  isNavOpen = false;
+}
+
+export { closeWindow, openWindow, toggleNavBar, closeNavBar };
