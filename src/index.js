@@ -113,8 +113,28 @@ function chooseProject() {
   }
 }
 
-createProjectBtn.addEventListener("click", () => {
+window.addEventListener("load", () => {
+  console.log("jkskjjv sljfvbsflkj i");
+  if (screen.width < 500) {
+    toggleNavBar();
+  }
+
+  listOfProjectsObjects.forEach((project, i) => {
+    if (i > 1) {
+      const newDiv = document.createElement("div");
+      newDiv.classList.add("select-project");
+      newDiv.innerText = project.nameOfProject;
+      projectList.appendChild(newDiv);
+      chooseProject();
+
+      console.log("Project Data: ", project.nameOfProject);
+    }
+  });
+});
+
+createProjectBtn.addEventListener("click", (name) => {
   // console.log(projectNameInput.value);
+
   const newDiv = document.createElement("div");
   newDiv.classList.add("select-project");
   newDiv.innerText = projectNameInput.value;
@@ -163,11 +183,7 @@ closeDetailsButton.addEventListener("click", () => {
 });
 
 // Opens nav bar on page load if device width < 500px
-window.onload = function () {
-  if (screen.width < 500) {
-    toggleNavBar();
-  }
-};
+window.onload = function () {};
 
 chooseProject(); // Call function to add event listeners to all project elements
 
