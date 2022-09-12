@@ -120,7 +120,7 @@ window.addEventListener("load", () => {
   }
 
   listOfProjectsObjects.forEach((project, i) => {
-    if (i > 1) {
+    if (i > 10) {
       const newDiv = document.createElement("div");
       newDiv.classList.add("select-project");
       newDiv.innerText = project.nameOfProject;
@@ -133,8 +133,6 @@ window.addEventListener("load", () => {
 });
 
 createProjectBtn.addEventListener("click", (name) => {
-  // console.log(projectNameInput.value);
-
   const newDiv = document.createElement("div");
   newDiv.classList.add("select-project");
   newDiv.innerText = projectNameInput.value;
@@ -143,10 +141,6 @@ createProjectBtn.addEventListener("click", (name) => {
   console.log(projectList);
   chooseProject();
 
-  // listOfProjectsObjects.push(new Project([{ project: projectNameInput.value }]));
-  listOfProjectsObjects.push(
-    new Project([{ project: projectNameInput.value }])
-  );
   listOfProjectsObjects.push(new Project([], projectNameInput.value));
   console.log("New Project: ", listOfProjectsObjects);
 
