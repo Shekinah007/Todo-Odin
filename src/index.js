@@ -44,8 +44,6 @@ import {
   // ////////////
   submitTaskButton,
   // submitEditButton,
-
-  // ////////////
   detailsWindow,
   navToggleButton,
   fullScreenBtn,
@@ -59,7 +57,6 @@ import {
   createProjectBtn,
   projectList,
   contentHeader,
-  // ///////////////////////
   projectItems,
   projectTasks,
   projectElementContainers,
@@ -74,15 +71,7 @@ let currentProjectElementContainer;
 function chooseProject() {
   for (let i = 0; i < projectItems.length; i++) {
     projectItems[i].addEventListener("click", (e) => {
-      console.log("InnerText: ", projectItems[i].innerText);
-      // console.log("Project Container: ", projectElementContainers[i].innerText);
-
-      // console.log("Selected Project: ", selectedProject);
-      // console.log(
-      //   "🚀 ~ file: index.js ~ line 55 ~ currentProjectElement",
-      //   currentProjectElement
-      // );
-      // console.log("Current Project Array: ", currentProject);
+      console.log("Project Element Name: ", projectItems[i].innerText);
 
       listOfProjectsObjects.forEach((item) => {
         // let projectName = item.arrayOfTodos[0].project;
@@ -115,15 +104,6 @@ function chooseProject() {
 
           currentProject = item;
           currentProject.displayTasks();
-
-          // item.displayTasks();
-
-          // console.log("Selected Project: ", selectedProject);
-          // console.log(
-          //   "🚀 ~ file: index.js ~ line 55 ~ currentProjectElement",
-          //   currentProjectElement
-          // );
-          // console.log("Current Project Array: ", currentProject);
           if (screen.width < 500) {
             closeNavBar();
           }
@@ -167,37 +147,9 @@ function renderProjects() {
   projectList.innerHTML = "";
   listOfProjectsObjects.forEach((project, i) => {
     if (i <= 1) {
-      // projectTasks.innerText = project.arrayOfTodos.length;
-      // console.log("Project tasks: ", projectTasks[i].innerText);
-      console.log("Project Tasks: ", projectTasks[i]);
       projectTasks[i].innerText = project.arrayOfTodos.length;
     }
     if (i > 1) {
-      // const projectNameDiv = document.createElement("div");
-      // projectNameDiv.classList.add("select-project");
-      // projectNameDiv.innerText = project.nameOfProject;
-      // projectList.appendChild(projectNameDiv);
-
-      // 0---------------------------------------------
-      // const container = document.createElement("div");
-      // container.classList.add("select-container");
-
-      // const projectNameDiv = document.createElement("div");
-      // projectNameDiv.classList.add("select-project");
-      // projectNameDiv.innerText = project.nameOfProject;
-
-      // const tasks = document.createElement("p");
-      // tasks.classList.add("number-of-tasks");
-      // tasks.innerText = "13";
-
-      // const deleteProjectButton = document.createElement("button");
-      // deleteProjectButton.classList.add("delete-project");
-      // deleteProjectButton.innerText = "del";
-
-      // container.append(projectNameDiv, tasks, deleteProjectButton);
-
-      // projectList.appendChild(container);
-
       console.log("Project Object: ", project.arrayOfTodos.length);
       projectList.appendChild(
         projectComponent(project.nameOfProject, i, project.arrayOfTodos.length)
@@ -273,8 +225,9 @@ let listOfProjectsObjects = [];
 // Checks if arrayOfProjects is empty
 // if so, create a empty INBOX project object and adds it to the listOfProjectsObjects array
 const inbox = new Project([], "Inbox");
+const all = new Project([], "All");
 if (arrayOfProjects.length == 0) {
-  listOfProjectsObjects = [inbox];
+  listOfProjectsObjects = [inbox, all];
 } else {
   listOfProjectsObjects = [];
 }
