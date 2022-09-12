@@ -109,10 +109,6 @@ function chooseProject() {
           currentProjectElementContainer = projectElementContainers[i]; // *
           currentProjectElementContainer.classList.add("container-selected"); // *
 
-          if (screen.width < 500) {
-            closeNavBar();
-          }
-
           contentHeader.innerText = "-- " + projectItems[i].innerText + " --";
 
           // projectItems[i].classList.add("project-selected");
@@ -128,6 +124,9 @@ function chooseProject() {
           //   currentProjectElement
           // );
           // console.log("Current Project Array: ", currentProject);
+          if (screen.width < 500) {
+            closeNavBar();
+          }
         }
       });
     });
@@ -158,7 +157,7 @@ function projectComponent(projectName, index, noOfTasks) {
   deleteProjectButton.addEventListener("click", () => {
     // alert(index);
     listOfProjectsObjects.splice(index, 1);
-    displayProjects();
+    renderProjects();
   });
 
   container.append(projectNameDiv, deleteProjectButton, tasks);
@@ -166,12 +165,12 @@ function projectComponent(projectName, index, noOfTasks) {
   return container;
 }
 
-function displayProjects() {
+function renderProjects() {
   projectList.innerHTML = "";
   listOfProjectsObjects.forEach((project, i) => {
-    // if (i < 1) {
-    //   projectTasks.innerText = project.arrayOfTodos.length;
-    // }
+    if (i < 1) {
+      projectTasks.innerText = project.arrayOfTodos.length;
+    }
     if (i > 1) {
       // const projectNameDiv = document.createElement("div");
       // projectNameDiv.classList.add("select-project");
@@ -218,7 +217,7 @@ window.addEventListener("load", () => {
   }
 
   // On initial load of page, load every project from data if any
-  displayProjects();
+  renderProjects();
 });
 
 createProjectBtn.addEventListener("click", (name) => {
@@ -232,6 +231,7 @@ createProjectBtn.addEventListener("click", (name) => {
   console.log("New Project: ", listOfProjectsObjects);
 
   chooseProject();
+  currentProject.saveData();
 });
 
 addProjectBtn.addEventListener("click", () => {
@@ -347,9 +347,10 @@ submitTaskButton.addEventListener("click", () => {
     mode = "addingTask";
     console.log("Component index: ", editComponentIndex);
   }
+  // renderProjects();
 });
 
 // Clicks on the first project, the INBOX
 projectItems[0].click();
 
-export { currentProject, mode, listOfProjectsObjects };
+export { currentProject, mode, listOfProjectsObjects, renderProjects };

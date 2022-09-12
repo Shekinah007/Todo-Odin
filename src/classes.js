@@ -5,7 +5,7 @@ import { closeWindow } from "./domStuff/utilityFunctions";
 import { editWindow } from "./domStuff/getElements";
 
 import { arrayOfProjects } from "./projectData";
-import { listOfProjectsObjects } from "./index";
+import { listOfProjectsObjects, renderProjects } from "./index";
 
 class Project {
   constructor(arrayOfTodos, nameOfProject) {
@@ -35,6 +35,7 @@ class Project {
     this.displayTasks();
     closeWindow(editWindow);
 
+    renderProjects();
     this.saveData();
   }
 
@@ -46,6 +47,7 @@ class Project {
     this.arrayOfTodos.splice(index, 1);
     this.displayTasks();
 
+    renderProjects();
     this.saveData();
   }
 
