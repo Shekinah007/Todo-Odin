@@ -39,7 +39,7 @@ const projectList = document.querySelector(".project-list");
 const projectItems = document.getElementsByClassName("select-project");
 const projectElementContainers =
   document.getElementsByClassName("select-container");
-const projectTasks = document.getElementsByClassName("number-of tasks");
+const projectTasks = document.getElementsByClassName("number-of-tasks");
 const deleteProjectBtns = document.getElementsByClassName("delete-project");
 
 const contentHeader = document.querySelector(".content-header");

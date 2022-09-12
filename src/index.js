@@ -134,8 +134,6 @@ function chooseProject() {
 }
 
 function projectComponent(projectName, index, noOfTasks) {
-  // let index = i;
-
   const container = document.createElement("div");
   container.classList.add("select-container");
 
@@ -168,8 +166,11 @@ function projectComponent(projectName, index, noOfTasks) {
 function renderProjects() {
   projectList.innerHTML = "";
   listOfProjectsObjects.forEach((project, i) => {
-    if (i < 1) {
-      projectTasks.innerText = project.arrayOfTodos.length;
+    if (i <= 1) {
+      // projectTasks.innerText = project.arrayOfTodos.length;
+      // console.log("Project tasks: ", projectTasks[i].innerText);
+      console.log("Project Tasks: ", projectTasks[i]);
+      projectTasks[i].innerText = project.arrayOfTodos.length;
     }
     if (i > 1) {
       // const projectNameDiv = document.createElement("div");
@@ -203,10 +204,6 @@ function renderProjects() {
       );
 
       chooseProject();
-      // projectNameDiv.dataset.index = listOfProjectsObjects.length;
-      // projectNameDiv.dataset.index = i;
-
-      // console.log("New Div: ", projectNameDiv.dataset.index);
     }
   });
 }
