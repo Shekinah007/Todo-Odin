@@ -14,7 +14,27 @@
     /* vertical-align: middle; */
     /* background-color: rgba(137, 210, 252, 0.856); */
     background-color: rgba(255, 255, 255, 0.829);
+
+
+    border-left: 5px solid rgb(55, 248, 55);
 }
+
+.low-priority {
+    border-left: 5px solid rgb(55, 248, 55);
+}
+
+.medium-priority {
+    border-left: 5px solid rgb(245, 248, 55);
+    border-left: 5px solid rgb(177, 180, 7);
+
+
+}
+
+.high-priority{
+    border-left: 5px solid rgb(248, 55, 55);
+
+}
+
 
 .todo-item:hover {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;

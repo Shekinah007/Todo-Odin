@@ -34,7 +34,8 @@ function todoComponent(
   const container = document.createElement("div");
   container.classList.add("todo-item");
 
-  // const dataset = titleText
+  // Adds class based on priority value
+  container.classList.add(priority + "-priority");
 
   const firstDiv = document.createElement("div");
   const input = document.createElement("input");
