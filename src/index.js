@@ -153,8 +153,10 @@ function projectComponent(projectName, index) {
   deleteProjectButton.innerText = "del";
 
   deleteProjectButton.addEventListener("click", () => {
-    alert(index);
-    // listOfProjectsObjects.splice()
+    // alert(index);
+    listOfProjectsObjects.splice(index, 1);
+    console.log("List of Projects: ", listOfProjectsObjects.length);
+    displayProjects();
   });
 
   container.append(projectNameDiv, tasks, deleteProjectButton);
@@ -163,6 +165,7 @@ function projectComponent(projectName, index) {
 }
 
 function displayProjects() {
+  projectList.innerHTML = "";
   listOfProjectsObjects.forEach((project, i) => {
     if (i > 1) {
       // const projectNameDiv = document.createElement("div");
