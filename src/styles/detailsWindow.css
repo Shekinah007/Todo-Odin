@@ -20,7 +20,13 @@
     align-items: center;
     transition: 0.3s;
     opacity: 1;
-    animation: displayEnter 0.4s;
+
+
+
+     /* outline: 9999px solid rgba(0,0,0,0.5); */
+    /* animation: altDisplayEnter 0.3s; */
+
+
     /* animation: altDisplayEnter 0.4s; */
     /* will-change: transform, opacity; */
 }
@@ -38,8 +44,8 @@
 @keyframes altDisplayEnter {
     0% {
         opacity: 0;
-        /* top: 40%; */
-        /* transform: translate(-50%, -50%) scale(1);  */
+        top: 40%;
+        transform: translate(-50%, -50%) scale(1); 
     }
     2% {
         opacity: 0;
@@ -64,7 +70,6 @@ label {
     background: var(--medium-priority);
     top: 50%;
     left: 50%; 
-    transform: translate(-50%, -50%) scale(1);
 }
 
 /* .close-details-button {

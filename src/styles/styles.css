@@ -111,7 +111,7 @@ nav {
     flex-direction: column;
     gap: 5px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    transition: 0.3s;
+    transition: 0.4s;
     z-index: 0;
 
     /* background-image: url("/src/images/To\ do\ list-amico-red.svg"); */
@@ -138,6 +138,12 @@ nav p {
 
 .nav-close {
     left: -350px;
+}
+
+
+
+.nav-fade-out {
+    
 }
 
  .content {
@@ -278,25 +284,27 @@ nav p {
 }
 
 .overlay {
-    backdrop-filter: blur(1px);
-    background-color: rgba(0, 10, 26, 0.637);
+    /* backdrop-filter: blur(1px); 
+    The issue causing the slow down all along!
+    */ 
+
+    background-color: rgba(4, 14, 27, 0.808);
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    bottom: 0;
-    right: 0;
     /* transition: 0.3s; */
     z-index: 10;
     animation: closeOverlay 0.3s;    
 }
 
 
+
 .overlay-display-none {
    height: 0;
    width: 0;
-   animation: overlayExit 0.05s;
+   animation: overlayExit 0.3s;
    opacity: 0;
 }
 
@@ -336,10 +344,10 @@ nav p {
 
 .display-none {
     position: fixed;
-    top: 40%;
-    transition: 0.4s;
+    /* top: 40%; */
+    transition: 0.3s;
     opacity: 0;
-    animation: displayExit 0.4s; 
+    animation: displayExit 0.3s; 
     transform:  scaleY(0);
 
 

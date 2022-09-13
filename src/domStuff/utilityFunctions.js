@@ -8,18 +8,15 @@ function openWindow(target) {
   if (screen.width > 500) {
     isNavOpen = false;
   }
-
   target.classList.remove("display-none");
-  setTimeout(() => {
-    overlay.classList.remove("overlay-display-none");
-  }, 250);
+  overlay.classList.remove("overlay-display-none");
+
   isWindowOpen = true;
 }
+
 function closeWindow(target) {
   isWindowOpen = false;
-  setTimeout(() => {
-    target.classList.add("display-none");
-  }, 60);
+  target.classList.add("display-none");
 
   if (isNavOpen == false) {
     overlay.classList.add("overlay-display-none");

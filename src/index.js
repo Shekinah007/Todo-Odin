@@ -196,6 +196,7 @@ window.addEventListener("load", () => {
 overlay.addEventListener("click", () => {
   closeWindow(detailsWindow);
   closeWindow(editWindow);
+  closeNavBar();
 });
 
 createProjectBtn.addEventListener("click", (name) => {
@@ -329,8 +330,8 @@ submitTaskButton.addEventListener("click", () => {
   // renderProjects();
 });
 
-// Clicks on the second project, the ALL
-projectItems[1].click();
+// Clicks on the first project, INBOX
+projectItems[0].click();
 
 export {
   currentProject,
