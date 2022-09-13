@@ -193,6 +193,11 @@ window.addEventListener("load", () => {
   renderProjects();
 });
 
+overlay.addEventListener("click", () => {
+  closeWindow(detailsWindow);
+  closeWindow(editWindow);
+});
+
 createProjectBtn.addEventListener("click", (name) => {
   closeWindow(projectWindow);
   console.log(projectList);
