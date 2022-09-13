@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import DeleteIcon from "./images/delete.png";
 
 import editTaskComponent from "./domStuff/components/editComponent";
 import { editIndex } from "./domStuff/components/todoItemComponent";
@@ -128,9 +129,10 @@ function projectComponent(projectName, index, noOfTasks) {
     tasks.innerHTML = noOfTasks;
   }
 
-  const deleteProjectButton = document.createElement("button");
+  const deleteProjectButton = new Image();
+  deleteProjectButton.src = DeleteIcon;
+
   deleteProjectButton.classList.add("delete-project");
-  deleteProjectButton.innerText = "del";
 
   deleteProjectButton.addEventListener("click", () => {
     // alert(index);

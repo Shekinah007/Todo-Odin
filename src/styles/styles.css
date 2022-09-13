@@ -1,4 +1,5 @@
 :root {
+    --nav-width: 300px;
     --header-height: 50px;
     --header-background: #db4c3f;
     --header-color: white;
@@ -104,7 +105,7 @@ nav {
     background: var(--nav-background);
     height: 100vh;
     top: var(--header-height);
-    width: 250px;
+    width: var(--nav-width);
     left: 0;
     padding: 20px;
     display: flex;
@@ -119,6 +120,11 @@ nav {
     background-position: center;
     color: var(--nav-color);
 
+}
+
+nav > div:first-child, nav > div:nth-child(2) {
+    /* background-color: black; */
+    gap: 20px;
 }
 
 /* .nav-top  {
@@ -148,8 +154,8 @@ nav p {
 
  .content {
     padding: 10px;
-    width: calc(100vw - 250px);
-    margin-left: 250px;
+    width: calc(100vw - var(--nav-width));
+    margin-left: var(--nav-width);
     margin-top: var(--header-height);
     height: calc(100vh - 36px);
     /* min-height: 100vh; */
@@ -185,8 +191,8 @@ nav p {
     position: fixed;
     
     margin-top: var(--header-height);
-    width: calc(100vw - 250px);
-    left: 250px;
+    width: calc(100vw - var(--nav-width));
+    left: var(--nav-width);
 
     top: 0;
     right: 0;
@@ -399,8 +405,9 @@ hr {
 .project-list {
     display: flex;
     flex-direction: column;
-    gap: 1px;
+    gap: 5px;
     overflow-y: scroll;
+    overflow-x: hidden;
     /* background-color: bisque; */
     height: 65vh;
     /* direction: rtl; */
@@ -473,7 +480,7 @@ hr {
       }
 
     nav {
-        width: 250px;
+        width: var(--nav-width);
         /* width: 70vw; */
         z-index: 40;
     }

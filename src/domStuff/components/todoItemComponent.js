@@ -1,4 +1,5 @@
-import EditIcon from "./images2/pencil-outline.svg";
+import EditIcon from "./images2/file-document-edit.svg";
+import DeleteIcon from "./images2/delete.png";
 
 import { listOfProjectsObjects } from "../..";
 
@@ -92,14 +93,16 @@ function todoComponent(
   detailsButton.classList.add("details-button");
   detailsButton.innerText = "Info";
 
-  const editButton = document.createElement("img");
+  // const editButton = document.createElement("img");
+  const editButton = new Image();
+  editButton.src = EditIcon;
   editButton.classList.add("edit-button");
   // editButton.innerText = "Hello";
-  editButton.src = EditIcon;
+  // editButton.src = EditIcon;
 
-  const deleteButton = document.createElement("button");
+  const deleteButton = new Image();
+  deleteButton.src = DeleteIcon;
   deleteButton.classList.add("delete-button");
-  deleteButton.innerText = "Del";
 
   deleteButton.addEventListener("click", () => {
     console.log("Current Project:", currentProject);
@@ -118,7 +121,7 @@ function todoComponent(
   if (currentProject.nameOfProject == "All") {
     secondDiv.append(date);
   } else {
-    secondDiv.append(editButton, date, deleteButton);
+    secondDiv.append(date, editButton, deleteButton);
   }
 
   // secondDiv.append(detailsButton, editButton, date, deleteButton);
