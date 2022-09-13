@@ -24,6 +24,7 @@ const detailsTitle = document.querySelector(".details-title");
 const detailsDescription = document.querySelector(".details-description");
 const detailsPriority = document.querySelector(".details-priority");
 const detailsDueDate = document.querySelector(".details-dueDate");
+const detailsTask = document.querySelector(".task-status");
 
 const navToggleButton = document.querySelector(".nav-toggle");
 const navBar = document.querySelector("nav");
@@ -68,6 +69,7 @@ export {
   detailsDescription,
   detailsPriority,
   detailsDueDate,
+  detailsTask,
   navToggleButton,
   navBar,
   fullScreenBtn,

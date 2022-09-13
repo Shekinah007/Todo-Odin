@@ -127,12 +127,26 @@ function todoComponent(
 
   detailsButton.addEventListener("click", () => {
     openWindow(detailsWindow);
-    altDetailsComponent(titleText, details, priority, dueDate, project);
+    altDetailsComponent(
+      titleText,
+      details,
+      priority,
+      dueDate,
+      project,
+      complete
+    );
   });
 
   title.addEventListener("click", () => {
     openWindow(detailsWindow);
-    altDetailsComponent(titleText, details, priority, dueDate, project);
+    altDetailsComponent(
+      titleText,
+      details,
+      priority,
+      dueDate,
+      project,
+      complete
+    );
   });
 
   editButton.addEventListener("click", () => {
