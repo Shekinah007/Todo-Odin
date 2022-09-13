@@ -82,7 +82,9 @@ function todoComponent(
     addCheckedClass();
   }
 
-  firstDiv.append(input, title);
+  if (currentProject.nameOfProject == "All") {
+    firstDiv.append(title);
+  } else firstDiv.append(input, title);
 
   const secondDiv = document.createElement("div");
 
@@ -108,17 +110,18 @@ function todoComponent(
   date.classList.add("date");
   date.innerText = dueDate;
 
-  if (currentProject.nameOfProject == "All") {
-    editButton.classList.add("project-all");
-    deleteButton.classList.add("project-all");
-  }
-
-  // if (currentProject.nameOfProject !== "All") {
-  //   secondDiv.append(detailsButton, editButton, date, deleteButton);
-  // } else {
+  // if (currentProject.nameOfProject == "All") {
+  //   editButton.classList.add("project-all");
+  //   deleteButton.classList.add("project-all");
   // }
 
-  secondDiv.append(detailsButton, editButton, date, deleteButton);
+  if (currentProject.nameOfProject == "All") {
+    secondDiv.append(date);
+  } else {
+    secondDiv.append(editButton, date, deleteButton);
+  }
+
+  // secondDiv.append(detailsButton, editButton, date, deleteButton);
 
   container.append(firstDiv, secondDiv);
 

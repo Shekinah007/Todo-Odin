@@ -1,11 +1,20 @@
 :root {
     --header-height: 50px;
-    --header-background: #db4c3f;;
+    --header-background: #db4c3f;
+    --header-color: white;
+
+    --content-background: rgb(255, 255, 255);
+    /* --content-text: white; */
+
+    --nav-background: #fafafa;
 }
 
 :root.dark {
-    --header-background: black;
-    --header-color: white;
+    --content-background: rgb(12, 17, 36);
+    --content-text: white;
+    --nav-color: white;
+
+
 }
 
 * {
@@ -92,7 +101,7 @@ nav {
     position: fixed;
     background: whitesmoke;
     background-color: rgb(238, 238, 238);
-    background: #fafafa;
+    background: var(--nav-background);
     height: 100vh;
     top: var(--header-height);
     width: 250px;
@@ -108,6 +117,7 @@ nav {
     /* background-image: url("/src/images/To\ do\ list-amico-red.svg"); */
     background-repeat: no-repeat;
     background-position: center;
+    color: var(--nav-color);
 
 }
 
@@ -154,6 +164,10 @@ nav p {
     background-color: rgb(255, 255, 255);
     /* background-color: rgb(253, 249, 211); */
 
+
+    background-color: var(--content-background);
+    color: var(--content-text);
+;
 
 }
 
