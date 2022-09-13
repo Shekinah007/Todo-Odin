@@ -57,6 +57,12 @@
     gap: 10px;
 }
 
+.project-all {
+    pointer-events: none;
+    color: grey;
+    opacity: 0.2;
+}
+
 .date {
     font-size: 10px;
     color: #db4c3f;

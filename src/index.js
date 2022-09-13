@@ -160,10 +160,34 @@ function renderProjects() {
   });
 }
 
+function getEveryTask() {
+  let tempArray = [];
+  listOfProjectsObjects.forEach((project, i) => {
+    console.log("Projects foreach", project.nameOfProject);
+    if (project.nameOfProject !== "All") {
+      tempArray.push(project.arrayOfTodos);
+    }
+    console.log("Temp Array: ", tempArray);
+  });
+
+  listOfProjectsObjects.forEach((project, i) => {
+    if (project.nameOfProject == "All") {
+      // Flattens the array
+
+      // project.arrayOfTodos = tempArray.reduce((acc, curVal) => {
+      //   return acc.concat(curVal);
+      // }, []);
+      project.arrayOfTodos = [].concat.apply([], tempArray);
+    }
+  });
+}
+
 window.addEventListener("load", () => {
   if (screen.width < 500) {
     toggleNavBar();
   }
+
+  getEveryTask();
 
   // On initial load of page, load every project from data if any
   renderProjects();
@@ -223,7 +247,7 @@ const homeProjects = new Project(homeProjectsArray, "Home");
 let listOfProjectsObjects = [];
 
 // Checks if arrayOfProjects is empty
-// if so, create a empty INBOX project object and adds it to the listOfProjectsObjects array
+// if so, create an empty INBOX project, and ALL object and adds it to the listOfProjectsObjects array
 const inbox = new Project([], "Inbox");
 const all = new Project([], "All");
 if (arrayOfProjects.length == 0) {
@@ -300,7 +324,13 @@ submitTaskButton.addEventListener("click", () => {
   // renderProjects();
 });
 
-// Clicks on the first project, the INBOX
-projectItems[0].click();
+// Clicks on the second project, the ALL
+projectItems[1].click();
 
-export { currentProject, mode, listOfProjectsObjects, renderProjects };
+export {
+  currentProject,
+  mode,
+  listOfProjectsObjects,
+  renderProjects,
+  getEveryTask,
+};

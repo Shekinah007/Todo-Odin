@@ -36,7 +36,7 @@ body::-webkit-scrollbar {
 
 
   ::-webkit-scrollbar {
-      width: 5px;
+      width: 0px;
   }
   
    
@@ -381,6 +381,7 @@ hr {
     overflow-y: scroll;
     /* background-color: bisque; */
     height: 65vh;
+    /* direction: rtl; */
 }
 
 

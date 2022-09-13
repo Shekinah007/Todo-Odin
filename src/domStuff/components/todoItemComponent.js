@@ -67,11 +67,8 @@ function todoComponent(
           removeCheckedClass();
         }
       }
-      console.log("Foreach: ", item.complete);
     });
 
-    // console.log(currentProject.arrayOf);
-    console.log("From Checkbox: ", listOfProjectsObjects);
     currentProject.saveData();
   });
 
@@ -110,6 +107,16 @@ function todoComponent(
   const date = document.createElement("p");
   date.classList.add("date");
   date.innerText = dueDate;
+
+  if (currentProject.nameOfProject == "All") {
+    editButton.classList.add("project-all");
+    deleteButton.classList.add("project-all");
+  }
+
+  // if (currentProject.nameOfProject !== "All") {
+  //   secondDiv.append(detailsButton, editButton, date, deleteButton);
+  // } else {
+  // }
 
   secondDiv.append(detailsButton, editButton, date, deleteButton);
 
