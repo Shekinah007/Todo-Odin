@@ -16,6 +16,7 @@ class Project {
   constructor(arrayOfTodos, nameOfProject) {
     this.arrayOfTodos = arrayOfTodos;
     this.nameOfProject = nameOfProject;
+    this.dateCreated;
   }
 
   displayTasks() {

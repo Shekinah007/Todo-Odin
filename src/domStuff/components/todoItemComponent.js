@@ -39,6 +39,9 @@ function todoComponent(
   container.classList.add(priority + "-priority");
 
   const firstDiv = document.createElement("div");
+  firstDiv.classList.add("title-container");
+  firstDiv.classList.add("title-" + priority);
+
   const input = document.createElement("input");
   input.type = "checkbox";
   input.checked = complete;
@@ -85,7 +88,7 @@ function todoComponent(
 
   if (currentProject.nameOfProject == "All") {
     firstDiv.append(title);
-  } else firstDiv.append(input, title);
+  } else firstDiv.append(title);
 
   const secondDiv = document.createElement("div");
 
@@ -102,6 +105,7 @@ function todoComponent(
 
   const deleteButton = new Image();
   deleteButton.src = DeleteIcon;
+
   deleteButton.classList.add("delete-button");
 
   deleteButton.addEventListener("click", () => {
@@ -126,7 +130,7 @@ function todoComponent(
 
   // secondDiv.append(detailsButton, editButton, date, deleteButton);
 
-  container.append(firstDiv, secondDiv);
+  container.append(input, firstDiv, secondDiv);
 
   detailsButton.addEventListener("click", () => {
     openWindow(detailsWindow);
@@ -140,7 +144,18 @@ function todoComponent(
     );
   });
 
-  title.addEventListener("click", () => {
+  date.addEventListener("click", () => {
+    openWindow(detailsWindow);
+    altDetailsComponent(
+      titleText,
+      details,
+      priority,
+      dueDate,
+      project,
+      complete
+    );
+  });
+  firstDiv.addEventListener("click", () => {
     openWindow(detailsWindow);
     altDetailsComponent(
       titleText,
