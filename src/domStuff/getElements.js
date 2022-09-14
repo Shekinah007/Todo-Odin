@@ -47,6 +47,8 @@ const deleteProjectBtns = document.getElementsByClassName("delete-project");
 
 const contentHeader = document.querySelector(".content-header");
 
+const allInputs = document.getElementsByClassName("input");
+
 export {
   content,
   addButton,
@@ -91,4 +93,5 @@ export {
   projectItems,
   projectElementContainers,
   contentHeader,
+  allInputs,
 };

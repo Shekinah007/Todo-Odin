@@ -27,7 +27,7 @@
         <form class="project-form" id="project-form">          
             <div>
                 <label for="project-name">Name</label>
-                <input id="project-name" class="project-name-input" required>
+                <input id="input project-name" class="input project-name-input" required>
             </div>
             <div>
                 <button type="button" class="cancel close-project-window">Cancel</button>
@@ -66,31 +66,32 @@
         <div class="edit-window display-none">
             <div class="edit-label">
               <p>Edit Task</p>
-            </div>
-            <hr>
-
-            <button class="close-edit-button">
+              <button class="close-edit-button">
                 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
                 </svg>
             </button>
+            </div>
+            <hr>
+
+           
 
             <form class="editCreate-form" id="editCreate-form">
                     <div>
                         <div class="label-input">
                             <label for="title-input">Title: </label>
-                            <textarea class="edit-title-input" placeholder="e.g: Learn some French every 2 days" id="title-input" required></textarea>
+                            <textarea class="input edit-title-input" placeholder="e.g: Learn some French every 2 days" id="title-input" required></textarea>
                         </div>
                         <div class="label-input">
                             <label for="details-input">Description:</label>
-                            <textarea class="edit-details-input" placeholder="Description" id="details-input"></textarea>
+                            <textarea class="input edit-details-input" placeholder="Description" id="details-input"></textarea>
                         </div>
                     </div>
                     
                     <div>                    
                         <div class="label-input">
                             <label for="date">Due Date:</label>
-                            <input class="edit-date-input" type="datetime-local" name="date-time" id="date">
+                            <input class="input edit-date-input" type="datetime-local" name="date-time" id="date">
                         </div>
                         
                         <div class="label-input">

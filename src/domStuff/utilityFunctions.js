@@ -1,5 +1,5 @@
 import { overlay } from "./getElements";
-import { navBar, content } from "./getElements";
+import { navBar, content, allInputs } from "./getElements";
 
 let isNavOpen = true;
 let isWindowOpen = false;
@@ -82,4 +82,18 @@ function closeNavBar() {
   isNavOpen = false;
 }
 
-export { closeWindow, openWindow, toggleNavBar, closeNavBar, openNavBar };
+function clearInputs() {
+  for (let i = 0; i < allInputs.length; i++) {
+    allInputs[i].value = "";
+    console.log("Input item: ", allInputs[i]);
+  }
+}
+
+export {
+  closeWindow,
+  openWindow,
+  toggleNavBar,
+  closeNavBar,
+  openNavBar,
+  clearInputs,
+};

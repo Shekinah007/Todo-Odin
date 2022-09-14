@@ -17,6 +17,10 @@ function altDetailsComponent(
   project,
   complete
 ) {
+  detailsWindow.classList.remove("details-low");
+  detailsWindow.classList.remove("details-medium");
+  detailsWindow.classList.remove("details-high");
+  detailsWindow.classList.add("details-" + priority);
   detailsTitle.innerText = titleText;
   detailsDescription.innerText = details;
   detailsProjectName.innerText = "Project: " + project;

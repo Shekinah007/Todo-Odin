@@ -67,11 +67,26 @@ label {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    background: var(--medium-priority);
+    /* background: var(--medium-priority); */
     top: 50%;
     left: 50%; 
 }
 
+
+
+
+.details-low {
+    background-color: rgb(128, 226, 128);
+    color: white;
+}
+.details-medium {
+    background-color: rgb(207, 207, 57);
+    color: black;
+}
+.details-high {
+    background-color: rgb(243, 118, 118);
+    color: white;
+}
 /* .close-details-button {
     position: relative;
 } */

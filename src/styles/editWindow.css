@@ -100,11 +100,11 @@ input, textarea, select {
 
     .close-edit-button {
         /* background: rgb(204, 204, 204); */
-        color: grey;
+        /* color: grey;
         background: none;
         position: fixed;
         top: 40px;
-        top: 10vh;
+        top: 10vh; */
     }
     .edit-window {
         border-radius: 0;

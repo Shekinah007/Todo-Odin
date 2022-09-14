@@ -22,6 +22,7 @@ import {
   toggleNavBar,
   isOpen,
   closeNavBar,
+  clearInputs,
 } from "./domStuff/utilityFunctions";
 import todoComponent from "./domStuff/components/todoItemComponent";
 
@@ -218,6 +219,7 @@ projectForm.addEventListener("submit", (e) => {
   console.log("New Project: ", listOfProjectsObjects);
 
   chooseProject();
+  clearInputs();
   currentProject.saveData();
 });
 
@@ -336,6 +338,7 @@ editForm.addEventListener("submit", (e) => {
     mode = "addingTask";
     console.log("Component index: ", editComponentIndex);
   }
+  clearInputs();
 });
 
 // Selects the first project, INBOX
