@@ -140,6 +140,7 @@ function projectComponent(projectName, index, noOfTasks) {
     // alert(index);
     listOfProjectsObjects.splice(index, 1);
     renderProjects();
+    currentProject.saveData();
   });
 
   container.append(projectNameDiv, deleteProjectButton, tasks);
@@ -217,20 +218,6 @@ projectForm.addEventListener("submit", (e) => {
   chooseProject();
   currentProject.saveData();
 });
-
-// createProjectBtn.addEventListener("click", (name) => {
-//   closeWindow(projectWindow);
-//   console.log(projectList);
-
-//   listOfProjectsObjects.push(new Project([], projectNameInput.value));
-//   projectList.appendChild(
-//     projectComponent(projectNameInput.value, listOfProjectsObjects.length - 1)
-//   );
-//   console.log("New Project: ", listOfProjectsObjects);
-
-//   chooseProject();
-//   currentProject.saveData();
-// });
 
 addProjectBtn.addEventListener("click", () => {
   openWindow(projectWindow);
@@ -349,34 +336,7 @@ editForm.addEventListener("submit", (e) => {
   }
 });
 
-// submitTaskButton.addEventListener("click", () => {
-//   console.log("Current: ", currentProject);
-//   if (mode === "addingTask") {
-//     currentProject.addTask({
-//       title: editTitleInput.value,
-//       details: editDetailsInput.value,
-//       priority: editPriorityInput.value,
-//       dueDate: editDateInput.value,
-//       project: currentProject.nameOfProject,
-//       complete: false,
-//     });
-//   } else if (mode === "editingTask") {
-//     currentProject.editTask(editComponentIndex, {
-//       title: editTitleInput.value,
-//       details: editDetailsInput.value,
-//       priority: editPriorityInput.value,
-//       dueDate: editDateInput.value,
-//       project: currentProject.nameOfProject,
-//       complete: currentProject.arrayOfTodos[editComponentIndex].complete,
-//     });
-
-//     mode = "addingTask";
-//     console.log("Component index: ", editComponentIndex);
-//   }
-//   // renderProjects();
-// });
-
-// Clicks on the first project, INBOX
+// Selects the first project, INBOX
 projectItems[0].click();
 
 export {
