@@ -36,6 +36,7 @@ import {
   overlay,
   closeDetailsButton,
   closeEditButton,
+  editForm,
   editWindow,
   editButton,
   addTaskButton,
@@ -56,6 +57,7 @@ import {
   projectNameInput,
   cancelProjectBtn,
   createProjectBtn,
+  projectForm,
   projectList,
   contentHeader,
   projectItems,
@@ -201,7 +203,8 @@ overlay.addEventListener("click", () => {
   closeNavBar();
 });
 
-createProjectBtn.addEventListener("click", (name) => {
+projectForm.addEventListener("submit", (e) => {
+  e.preventDefault();
   closeWindow(projectWindow);
   console.log(projectList);
 
@@ -214,6 +217,20 @@ createProjectBtn.addEventListener("click", (name) => {
   chooseProject();
   currentProject.saveData();
 });
+
+// createProjectBtn.addEventListener("click", (name) => {
+//   closeWindow(projectWindow);
+//   console.log(projectList);
+
+//   listOfProjectsObjects.push(new Project([], projectNameInput.value));
+//   projectList.appendChild(
+//     projectComponent(projectNameInput.value, listOfProjectsObjects.length - 1)
+//   );
+//   console.log("New Project: ", listOfProjectsObjects);
+
+//   chooseProject();
+//   currentProject.saveData();
+// });
 
 addProjectBtn.addEventListener("click", () => {
   openWindow(projectWindow);
@@ -305,7 +322,8 @@ addTaskButton.addEventListener("click", () => {
   mode = "addingTask";
 });
 
-submitTaskButton.addEventListener("click", () => {
+editForm.addEventListener("submit", (e) => {
+  e.preventDefault();
   console.log("Current: ", currentProject);
   if (mode === "addingTask") {
     currentProject.addTask({
@@ -329,8 +347,34 @@ submitTaskButton.addEventListener("click", () => {
     mode = "addingTask";
     console.log("Component index: ", editComponentIndex);
   }
-  // renderProjects();
 });
+
+// submitTaskButton.addEventListener("click", () => {
+//   console.log("Current: ", currentProject);
+//   if (mode === "addingTask") {
+//     currentProject.addTask({
+//       title: editTitleInput.value,
+//       details: editDetailsInput.value,
+//       priority: editPriorityInput.value,
+//       dueDate: editDateInput.value,
+//       project: currentProject.nameOfProject,
+//       complete: false,
+//     });
+//   } else if (mode === "editingTask") {
+//     currentProject.editTask(editComponentIndex, {
+//       title: editTitleInput.value,
+//       details: editDetailsInput.value,
+//       priority: editPriorityInput.value,
+//       dueDate: editDateInput.value,
+//       project: currentProject.nameOfProject,
+//       complete: currentProject.arrayOfTodos[editComponentIndex].complete,
+//     });
+
+//     mode = "addingTask";
+//     console.log("Component index: ", editComponentIndex);
+//   }
+//   // renderProjects();
+// });
 
 // Clicks on the first project, INBOX
 projectItems[0].click();

@@ -6,6 +6,18 @@
 
 .edit-label {
     height: 30px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    /* background-color: aqua; */
+    font-size: 20px;
+}
+
+.submit-container {
+    width: calc(200% + 20px);
+    display: flex;
+    justify-content: center;
 }
 
 textarea {
@@ -74,6 +86,12 @@ input, textarea, select {
 }
 
 @media only screen and (max-width: 500px) {
+
+
+    .submit-container {
+        width: initial;
+        justify-content: center;
+    }
     .editCreate-form {
         grid-template-columns: initial;
         grid-template-rows: 1fr 1fr;

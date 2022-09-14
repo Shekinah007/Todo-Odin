@@ -103,9 +103,6 @@
     height: 180%;
 }
 
-input  {
-    background-color: lightpink;
-}
 .title {
     /* background-color: lightsalmon; */
     font-size: 14px;
@@ -137,6 +134,7 @@ input  {
 
 .title-low:hover {
     color: var(--low-priority);
+    color: green;
 }
 .title-medium:hover {
     color: var(--medium-priority);

@@ -20,21 +20,18 @@
     <div class="overlay overlay-display-none"></div>
 
     <div class="project-window display-none">
-
-
         <div>
             <p>New Project</p>
             <hr >
         </div>
-        <form action="">
-            
+        <form class="project-form" id="project-form">          
             <div>
                 <label for="project-name">Name</label>
                 <input id="project-name" class="project-name-input" required>
             </div>
             <div>
                 <button type="button" class="cancel close-project-window">Cancel</button>
-                <button type="button" class="submit submit-project">Create Project</button>
+                <button type="submit" class="submit submit-project">Create Project</button>
             </div>
         </form>
     </div>
@@ -78,7 +75,7 @@
                 </svg>
             </button>
 
-            <form class="editCreate-form">
+            <form class="editCreate-form" id="editCreate-form">
                     <div>
                         <div class="label-input">
                             <label for="title-input">Title: </label>
@@ -115,11 +112,12 @@
                         </div>
                     </div>
                 
+                    <div class="submit-container">
+                        <button type="submit" class="submit submit-task">Done</button>
+                        <!-- <button class="">Cancel</button> -->
+                    </div>
                 </form>
-            <div>
-                <button type="submit" class="submit submit-task">Done</button>
-                <!-- <button class="">Cancel</button> -->
-            </div>
+           
         </div>
 
         <!-- <div class="create-window display-none">
