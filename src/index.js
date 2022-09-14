@@ -201,7 +201,9 @@ window.addEventListener("load", () => {
 overlay.addEventListener("click", () => {
   closeWindow(detailsWindow);
   closeWindow(editWindow);
-  closeNavBar();
+  if (screen.width < 500) {
+    closeNavBar();
+  }
 });
 
 projectForm.addEventListener("submit", (e) => {
