@@ -304,7 +304,6 @@ let mode = "addingTask";
 // } else {
 //   console.log("Sorry!!");
 // }
-
 ///////////////////////////////////////////////////////////////////////////////////
 
 addTaskButton.addEventListener("click", () => {
@@ -334,7 +333,6 @@ editForm.addEventListener("submit", (e) => {
       project: currentProject.nameOfProject,
       complete: currentProject.arrayOfTodos[editComponentIndex].complete,
     });
-
     mode = "addingTask";
     console.log("Component index: ", editComponentIndex);
   }

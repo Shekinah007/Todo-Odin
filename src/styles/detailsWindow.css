@@ -68,62 +68,90 @@ label {
     align-items: center;
     gap: 20px;
     /* background: var(--medium-priority); */
+    /* background-color: whitesmoke; */
     top: 50%;
     left: 50%; 
 }
-
-
-
-
-.details-low {
-    background-color: rgb(128, 226, 128);
-    color: white;
+.details-added {
+    top: 7px;
+    left: 7px;
 }
-.details-medium {
-    background-color: rgb(207, 207, 57);
-    color: black;
+.details-label {
+    bottom: 7px;
+    right: 7px;
 }
-.details-high {
-    background-color: rgb(243, 118, 118);
-    color: white;
+
+.details-added, .details-label {
+    color: grey;
+    font-size: 11px;
+    font-weight: bold;
+    opacity: 0.6;
+    position: absolute;
 }
+
+
 /* .close-details-button {
     position: relative;
 } */
 
 
-.details-window div:first-child {
+.details-window > div:first-child {
     display: flex;
 }
 
-.details-window div:nth-child(2) {
+.details-window div:nth-child(2), .details2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    /* gap: 20px; */
     width: 100%;
     text-align: left;
+    /* background-color: khaki; */
+}
+
+.details-other {
+    /* background-color: red; */
+    
+
+    /* width: 100%; */
+    /* margin-top: 20px; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-self: start;
+}
+
+.details-other  .details-values {
 }
 
 .details-description {
+    text-indent: 40px;
+    /* min-height: 100px; */
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.description-label, .details-title-label {
+    /* background-color: yellowgreen; */
+    align-self: flex-start;
+    color: grey;
+    margin-top: 20px;
+    margin-bottom: 5px;
 }
 
 
 .details-title {
     font-size: 20px;
     font-weight: bold;
+    margin-bottom: 10px;
     /* width: 200px; */
-    color:rgb(82, 116, 102);
-    text-decoration: underline;
+    color:rgb(105, 51, 34);
+    /* text-decoration: underline; */
+    text-align: left;
 }
-.details-label {
-    font-size: 12px;
-    font-weight: bold;
-    opacity: 0.4;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-}
+
 
 .details-priority {
     /* border: 1px solid red; */
@@ -131,9 +159,10 @@ label {
     border-radius: 4px;
     padding: 5px;
     color: rgb(80, 80, 80);
-    background: yellow;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    /* background: yellow; */
+    /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
 }
+
 
 .priority-meter {
     color: black;
@@ -164,6 +193,19 @@ label {
 }
 .high {
     background-color: var(--high-priority);
+}
+
+.details-low {
+    /* background-color: rgb(128, 226, 128);
+    color: white; */
+}
+.details-medium {
+    /* background-color: rgb(207, 207, 57);
+    color: black; */
+}
+.details-high {
+    /* background-color: rgb(243, 118, 118);
+    color: white; */
 }
 
 @media only screen and (max-width: 500px) {

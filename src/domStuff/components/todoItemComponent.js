@@ -71,6 +71,7 @@ function todoComponent(
           removeCheckedClass();
         }
       }
+      currentProject.displayTasks();
     });
 
     currentProject.saveData();
