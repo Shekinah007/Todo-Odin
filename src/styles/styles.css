@@ -161,17 +161,15 @@ nav p {
     margin-left: var(--nav-width);
     margin-top: var(--header-height);
     height: calc(100vh - 36px);
-    /* min-height: 100vh; */
     background: rgb(255, 253, 248);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0px;
     transition: 0.3s;
-    /* background: rgb(253, 249, 211); */
     background-image: url("/src/images/To\ do\ list-amico-red.svg");
     background-image: url("/src/images/To\ do\ list-amico-grey.svg");
-    background-image: url("/src/images/To\ do\ list-pana.svg");
+    /* background-image: url("/src/images/To\ do\ list-pana.svg"); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: 30%;
@@ -182,8 +180,18 @@ nav p {
 
     background-color: var(--content-background);
     color: var(--content-text);
-;
+    /* animation: myFadeIn 0.3s ease 0s 1 normal forwards; */
 
+}
+
+@keyframes myFadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
 }
 
 
@@ -389,9 +397,25 @@ hr {
     width: 100%;
 }
 
+.disable-button {
+    margin-bottom: 20px;
+    pointer-events: none;
+    height: 0 !important;
+    /* width: 0 !important; */
+    padding: 0;
+    overflow: hidden;
+}
+
 .projects {
     display: flex;
     flex-direction: column;
+}
+
+.projects-header {
+    color: var(--header-background);
+    /* font-weight: 20px; */
+    font-size: 20px;
+    /* background-color: antiquewhite; */
 }
 
 .project-task-no {
@@ -402,17 +426,17 @@ hr {
     gap: 10px;
 }
 
+
 .project-task-no  .project-no {
     color: white;
-    /* font-size: 14px; */
-    /* font-weight: 600; */
     background: var(--header-background);
 }
 
 .projects > div:first-child {
     display: flex;
     justify-content: space-between;
-    padding-left: 20px;
+    padding-left: 8px;
+    margin-bottom: 5px;
 }
 
 .projects > div:first-child {

@@ -32,11 +32,22 @@ function todoComponent(
   complete
 ) {
   let itemIndex = index;
+  console.log("item Index: ", index);
   editIndex = index;
 
   console.log("Project:", project);
   const container = document.createElement("div");
   container.classList.add("todo-item");
+  // if (index == currentProject.arrayOfTodos.length - 1 && mode == "addingTask") {
+  //   container.classList.add("animation-enter");
+  // }
+  // setTimeout(() => {
+  //   container.classList.remove("animation-enter");
+  // }, 500);
+
+  // setTimeout(() => {
+  //   container.classList.add("animation-enter");
+  // }, 1000);
 
   // Adds class based on priority value
   container.classList.add(priority + "-priority");
@@ -113,9 +124,13 @@ function todoComponent(
   deleteButton.classList.add("delete-button");
 
   function confirmTaskDelete() {
-    currentProject.deleteTask(itemIndex);
+    container.classList.add("animation-slideOut");
     closeWindow(deleteWindow);
-    confirmDeleteBtn.removeEventListener("click", confirmTaskDelete);
+
+    setTimeout(() => {
+      currentProject.deleteTask(itemIndex);
+      confirmDeleteBtn.removeEventListener("click", confirmTaskDelete);
+    }, 300);
   }
 
   deleteButton.addEventListener("click", () => {

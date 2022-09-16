@@ -90,8 +90,14 @@ function chooseProject() {
       listOfProjectsObjects.forEach((item) => {
         // let projectName = item.arrayOfTodos[0].project;
         if (item.nameOfProject == projectItems[i].innerText) {
-          // console.log("Name: of project: ", item.nameOfProject);
+          console.log("Name: of project: ", item.nameOfProject);
           selectedProject = projectItems[i].innerText;
+          console.log("Item Name: ", item.nameOfProject);
+
+          if (item.nameOfProject == "All") {
+            console.log("Hurra!");
+            addTaskButton.classList.add("disable-button");
+          } else addTaskButton.classList.remove("disable-button");
 
           if (currentProjectElement) {
             currentProjectElement.classList.remove("project-selected");
@@ -317,7 +323,7 @@ arrayOfProjects.forEach((projectItem, i) => {
 // Declare variables up top
 let currentProject;
 
-let mode = "addingTask";
+let mode = "";
 
 addTaskButton.addEventListener("click", () => {
   homeProjects.addTaskWindow(editWindow);

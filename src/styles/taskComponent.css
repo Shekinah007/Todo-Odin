@@ -29,7 +29,55 @@
 
 
     /* border-left: 5px solid rgb(55, 248, 55); */
+    animation: mySlideIn 0.3s ease 0s 1 normal forwards;
+    /* animation: myFadeIn 0.3s ease 0s 1 normal forwards; */
+
+    /* transition: 1s; */
 }
+
+@keyframes myFadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.animation-enter {
+    animation: mySlideIn 0.3s ease 0s 1 normal forwards;
+    
+}
+
+
+@keyframes mySlideIn {
+	0% {
+		opacity: 0;
+		transform: translateX(250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.animation-slideOut {
+    animation: mySlideOut 1s ease 0s 1 normal forwards;
+}
+@keyframes mySlideOut {
+	0% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateX(250px);
+	}
+}
+
 
 .low-priority {
     border-left: 5px solid var(--low-priority);
@@ -94,7 +142,8 @@
     align-items: center;
     gap: 5px;
     /* align-self: flex-start; */
-    color: grey;
+    color: rgb(128, 128, 128);
+    transition: 0.2s;
 }
 
 .add-task:hover {
