@@ -20,6 +20,7 @@ function altDetailsComponent(
   detailsWindow.classList.remove("details-low");
   detailsWindow.classList.remove("details-medium");
   detailsWindow.classList.remove("details-high");
+
   detailsWindow.classList.add("details-" + priority);
   detailsTitle.innerText = titleText;
   detailsDescription.innerText = details;
@@ -29,7 +30,13 @@ function altDetailsComponent(
   detailsProjectName.innerText = "Project: " + project;
   detailsProjectName.style.textTransform = "capitalize";
   detailsPriority.innerText = priority;
-  detailsDueDate.innerText = "Due date: " + dueDate;
+  let formattedDate = new Date(dueDate) + "";
+  if (!dueDate) {
+    formattedDate = "Not Set";
+  }
+  date.innerText = formattedDate.substring(0, 16);
+  detailsDueDate.innerText = "Due date: " + formattedDate.substring(0, 16);
+
   if (complete) {
     detailsTask.innerText = "Complete";
   } else detailsTask.innerText = "Pending";

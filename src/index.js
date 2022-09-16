@@ -328,7 +328,7 @@ editForm.addEventListener("submit", (e) => {
       title: editTitleInput.value,
       details: editDetailsInput.value,
       priority: editPriorityInput.value,
-      dueDate: editDateInput.valueAsDate + "",
+      dueDate: editDateInput.value + "",
       project: currentProject.nameOfProject,
       complete: false,
     });
@@ -337,7 +337,7 @@ editForm.addEventListener("submit", (e) => {
       title: editTitleInput.value,
       details: editDetailsInput.value,
       priority: editPriorityInput.value,
-      dueDate: editDateInput.valueAsDate + "",
+      dueDate: editDateInput.value + "",
       project: currentProject.nameOfProject,
       complete: currentProject.arrayOfTodos[editComponentIndex].complete,
     });
