@@ -124,7 +124,8 @@ function todoComponent(
 
   const date = document.createElement("p");
   date.classList.add("date");
-  date.innerText = dueDate;
+  date.innerText = dueDate.substring(0, 16);
+  console.log("COmming from todo ", dueDate.substring(0, 16));
 
   // if (currentProject.nameOfProject == "All") {
   //   editButton.classList.add("project-all");

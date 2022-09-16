@@ -416,7 +416,9 @@ hr {
     /* direction: rtl; */
 }
 
-
+input, textarea {
+    font-family: sans-serif;
+}
 
 /* .select-project {
     height: 30px;

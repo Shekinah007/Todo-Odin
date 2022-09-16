@@ -2,6 +2,8 @@
     --low-priority: rgb(167, 238, 167);
     --medium-priority: rgb(240, 220, 107);
     --high-priority: rgb(247, 124, 120);
+
+    --other-absolute: grey;
 }
 
 .details-window, .edit-window, .delete-window {
@@ -82,7 +84,7 @@ label {
 }
 
 .details-added, .details-label {
-    color: grey;
+    color: var(--other-absolute);
     font-size: 11px;
     font-weight: bold;
     opacity: 0.6;
@@ -117,7 +119,7 @@ label {
     /* margin-top: 20px; */
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     align-self: start;
 }
 
@@ -125,12 +127,14 @@ label {
 }
 
 .details-description {
-    text-indent: 40px;
+    /* text-indent: 40px; */
     /* min-height: 100px; */
     text-align: left;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-color: aqua; */
+    width: 80%;
 }
 
 .description-label, .details-title-label {
@@ -147,9 +151,10 @@ label {
     font-weight: bold;
     margin-bottom: 10px;
     /* width: 200px; */
-    color:rgb(105, 51, 34);
-    /* text-decoration: underline; */
-    text-align: left;
+    /* color:rgb(105, 51, 34); */
+    text-decoration: underline;
+    text-align: center;
+    width: 80%;
 }
 
 
@@ -196,16 +201,20 @@ label {
 }
 
 .details-low {
-    /* background-color: rgb(128, 226, 128);
-    color: white; */
+    background-color: rgb(128, 226, 128);
+    /* color: rgb(128, 226, 128); */
+    color: white;
+    
 }
 .details-medium {
-    /* background-color: rgb(207, 207, 57);
-    color: black; */
+    background-color: rgb(207, 207, 57);
+    /* color: rgb(207, 207, 57); */
+    color: black;
 }
 .details-high {
-    /* background-color: rgb(243, 118, 118);
-    color: white; */
+    background-color: rgb(255, 64, 64);
+    color: rgb(255, 64, 64);
+    color: white;
 }
 
 @media only screen and (max-width: 500px) {

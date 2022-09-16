@@ -78,6 +78,10 @@
 .date {
     font-size: 10px;
     color: #db4c3f;
+    background-color: pink;
+    width: 80px;
+    display: flex;
+    justify-content: center;
 }
 
 .task-complete {
@@ -104,7 +108,7 @@
 }
 
 .title {
-    background-color: lightsalmon;
+    /* background-color: lightsalmon; */
     font-size: 14px;
     font-weight: 500;
     max-width: 350px;

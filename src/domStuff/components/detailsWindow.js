@@ -23,6 +23,9 @@ function altDetailsComponent(
   detailsWindow.classList.add("details-" + priority);
   detailsTitle.innerText = titleText;
   detailsDescription.innerText = details;
+  if (!details) {
+    detailsDescription.innerText = "...no description";
+  }
   detailsProjectName.innerText = "Project: " + project;
   detailsProjectName.style.textTransform = "capitalize";
   detailsPriority.innerText = priority;

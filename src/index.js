@@ -78,23 +78,13 @@ let selectedProject;
 let currentProjectElement;
 let currentProjectElementContainer;
 
-// confirmDeleteBtn.addEventListener("click", () => {
-//   deleteValue = true;
-//   alert("JSjk");
-//   currentProject.deleteTask(itemIndex);
-//   closeWindow(deleteWindow);
-// });
-// cancelDeleteBtn.addEventListener("click", () => {
-//   deleteValue = false;
-//   alert("adfjj");
-//   closeWindow(deleteWindow);
-// });
+// console.log("Date: ", new Date(2001, 3, 2));
 
 // Function to choose current project
 function chooseProject() {
   for (let i = 0; i < projectItems.length; i++) {
     projectItems[i].addEventListener("click", (e) => {
-      console.log("Project Element Name: ", projectItems[i].innerText);
+      // console.log("Project Element Name: ", projectItems[i].innerText);
 
       listOfProjectsObjects.forEach((item) => {
         // let projectName = item.arrayOfTodos[0].project;
@@ -162,7 +152,7 @@ function projectComponent(projectName, index, noOfTasks) {
     deleteTitle.innerText = listOfProjectsObjects[index].nameOfProject + " ?";
 
     confirmDeleteBtn.addEventListener("click", () => {
-      console.log("List: ", listOfProjectsObjects[index].nameOfProject);
+      // console.log("List: ", listOfProjectsObjects[index].nameOfProject);
 
       listOfProjectsObjects.splice(index, 1);
       renderProjects();
@@ -183,7 +173,7 @@ function renderProjects() {
       projectTasks[i].innerText = project.arrayOfTodos.length;
     }
     if (i > 1) {
-      console.log("Project Object: ", project.arrayOfTodos.length);
+      // console.log("Project Object: ", project.arrayOfTodos.length);
       projectList.appendChild(
         projectComponent(project.nameOfProject, i, project.arrayOfTodos.length)
       );
@@ -196,11 +186,11 @@ function renderProjects() {
 function getEveryTask() {
   let tempArray = [];
   listOfProjectsObjects.forEach((project, i) => {
-    console.log("Projects foreach", project.nameOfProject);
+    // console.log("Projects foreach", project.nameOfProject);
     if (project.nameOfProject !== "All") {
       tempArray.push(project.arrayOfTodos);
     }
-    console.log("Temp Array: ", tempArray);
+    // console.log("Temp Array: ", tempArray);
   });
 
   listOfProjectsObjects.forEach((project, i) => {
@@ -238,13 +228,13 @@ overlay.addEventListener("click", () => {
 projectForm.addEventListener("submit", (e) => {
   e.preventDefault();
   closeWindow(projectWindow);
-  console.log(projectList);
+  // console.log(projectList);
 
   listOfProjectsObjects.push(new Project([], projectNameInput.value));
   projectList.appendChild(
     projectComponent(projectNameInput.value, listOfProjectsObjects.length - 1)
   );
-  console.log("New Project: ", listOfProjectsObjects);
+  // console.log("New Project: ", listOfProjectsObjects);
 
   chooseProject();
   clearInputs();
@@ -338,7 +328,7 @@ editForm.addEventListener("submit", (e) => {
       title: editTitleInput.value,
       details: editDetailsInput.value,
       priority: editPriorityInput.value,
-      dueDate: editDateInput.value,
+      dueDate: editDateInput.valueAsDate + "",
       project: currentProject.nameOfProject,
       complete: false,
     });
@@ -347,12 +337,13 @@ editForm.addEventListener("submit", (e) => {
       title: editTitleInput.value,
       details: editDetailsInput.value,
       priority: editPriorityInput.value,
-      dueDate: editDateInput.value,
+      dueDate: editDateInput.valueAsDate + "",
       project: currentProject.nameOfProject,
       complete: currentProject.arrayOfTodos[editComponentIndex].complete,
     });
     mode = "addingTask";
-    console.log("Component index: ", editComponentIndex);
+
+    // console.log("Component index: ", editComponentIndex);
   }
   clearInputs();
 });
