@@ -160,10 +160,6 @@ function projectComponent(projectName, index, noOfTasks) {
     deleteTitle.innerText = listOfProjectsObjects[index].nameOfProject + " ?";
 
     confirmDeleteBtn.addEventListener("click", confirmProjectDelete);
-
-    // listOfProjectsObjects.splice(index, 1);
-    // renderProjects();
-    // currentProject.saveData();
   });
 
   container.append(projectNameDiv, deleteProjectButton, tasks);
@@ -235,9 +231,12 @@ projectForm.addEventListener("submit", (e) => {
   closeWindow(projectWindow);
   // console.log(projectList);
 
-  listOfProjectsObjects.push(new Project([], projectNameInput.value));
+  listOfProjectsObjects.push(new Project([], projectNameInput.value.trim()));
   projectList.appendChild(
-    projectComponent(projectNameInput.value, listOfProjectsObjects.length - 1)
+    projectComponent(
+      projectNameInput.value.trim(),
+      listOfProjectsObjects.length - 1
+    )
   );
   // console.log("New Project: ", listOfProjectsObjects);
 

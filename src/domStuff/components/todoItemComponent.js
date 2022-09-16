@@ -129,9 +129,9 @@ function todoComponent(
   date.classList.add("date");
   let formattedDate = new Date(dueDate) + "";
   if (!dueDate) {
-    formattedDate = "Not Set";
+    formattedDate = "";
   }
-  date.innerText = formattedDate.substring(0, 16);
+  date.innerText = formattedDate.substring(0, 10);
 
   if (currentProject.nameOfProject == "All") {
     secondDiv.append(date);
