@@ -71,6 +71,7 @@ import {
   confirmDeleteBtn,
   deleteTitle,
   deleteTarget,
+  projectNumber,
 } from "./domStuff/getElements";
 import { de } from "date-fns/locale";
 
@@ -152,6 +153,7 @@ function projectComponent(projectName, index, noOfTasks) {
     currentProject.saveData();
     closeWindow(deleteWindow);
     confirmDeleteBtn.removeEventListener("click", confirmProjectDelete);
+    projectNumber.innerText = listOfProjectsObjects.length - 2;
   }
 
   deleteProjectButton.addEventListener("click", () => {
@@ -211,6 +213,7 @@ window.addEventListener("load", () => {
     toggleNavBar();
   }
 
+  projectNumber.innerText = listOfProjectsObjects.length - 2;
   getEveryTask();
 
   // On initial load of page, load every project from data if any
@@ -240,6 +243,7 @@ projectForm.addEventListener("submit", (e) => {
   );
   // console.log("New Project: ", listOfProjectsObjects);
 
+  projectNumber.innerText = listOfProjectsObjects.length - 2;
   chooseProject();
   clearInputs();
   currentProject.saveData();

@@ -394,6 +394,21 @@ hr {
     flex-direction: column;
 }
 
+.project-task-no {
+    /* background: red; */
+    padding-right: 2px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.project-task-no  .project-no {
+    color: white;
+    /* font-size: 14px; */
+    /* font-weight: 600; */
+    background: var(--header-background);
+}
+
 .projects > div:first-child {
     display: flex;
     justify-content: space-between;
