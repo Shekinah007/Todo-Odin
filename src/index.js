@@ -146,19 +146,24 @@ function projectComponent(projectName, index, noOfTasks) {
 
   deleteProjectButton.classList.add("delete-project");
 
+  function confirmProjectDelete() {
+    listOfProjectsObjects.splice(index, 1);
+    renderProjects();
+    currentProject.saveData();
+    closeWindow(deleteWindow);
+    confirmDeleteBtn.removeEventListener("click", confirmProjectDelete);
+  }
+
   deleteProjectButton.addEventListener("click", () => {
     openWindow(deleteWindow);
     deleteTarget.innerText = "Project:";
     deleteTitle.innerText = listOfProjectsObjects[index].nameOfProject + " ?";
 
-    confirmDeleteBtn.addEventListener("click", () => {
-      // console.log("List: ", listOfProjectsObjects[index].nameOfProject);
+    confirmDeleteBtn.addEventListener("click", confirmProjectDelete);
 
-      listOfProjectsObjects.splice(index, 1);
-      renderProjects();
-      currentProject.saveData();
-      closeWindow(deleteWindow);
-    });
+    // listOfProjectsObjects.splice(index, 1);
+    // renderProjects();
+    // currentProject.saveData();
   });
 
   container.append(projectNameDiv, deleteProjectButton, tasks);
@@ -298,9 +303,6 @@ arrayOfProjects.forEach((projectItem, i) => {
   // Issue #023 project object name in this case comes from project property of first
   // task. Which is a big problem if there are no tasks at all
 
-  console.log("Project Item", projectItem.nameOfProject);
-  console.log(i);
-
   // let item = new Project(projectItem, projectItem[0].project); // Original
 
   let item = new Project(projectItem.arrayOfTodos, projectItem.nameOfProject); // Testing
@@ -322,7 +324,7 @@ addTaskButton.addEventListener("click", () => {
 
 editForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log("Current: ", currentProject);
+  // console.log("Current: ", currentProject);
   if (mode === "addingTask") {
     currentProject.addTask({
       title: editTitleInput.value,

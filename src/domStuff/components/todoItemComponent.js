@@ -112,16 +112,17 @@ function todoComponent(
 
   deleteButton.classList.add("delete-button");
 
-  deleteButton.addEventListener("click", () => {
+  function confirmTaskDelete() {
     currentProject.deleteTask(itemIndex);
+    closeWindow(deleteWindow);
+    confirmDeleteBtn.removeEventListener("click", confirmTaskDelete);
+  }
 
-    // openWindow(deleteWindow);
-    // deleteTarget.innerText = "Task:";
-    // deleteTitle.innerText = titleText + " ?";
-    // confirmDeleteBtn.addEventListener("click", () => {
-    //   currentProject.deleteTask(itemIndex);
-    //   closeWindow(deleteWindow);
-    // });
+  deleteButton.addEventListener("click", () => {
+    openWindow(deleteWindow);
+    deleteTarget.innerText = "Task:";
+    deleteTitle.innerText = titleText + " ?";
+    confirmDeleteBtn.addEventListener("click", confirmTaskDelete);
   });
 
   const date = document.createElement("p");
@@ -131,13 +132,6 @@ function todoComponent(
     formattedDate = "Not Set";
   }
   date.innerText = formattedDate.substring(0, 16);
-  // date.innerText = dueDate.substring(0, 16);
-  // console.log("COmming from todo ", dueDate.substring(0, 16));
-
-  // if (currentProject.nameOfProject == "All") {
-  //   editButton.classList.add("project-all");
-  //   deleteButton.classList.add("project-all");
-  // }
 
   if (currentProject.nameOfProject == "All") {
     secondDiv.append(date);
