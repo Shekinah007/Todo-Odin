@@ -52,6 +52,8 @@ const allInputs = document.getElementsByClassName("input");
 const deleteWindow = document.querySelector(".delete-window");
 const confirmDeleteBtn = document.querySelector(".yes");
 const cancelDeleteBtn = document.querySelector(".no");
+const deleteTitle = document.querySelector(".delete-title");
+const deleteTarget = document.querySelector(".delete-target");
 
 export {
   content,
@@ -101,4 +103,6 @@ export {
   deleteWindow,
   confirmDeleteBtn,
   cancelDeleteBtn,
+  deleteTitle,
+  deleteTarget,
 };

@@ -4,21 +4,21 @@ import DeleteIcon from "./images2/delete.png";
 import { listOfProjectsObjects } from "../..";
 
 import {
-  overlay,
   editWindow,
   closeDetailsButton,
   closeEditButton,
   detailsWindow,
   deleteWindow,
-  cancelDeleteBtn,
   confirmDeleteBtn,
+  deleteTitle,
+  deleteTarget,
 } from "../getElements";
 
 import { openWindow, closeWindow } from "../utilityFunctions";
 import detailsComponent from "./detailsWindow";
 import { altDetailsComponent } from "./detailsWindow";
 import editTaskComponent from "./editComponent";
-import { currentProject, mode, deleteTarget } from "../..";
+import { currentProject, mode } from "../..";
 
 var editIndex;
 
@@ -114,7 +114,8 @@ function todoComponent(
 
   deleteButton.addEventListener("click", () => {
     openWindow(deleteWindow);
-    deleteTarget = "task";
+    deleteTarget.innerText = "Task:";
+    deleteTitle.innerText = titleText + " ?";
     confirmDeleteBtn.addEventListener("click", () => {
       currentProject.deleteTask(itemIndex);
       closeWindow(deleteWindow);

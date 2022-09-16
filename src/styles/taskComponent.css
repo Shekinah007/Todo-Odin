@@ -104,7 +104,7 @@
 }
 
 .title {
-    /* background-color: lightsalmon; */
+    background-color: lightsalmon;
     font-size: 14px;
     font-weight: 500;
     max-width: 350px;
@@ -114,6 +114,7 @@
     /* vertical-align: middle; */
 
     white-space: nowrap; 
+    word-wrap: break-word;
     overflow: hidden;
     text-overflow: ellipsis; 
     display: inline-block;
@@ -191,10 +192,8 @@ svg path {
     }
     .title {
         width: 100%;
-        /* max-width: calc(45vw - 1px); */
         width: 220px;
         max-width: 220px;
-        /* background-color: red; */
     }
     .todo {
         /* background-color: blue; */

@@ -69,13 +69,14 @@ import {
   deleteWindow,
   cancelDeleteBtn,
   confirmDeleteBtn,
+  deleteTitle,
+  deleteTarget,
 } from "./domStuff/getElements";
 import { de } from "date-fns/locale";
 
 let selectedProject;
 let currentProjectElement;
 let currentProjectElementContainer;
-let deleteTarget;
 
 // confirmDeleteBtn.addEventListener("click", () => {
 //   deleteValue = true;
@@ -156,22 +157,19 @@ function projectComponent(projectName, index, noOfTasks) {
   deleteProjectButton.classList.add("delete-project");
 
   deleteProjectButton.addEventListener("click", () => {
-    deleteTarget = "project";
     openWindow(deleteWindow);
+    deleteTarget.innerText = "Project:";
+    deleteTitle.innerText = listOfProjectsObjects[index].nameOfProject + " ?";
 
-    // listOfProjectsObjects.splice(index, 1);
-    // renderProjects();
-    // currentProject.saveData();
     confirmDeleteBtn.addEventListener("click", () => {
+      console.log("List: ", listOfProjectsObjects[index].nameOfProject);
+
       listOfProjectsObjects.splice(index, 1);
       renderProjects();
       currentProject.saveData();
       closeWindow(deleteWindow);
     });
   });
-
-  if (deleteTarget == "project") {
-  }
 
   container.append(projectNameDiv, deleteProjectButton, tasks);
 
@@ -232,11 +230,11 @@ overlay.addEventListener("click", () => {
   closeWindow(detailsWindow);
   closeWindow(editWindow);
   closeWindow(projectWindow);
+  closeWindow(deleteWindow);
   if (screen.width < 500) {
     closeNavBar();
   }
 });
-
 projectForm.addEventListener("submit", (e) => {
   e.preventDefault();
   closeWindow(projectWindow);
@@ -252,7 +250,6 @@ projectForm.addEventListener("submit", (e) => {
   clearInputs();
   currentProject.saveData();
 });
-
 cancelDeleteBtn.addEventListener("click", () => {
   closeWindow(deleteWindow);
 });
@@ -327,18 +324,6 @@ let currentProject;
 
 let mode = "addingTask";
 
-// //////////////////////////////////////////////////////////
-// if (localStorage.getItem("names")) {
-//   let storedProjects = JSON.stringify(arrayOfProjects);
-//   localStorage.setItem("allProjects", storedProjects);
-
-//   let retrievedProjects = JSON.parse(localStorage.getItem("allProjects"));
-//   console.log("Retrieved Projects:  ", retrievedProjects);
-// } else {
-//   console.log("Sorry!!");
-// }
-///////////////////////////////////////////////////////////////////////////////////
-
 addTaskButton.addEventListener("click", () => {
   homeProjects.addTaskWindow(editWindow);
   console.log("Hello");
@@ -381,5 +366,4 @@ export {
   listOfProjectsObjects,
   renderProjects,
   getEveryTask,
-  deleteTarget,
 };

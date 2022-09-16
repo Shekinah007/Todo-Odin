@@ -21,9 +21,10 @@
 
 
     <div class="delete-window delete-prompt display-none">
-        <p>Are you sure?</p>
+        <p>Are you sure you want to delete the <span class="delete-target"></span> </p>
+        <span class="delete-title"></span>
         <div>
-            <p class="yes">Yes</p>
+            <p class="yes">Delete</p>
             <p class="no">Cancel</p>
         </div>
     </div>
@@ -98,7 +99,7 @@
                     <div>
                         <div class="label-input">
                             <label for="title-input">Title: </label>
-                            <textarea class="input edit-title-input" placeholder="e.g: Learn some French every 2 days" id="title-input" required></textarea>
+                            <input class="input edit-title-input" placeholder="e.g: Learn some French every 2 days" id="title-input" required></input>
                         </div>
                         <div class="label-input">
                             <label for="details-input">Description:</label>
