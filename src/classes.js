@@ -10,6 +10,7 @@ import {
   renderProjects,
   currentProject,
   getEveryTask,
+  deleteValue,
 } from "./index";
 
 class Project {

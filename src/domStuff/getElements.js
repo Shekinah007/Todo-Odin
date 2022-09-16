@@ -49,6 +49,10 @@ const contentHeader = document.querySelector(".content-header");
 
 const allInputs = document.getElementsByClassName("input");
 
+const deleteWindow = document.querySelector(".delete-window");
+const confirmDeleteBtn = document.querySelector(".yes");
+const cancelDeleteBtn = document.querySelector(".no");
+
 export {
   content,
   addButton,
@@ -94,4 +98,7 @@ export {
   projectElementContainers,
   contentHeader,
   allInputs,
+  deleteWindow,
+  confirmDeleteBtn,
+  cancelDeleteBtn,
 };

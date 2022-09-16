@@ -4,7 +4,7 @@
     --high-priority: rgb(247, 124, 120);
 }
 
-.details-window, .edit-window {
+.details-window, .edit-window, .delete-window {
     width: min(700px, 90vw);
     min-height: 300px;
     position: fixed;

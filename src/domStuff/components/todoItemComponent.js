@@ -9,13 +9,16 @@ import {
   closeDetailsButton,
   closeEditButton,
   detailsWindow,
+  deleteWindow,
+  cancelDeleteBtn,
+  confirmDeleteBtn,
 } from "../getElements";
 
 import { openWindow, closeWindow } from "../utilityFunctions";
 import detailsComponent from "./detailsWindow";
 import { altDetailsComponent } from "./detailsWindow";
 import editTaskComponent from "./editComponent";
-import { currentProject, mode } from "../..";
+import { currentProject, mode, deleteTarget } from "../..";
 
 var editIndex;
 
@@ -110,8 +113,12 @@ function todoComponent(
   deleteButton.classList.add("delete-button");
 
   deleteButton.addEventListener("click", () => {
-    console.log("Current Project:", currentProject);
-    currentProject.deleteTask(itemIndex);
+    openWindow(deleteWindow);
+    deleteTarget = "task";
+    confirmDeleteBtn.addEventListener("click", () => {
+      currentProject.deleteTask(itemIndex);
+      closeWindow(deleteWindow);
+    });
   });
 
   const date = document.createElement("p");

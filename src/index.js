@@ -14,6 +14,7 @@ import "./styles/styles.css";
 import "./styles/editWindow.css";
 import "./styles/taskComponent.css";
 import "./styles/projectSelect.css";
+import "./styles/deleteWindow.css";
 
 import Project from "./classes";
 import {
@@ -65,11 +66,28 @@ import {
   projectTasks,
   projectElementContainers,
   deleteProjectBtns,
+  deleteWindow,
+  cancelDeleteBtn,
+  confirmDeleteBtn,
 } from "./domStuff/getElements";
+import { de } from "date-fns/locale";
 
 let selectedProject;
 let currentProjectElement;
 let currentProjectElementContainer;
+let deleteTarget;
+
+// confirmDeleteBtn.addEventListener("click", () => {
+//   deleteValue = true;
+//   alert("JSjk");
+//   currentProject.deleteTask(itemIndex);
+//   closeWindow(deleteWindow);
+// });
+// cancelDeleteBtn.addEventListener("click", () => {
+//   deleteValue = false;
+//   alert("adfjj");
+//   closeWindow(deleteWindow);
+// });
 
 // Function to choose current project
 function chooseProject() {
@@ -138,11 +156,22 @@ function projectComponent(projectName, index, noOfTasks) {
   deleteProjectButton.classList.add("delete-project");
 
   deleteProjectButton.addEventListener("click", () => {
-    // alert(index);
-    listOfProjectsObjects.splice(index, 1);
-    renderProjects();
-    currentProject.saveData();
+    deleteTarget = "project";
+    openWindow(deleteWindow);
+
+    // listOfProjectsObjects.splice(index, 1);
+    // renderProjects();
+    // currentProject.saveData();
+    confirmDeleteBtn.addEventListener("click", () => {
+      listOfProjectsObjects.splice(index, 1);
+      renderProjects();
+      currentProject.saveData();
+      closeWindow(deleteWindow);
+    });
   });
+
+  if (deleteTarget == "project") {
+  }
 
   container.append(projectNameDiv, deleteProjectButton, tasks);
 
@@ -224,6 +253,9 @@ projectForm.addEventListener("submit", (e) => {
   currentProject.saveData();
 });
 
+cancelDeleteBtn.addEventListener("click", () => {
+  closeWindow(deleteWindow);
+});
 addProjectBtn.addEventListener("click", () => {
   openWindow(projectWindow);
 });
@@ -349,4 +381,5 @@ export {
   listOfProjectsObjects,
   renderProjects,
   getEveryTask,
+  deleteTarget,
 };
