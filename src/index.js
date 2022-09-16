@@ -202,6 +202,7 @@ window.addEventListener("load", () => {
 overlay.addEventListener("click", () => {
   closeWindow(detailsWindow);
   closeWindow(editWindow);
+  closeWindow(projectWindow);
   if (screen.width < 500) {
     closeNavBar();
   }
