@@ -29,7 +29,8 @@ function todoComponent(
   dueDate,
   project,
   index,
-  complete
+  complete,
+  dateCreated
 ) {
   let itemIndex = index;
   console.log("item Index: ", index);
@@ -166,7 +167,8 @@ function todoComponent(
       priority,
       dueDate,
       project,
-      complete
+      complete,
+      dateCreated
     );
   });
 
@@ -178,7 +180,8 @@ function todoComponent(
       priority,
       dueDate,
       project,
-      complete
+      complete,
+      dateCreated
     );
   });
   firstDiv.addEventListener("click", () => {
@@ -189,7 +192,8 @@ function todoComponent(
       priority,
       dueDate,
       project,
-      complete
+      complete,
+      dateCreated
     );
   });
 

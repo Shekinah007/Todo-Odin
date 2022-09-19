@@ -1,3 +1,5 @@
+const bodyMain = document.querySelector("body");
+
 const content = document.querySelector(".content");
 const addButton = document.querySelector(".add-button");
 const detailsButton = document.querySelector(".details-button");
@@ -56,6 +58,9 @@ const cancelDeleteBtn = document.querySelector(".no");
 const deleteTitle = document.querySelector(".delete-title");
 const deleteTarget = document.querySelector(".delete-target");
 
+const contentCurrentDate = document.querySelector(".current-date-time");
+const detailsDateAdded = document.querySelector(".details-added");
+
 export {
   content,
   addButton,
@@ -107,4 +112,7 @@ export {
   deleteTitle,
   deleteTarget,
   projectNumber,
+  bodyMain,
+  contentCurrentDate,
+  detailsDateAdded,
 };

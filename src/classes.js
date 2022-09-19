@@ -31,7 +31,8 @@ class Project {
           item.dueDate,
           item.project,
           index,
-          item.complete
+          item.complete,
+          item.dateCreated
         )
       );
     });

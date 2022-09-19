@@ -6,6 +6,7 @@ import {
   detailsPriority,
   detailsDueDate,
   detailsTask,
+  detailsDateAdded,
 } from "../getElements";
 import { closeWindow } from "../utilityFunctions";
 
@@ -15,12 +16,16 @@ function altDetailsComponent(
   priority,
   dueDate,
   project,
-  complete
+  complete,
+  dateCreated
 ) {
+  console.log("Details Added: ", dateCreated);
+
   detailsWindow.classList.remove("details-low");
   detailsWindow.classList.remove("details-medium");
   detailsWindow.classList.remove("details-high");
 
+  detailsDateAdded.innerText = dateCreated;
   detailsWindow.classList.add("details-" + priority);
   detailsTitle.innerText = titleText;
   detailsDescription.innerText = details;

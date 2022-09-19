@@ -72,6 +72,8 @@ import {
   deleteTitle,
   deleteTarget,
   projectNumber,
+  bodyMain,
+  contentCurrentDate,
 } from "./domStuff/getElements";
 import { de } from "date-fns/locale";
 
@@ -214,9 +216,26 @@ function getEveryTask() {
   });
 }
 
+let currentDate;
+// Updates current dateTime
+setInterval(() => {
+  currentDate = new Date().toString().substring(0, 21);
+  contentCurrentDate.innerText = currentDate;
+}, 1000);
+
 window.addEventListener("load", () => {
   if (screen.width < 500) {
     toggleNavBar();
+
+    // let windowHeight = window.innerHeight;
+    // editWindow.style.height = windowHeight + "px";
+    // let halfHeight = windowHeight * 0.5;
+    // editWindow.style.top = halfHeight + "px";
+  }
+
+  if (screen.width < 350) {
+    editWindow.style.height = window.innerHeight + "px";
+    editWindow.style.top = window.innerHeight / 2 + "px";
   }
 
   projectNumber.innerText = listOfProjectsObjects.length - 2;
@@ -342,7 +361,9 @@ editForm.addEventListener("submit", (e) => {
       dueDate: editDateInput.value + "",
       project: currentProject.nameOfProject,
       complete: false,
+      dateCreated: currentDate,
     });
+    console.log("Date-Created: ", currentDate);
   } else if (mode === "editingTask") {
     currentProject.editTask(editComponentIndex, {
       title: editTitleInput.value,
@@ -351,6 +372,7 @@ editForm.addEventListener("submit", (e) => {
       dueDate: editDateInput.value + "",
       project: currentProject.nameOfProject,
       complete: currentProject.arrayOfTodos[editComponentIndex].complete,
+      dateCreated: currentProject.arrayOfTodos[editComponentIndex].dateCreated,
     });
     mode = "addingTask";
 

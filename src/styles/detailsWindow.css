@@ -135,6 +135,8 @@ label {
     align-items: center;
     /* background-color: aqua; */
     width: 80%;
+    max-height: 200px;
+    overflow: scroll;
 }
 
 .description-label, .details-title-label {
@@ -155,6 +157,8 @@ label {
     text-decoration: underline;
     text-align: center;
     width: 80%;
+    max-height: 100px;
+    overflow: scroll;
 }
 
 
@@ -201,20 +205,17 @@ label {
 }
 
 .details-low {
-    background-color: rgb(128, 226, 128);
-    /* color: rgb(128, 226, 128); */
-    color: white;
+    /* background-color: rgb(128, 226, 128);
+    color: white; */
     
 }
 .details-medium {
-    background-color: rgb(207, 207, 57);
-    /* color: rgb(207, 207, 57); */
-    color: black;
+    /* background-color: rgb(207, 207, 57);
+    color: black; */
 }
 .details-high {
-    background-color: rgb(255, 64, 64);
-    color: rgb(255, 64, 64);
-    color: white;
+    /* background-color: rgb(255, 64, 64);
+    color: white; */
 }
 
 @media only screen and (max-width: 500px) {

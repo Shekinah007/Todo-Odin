@@ -51,14 +51,14 @@ body::-webkit-scrollbar {
   
    
   ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    /* box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
     border-radius: 10px;
   }
    
   ::-webkit-scrollbar-thumb {
     background-color: rgb(255, 255, 255);
     border: 1px solid rgb(181, 214, 172);
-    border-radius: 10px;
+    border-radius: 10px; 
   }
 
 
@@ -169,7 +169,7 @@ nav p {
     transition: 0.3s;
     background-image: url("/src/images/To\ do\ list-amico-red.svg");
     background-image: url("/src/images/To\ do\ list-amico-grey.svg");
-    /* background-image: url("/src/images/To\ do\ list-pana.svg"); */
+    background-image: url("/src/images/To\ do\ list-pana.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 30%;
@@ -515,20 +515,18 @@ input, textarea {
         top: 0;
         width: 100%;
         height: 100%;
-        opacity: 0.6;
-        background-image: url("/src/images/To\ do\ list-pana.svg");
+        opacity: 0.2;
         /* background-image: url("/src/images/To\ do\ list-amico-pink.svg"); */
+        background-image: url("/src/images/To\ do\ list-pana.svg");
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 70%;
+        background-size: 100%;
       }
 
     nav {
         width: var(--nav-width);
         /* width: 70vw; */
         z-index: 40;
-
-
         /* top: 30vh;
         width: 100vw; */
     }
@@ -537,6 +535,8 @@ input, textarea {
         /* left: initial;
         top: 100vh; */
     }
+
+
 
     header {
         padding-left: 0px;
