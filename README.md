@@ -1,7 +1,7 @@
 # Todo-Odin Project
  A more than basic todo app.
 # Features
-Can create projects with each projects able to create tasks.
+Can create projects with each project able to create tasks.
 Each task a title, description, dueDate priority and completion state.
 Built as a Progressive Web App.
 
